@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personalización de Anillo</title>
+  <link rel="stylesheet" href="personalizacion.css">
+</head>
+
+<body>
+<!-- Encabezado generico para todas la pag -->
+  <header>
+    <div class="logo">Brisas Gems</div>
+    <nav class="nav-links">
+      <a href="#">Personalizacion</a>
+      <a href="#">Portafolio</a>
+      <a href="#">Progreso de Pedido</a>
+    </nav>
+    <div class="icons">
+      <span>🔍</span>
+      <span>👤</span>
+    </div>
+  </header>
+
+  <main class="customizer">
+    <div class="container">
+    <!-- Vista previa del anillo -->
+      <section class="preview">
+      <h2>Vista previa</h2>
+      <img src="../imagenes/personalizacion/vista-previa/vista-frontal.jpg" alt="Vista previa del anillo" id="ring-preview">
+      <div class="preview-thumbnails">
+        <img src="../imagenes/personalizacion/vista-previa/vista-frontal.jpg" alt="Vista Frontal">
+        <img src="../imagenes/personalizacion/vista-previa/vista-perfil.jpg" alt="Vista Perfil">
+        <img src="../imagenes/personalizacion/vista-previa/vista-contorno.jpg" alt="Vista Contorno">
+      </div>
+      </section>
+
+    <!-- Opciones de personalización -->
+    <section class="customization">
+      <!-- RF-007 Selección de gema -->
+      <div class="option-section" id="center-gemstone">
+        <h3>PIEDRA CENTRAL</h3>
+        <div class="option-list">
+          <button class="option-item" data-gem="diamante">
+            <img src="../imagenes/personalizacion/gemas/diamante.png" alt="Diamante">
+            <span>Diamante</span>
+          </button>
+          <button class="option-item selected" data-gem="esmeralda">
+            <img src="../imagenes/personalizacion/gemas/esmeralda.png" alt="Esmeralda">
+            <span>Esmeralda</span>
+          </button>
+          <button class="option-item" data-gem="zafiro">
+            <img src="../imagenes/personalizacion/gemas/zafiro.png" alt="Zafiro">
+            <span>Zafiro</span>
+          </button>
+          <button class="option-item" data-gem="ruby">
+            <img src="../imagenes/personalizacion/gemas/ruby.png" alt="Ruby">
+            <span>Ruby</span>
+          </button>
+        </div>
+      </div>
+      
+        <!-- RF-008 Selección de forma -->
+        <div class="option-section" id="center-stone-shape">
+          <h3>FORMA DE LA PIEDRA CENTRAL</h3>
+          <div class="option-list">
+            <button class="option-item selected" data-shape="round">
+              <img src="../imagenes/personalizacion/forma/redonda.png" alt="Round">
+              <span>Redonda</span>
+            </button>
+            <button class="option-item" data-shape="oval">
+              <img src="../imagenes/personalizacion/forma/ovalada.png" alt="Oval">
+              <span>Ovalada</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- RF-0010 Tamaño de la joya -->
+        <div class="option-section" id="stone-size">
+          <h3>TAMAÑO DE LA PIEDRA CENTRAL</h3>
+          <div class="option-list">
+            <button class="option-item" data-size="6">
+              <img src="../imagenes/personalizacion/tama-piedra-central/6mm.png" alt="6mm">
+              <span>6 MM.</span>
+            </button>
+            <button class="option-item selected" data-size="7">
+              <img src="../imagenes/personalizacion/tama-piedra-central/7mm.png" alt="7mm">
+              <span>7 MM.</span>
+            </button>
+          </div>
+        </div>
+      
+        <!-- RF-009 Material del anillo -->
+        <div class="option-section" id="ring-material">
+          <h3>MATERIAL DEL ANILLO</h3>
+          <div class="option-list">
+            <button class="option-item" data-material="gold">
+              <img src="../imagenes/personalizacion/material/oro-amarillo.png" alt="Gold">
+              <span>Oro Amarillo</span>
+            </button>
+            <button class="option-item" data-material="white-gold">
+              <img src="../imagenes/personalizacion/material/oro-blanco.png" alt="White Gold">
+              <span>Oro Blanco</span>
+            </button>
+            <button class="option-item" data-material="rose-gold">
+              <img src="../imagenes/personalizacion/material/oro-rosa.png" alt="Rose Gold">
+              <span>Rose Gold</span>
+            </button>
+            <button class="option-item" data-material="platinum">
+              <img src="../imagenes/personalizacion/material/platino.png" alt="Platinum">
+              <span>Platino</span>
+            </button>
+          </div>
+        </div>
+      
+        <!-- RF-0011 Talla del anillo -->
+        <div class="option-section" id="ring-size">
+          <h3>TALLA DEL ANILLO</h3>
+          <div class="option-list">
+            <select class="ring-size-selector">
+              <option disabled selected>Choose your ring size</option>
+              <option value="5">Size 5</option>
+              <option value="6">Size 6</option>
+              <option value="7">Size 7</option>
+              <option value="8">Size 8</option>
+              <option value="9">Size 9</option>
+              <!-- más tallas según tabla estándar -->
+            </select>
+            <p class="help-text">Don’t know your size? <a href="#">Learn how to measure</a></p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Plataforma de Personalización de Joyas</p>
+  </footer>
+</body>
+</html>
