@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi perfil</title>
+  <link rel="stylesheet" href="gestion-de-usuario.css"/>
+</head>
+<body>
+
+  <header>
+    <div class="logo">JoyaPersonal</div>
+    <nav class="nav-links">
+      <a href="perfil.html">Mi perfil</a>
+      <a href="login.html">Cerrar sesión</a>
+    </nav>
+  </header>
+
+  <section class="perfil">
+    <h1>Perfil de Usuario</h1>
+    <form action="update_profile.html" method="POST">
+      <div class="form-group">
+        <label for="nombre_completo">Nombre Completo</label>
+        <input type="text" id="nombre_completo" name="nombre_completo" placeholder="Juan Pérez" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="correo">Correo Electrónico</label>
+        <input type="email" id="correo" name="correo" placeholder="juan@correo.com" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="123-456-7890" required>
+      </div>
+  
+      <button type="submit" class="btn-principal">Actualizar Información</button>
+    </form>
+    <a href="index.html" class="btn cerrar-sesion">Cerrar sesión</a>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crear cuenta</title>
+  <link rel="stylesheet" href="gestion-de-usuario.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">JoyaPersonal</div>
+    <nav class="nav-links">
+      <a href="login.html">Iniciar sesión</a>
+      <a href="registro.html">Crear cuenta</a>
+    </nav>
+  </header>
+
+  <main class="form-container">
+    <h2>Crear cuenta</h2>
+    <form id="registro-form">
+      <div class="form-group">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" required />
+      </div>
+
+      <div class="form-group">
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo" required />
+      </div>
+
+      <div class="form-group">
+        <label for="contrasena">Contraseña</label>
+        <input 
+          type="password" 
+          id="contrasena" 
+          name="contrasena" 
+          required 
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}"
+          title="Debe tener al menos 8 caracteres, una mayúscula, una minúscula y un carácter especial."
+        />
+        <p class="help-text">Mínimo 8 caracteres, una mayúscula, una minúscula y un carácter especial.</p>
+      </div>
+
+      <button type="submit">Registrarse</button>
+      <p class="form-message success hidden">¡Registro exitoso! Revisa tu correo para activar la cuenta.</p>
+      <p class="form-message error hidden">Este correo ya está registrado.</p>
+    </form>
+  </main>
+
+</body>
+</html>
