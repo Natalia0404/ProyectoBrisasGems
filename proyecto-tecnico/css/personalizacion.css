@@ -15,7 +15,7 @@ body {
   /* HEADER / NAV */
   header {
     position: static; 
-    width: 100%;
+    width: 95%;
     background-color: #ffffff;
     border-bottom: 1px solid #ddd;
     padding: 15px 30px;
