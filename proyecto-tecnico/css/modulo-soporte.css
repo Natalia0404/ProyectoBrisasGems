@@ -1,0 +1,141 @@
+.soporte {
+    background-color: #fff;
+    border: 2px solid #0a8048;
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 600px;
+    border-radius: 12px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .soporte h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #0a8048;
+  }
+  
+  .soporte p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .formulario-soporte {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .formulario-soporte input,
+  .formulario-soporte textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  
+  .formulario-soporte button {
+    background-color: #0a8048;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .formulario-soporte button:hover {
+    background-color: #06693a;
+  }
+  
+  .terminos {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+  }
+  
+  .terminos a {
+    color: #0a8048;
+    text-decoration: underline;
+  }
+  
+  .whatsapp-contacto {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .whatsapp-contacto button {
+    background-color: #25D366;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .whatsapp-contacto button:hover {
+    background-color: #1ebe5b;
+  }
+/* Header general */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f6f6f6;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del contenedor del logo */
+.logo img {
+  height: 120px; /* Ajusta el tamaño del logo */
+  object-fit: contain;
+}
+
+/* Navegación */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+.nav-links:hover{
+  background-color: #d3fbe2;
+  color: #0a8048;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #007bff; /* color al pasar el cursor */
+}
+
+/* Íconos del lado derecho */
+.icons {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .icons {
+    margin-top: 10px;
+  }
+}

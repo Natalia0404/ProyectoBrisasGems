@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soporte y Comunicación</title>
+  <link rel="stylesheet" href="/proyecto-tecnico/css/modulo-soporte.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="../imagenes/logo-general-removebg-preview.png" alt="Brisas Gems Logo">
+    </div>
+    <nav class="nav-links">
+      <a href="#">Personalización</a>
+      <a href="#">Portafolio</a>
+      <a href="#">Progreso de Pedido</a>
+    </nav>
+    <div class="icons">
+      <span>🔍</span>
+      <span>👤</span>
+    </div>
+  </header>
+
+  <!-- MÓDULO: SOPORTE Y COMUNICACIÓN -->
+  <section class="soporte">
+    <h2>Soporte y Comunicación</h2>
+    <p>¿Tienes dudas o necesitas ayuda durante la personalización? Contáctanos aquí:</p>
+
+    <form id="form-soporte" class="formulario-soporte">
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" id="correo" name="correo" required>
+
+      <label for="mensaje">Mensaje o consulta:</label>
+      <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+      <label for="presupuesto">Presupuesto estimado (COP):</label>
+      <input type="number" id="presupuesto" name="presupuesto" required>
+
+      <label for="fecha">Fecha estimada para recibir el anillo:</label>
+      <input type="date" id="fecha" name="fecha" required>
+
+      <div class="terminos">
+        <input type="checkbox" id="aceptaTerminos" required>
+        <label for="aceptaTerminos">
+          Acepto los <a href="#" target="_blank">términos y condiciones</a>.
+        </label>
+      </div>
+
+      <button type="submit">Enviar solicitud</button>
+    </form>
+
+    <div id="whatsappContacto" class="whatsapp-contacto" style="display: none;">
+      <p>¿Prefieres hablar por WhatsApp?</p>
+      <a href="https://wa.me/573001112233" target="_blank">
+        <button>Contactar por WhatsApp</button>
+      </a>
+    </div>
+  </section>
