@@ -87,7 +87,9 @@ header {
   }
   
   .form-group {
-    margin-bottom: 20px;
+    margin-top: 60px; /* Aumenta este valor si quieres más separación */
+    display: flex;
+    justify-content: center;
   }
   
   .form-group label {
@@ -96,7 +98,7 @@ header {
     margin-bottom: 6px;
     color: #333;
   }
-  
+
   .form-group input {
     width: 100%;
     padding: 10px;
