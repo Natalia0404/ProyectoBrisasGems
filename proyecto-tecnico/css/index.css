@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #fff;
+    color: #111;
+  }
+  
+  /* Encabezado */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #999;
+    padding: 15px 30px;
+    width: 100%;
+  }
+  
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #111;
+    font-weight: bold;
+    font-size: 14px;
+    border: 1px solid #111;
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+  
+  .login-link {
+    font-size: 14px;
+    color: green;
+    text-decoration: none;
+  }
+  
+  /* Layout general */
+  .main-layout {
+    display: flex;
+    padding: 30px;
+    gap: 30px;
+    justify-content: space-between;
+  }
+  
+  /* Vista previa */
+  .preview-section {
+    flex: 1;
+  }
+  
+  .preview-section h2 {
+    font-size: 16px;
+    color: green;
+    margin-bottom: 10px;
+  }
+  
+  .preview-section img {
+    width: 100%;
+    max-width: 320px;
+    border: 1px solid #999;
+  }
+  
+  /* Información central */
+  .info-section {
+    flex: 1.2;
+    border: 2px solid #999;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .bienvenida p {
+    font-size: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .redes {
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+    margin-top: 10px;
+  }
+  
+  .redes .iconos span {
+    font-size: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  /* Catálogo lateral */
+  .catalogo {
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .btn-adquirir {
+    align-self: flex-end;
+    background-color: #0a0;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 6px;
+  }
+  
+  .categoria h4 {
+    font-size: 13px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+  }
+  
+  .categoria img {
+    width: 150px;
+    border: 1px solid #999;
+  }
+  
