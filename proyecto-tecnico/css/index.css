@@ -12,12 +12,66 @@
   
   /* Encabezado */
   header {
+    position: static; 
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #999;
-    padding: 15px 30px;
-    width: 100%;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-right: 10px; /* Espacio entre el nombre y el logo */
+  }
+  
+  .logo-img img {
+    width: 60px; /* Ajusta el tamaño del logo si es necesario */
+    height: auto;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 25px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #111;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #666;
+  }
+  
+  .user-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .user-links a {
+    text-decoration: none;
+    color: #111;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .user-links a:hover {
+    color: #666;
   }
   
   .logo {
@@ -69,6 +123,7 @@
     width: 100%;
     max-width: 320px;
     border: 1px solid #999;
+
   }
   
   /* Información central */
@@ -130,4 +185,11 @@
     width: 150px;
     border: 1px solid #999;
   }
-  
+  img {
+    border-radius: 12px;
+  }
+  .preview img {
+    border-radius: 12px;
+    margin-left: 40px;    
+    margin-top: 20px;      
+  }
