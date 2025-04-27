@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 /* HEADER / NAV */
 header {
   position: static; 

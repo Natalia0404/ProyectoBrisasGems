@@ -8,6 +8,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: 'Times New Roman', Times, serif
 }
 
 .logo-container {
@@ -15,6 +16,7 @@ header {
   align-items: center;
   text-decoration: none;
   color: inherit;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .logo {
@@ -32,6 +34,7 @@ header {
 .nav-links {
   display: flex;
   gap: 25px;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .nav-links a {
@@ -39,6 +42,7 @@ header {
   color: #111;
   font-size: 14px;
   transition: color 0.3s ease;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .nav-links a:hover {
@@ -49,12 +53,13 @@ header {
   display: flex;
   gap: 20px;
   align-items: center;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .user-links a {
   text-decoration: none;
   color: #111;
-  font-size: 14px;
+  font-size: 10px;
   transition: color 0.3s ease;
 }
 
@@ -99,21 +104,16 @@ body {
 .nav-links {
   display: flex;
   gap: 25px;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .nav-links a {
   text-decoration: none;
   color: #333;
-  font-weight: bold;
   font-size: 16px;
   padding: 10px 15px;
   border-radius: 6px;
   transition: background-color 0.2s, color 0.2s;
-}
-
-.nav-links a:hover {
-  background-color: #d3fbe2;
-  color: #0a8048;
 }
 
 .icons {
@@ -160,7 +160,7 @@ body {
 .menu-lateral li:hover,
 .menu-lateral .activo {
   background-color: #d3fbe2;
-  color: #0a8048;
+  color: #ffffff;
   font-weight: bold;
 }
 
