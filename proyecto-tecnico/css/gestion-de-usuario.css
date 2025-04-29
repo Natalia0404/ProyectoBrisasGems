@@ -7,11 +7,13 @@ header {
   position: static; 
   width: 100%;
   background-color: #ffffff;
-  border-bottom: 1px solid #ddd;
+  border-bottom: none solid #ddd;
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border: none;
+  outline: none;
 }
 
 .logo-container {
@@ -36,6 +38,7 @@ header {
 .nav-links {
   display: flex;
   gap: 25px;
+  
 }
 
 .nav-links a {
@@ -66,9 +69,31 @@ header {
   color: #666;
 }
 
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
 
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
 
+.nav-links a {
+  text-decoration: none;
+  color: #111;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-family:'Times New Roman', Times, serif;
+}
 
+.login-link {
+  font-size: 14px;
+  color: green;
+  text-decoration: none;
+  font-family: 'Times New Roman', Times, serif;
+}
 
 /* FORMULARIOS */
 

@@ -46,6 +46,7 @@
   .nav-links {
     display: flex;
     gap: 25px;
+    
   }
   
   .nav-links a {
@@ -99,6 +100,7 @@
     font-size: 14px;
     color: green;
     text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
   }
   
   /* Layout general */
