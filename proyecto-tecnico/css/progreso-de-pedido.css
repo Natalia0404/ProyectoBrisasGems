@@ -18,21 +18,11 @@ body {
 /* Header (conservando estilos originales) */
 header {
   background-color: #ffffff;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  border-bottom: none solid #ddd;
-=======
   border-bottom: 1px solid var(--color-borde);
->>>>>>> Stashed changes
-=======
-  border-bottom: 1px solid var(--color-borde);
->>>>>>> Stashed changes
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: none;
-  outline: none;
 }
 
 .logo-container {
@@ -43,205 +33,6 @@ header {
 }
 
 .logo-img img {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  width: 60px; /* Ajusta el tamaño del logo si es necesario */
-  height: auto;
-}
-
-.nav-links {
-  display: flex;
-  gap: 25px;
-  
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #111;
-  font-size: 14px;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #666;
-}
-
-.user-links {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.user-links a {
-  text-decoration: none;
-  color: #111;
-  font-size: 14px;
-  transition: color 0.3s ease;
-}
-
-.user-links a:hover {
-  color: #666;
-}
-
-.logo {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #111;
-  font-size: 14px;
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-family:'Times New Roman', Times, serif;
-}
-
-.login-link {
-  font-size: 14px;
-  color: green;
-  text-decoration: none;
-  font-family: 'Times New Roman', Times, serif;
-}
-
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-  background-color: #f5f5f5;
-  margin: 0;
-  padding: 0;
-}
-
-
-.encabezado-global {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 30px;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-bottom: 2px solid #333;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.encabezado-global .logo img {
-  height: 55px;
-=======
-  height: 50px;
->>>>>>> Stashed changes
-  width: auto;
-}
-
-<<<<<<< Updated upstream
-.nav-links {
-  display: flex;
-  gap: 25px;
-  font-family: 'Times New Roman', Times, serif;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  font-size: 16px;
-  padding: 10px 15px;
-  border-radius: 6px;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.icons {
-  display: flex;
-  gap: 15px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.icons span:hover {
-  color: #0a8048;
-}
-
-
-.menu-lateral {
-  width: 250px;
-  background-color: #fff;
-  border: 2px solid #333;
-  padding: 30px 20px;
-  border-radius: 10px;
-  margin: 20px;
-  height: calc(100vh - 40px);
-  font-weight: bolder;
-  line-height: 3;
-  text-align: center;
-}
-
-.menu-lateral ul {
-  list-style: none;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.menu-lateral li {
-  padding: 12px 18px;
-  margin: 12px 0;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.2s;
-  font-size: 15px;
-  text-align: left;
-}
-
-.menu-lateral li:hover,
-.menu-lateral .activo {
-  background-color: #d3fbe2;
-  color: #ffffff;
-  font-weight: bold;
-}
-
- 
-.contenido {
-  flex: 1;
-  padding: 35px;
-  overflow: visible;
-  height: 90%;
-  width: 50;
-}
-
- 
-.barra-superior {
-=======
-/* Contenedor principal */
-.contenedor-principal {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 30px;
-  max-width: 1200px;
-  margin: 30px auto;
-  padding: 0 20px;
-}
-
-/* Tarjeta de pedido */
-.tarjeta-pedido {
-  background: white;
-  border-radius: var(--border-radius);
-  padding: 25px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.encabezado-pedido {
->>>>>>> Stashed changes
-=======
   height: 50px;
   width: auto;
 }
@@ -265,7 +56,6 @@ body {
 }
 
 .encabezado-pedido {
->>>>>>> Stashed changes
   display: flex;
   justify-content: space-between;
   align-items: center;
