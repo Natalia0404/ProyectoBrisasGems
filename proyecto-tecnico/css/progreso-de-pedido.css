@@ -19,7 +19,11 @@ body {
 header {
   background-color: #ffffff;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   border-bottom: none solid #ddd;
+=======
+  border-bottom: 1px solid var(--color-borde);
+>>>>>>> Stashed changes
 =======
   border-bottom: 1px solid var(--color-borde);
 >>>>>>> Stashed changes
@@ -39,6 +43,7 @@ header {
 }
 
 .logo-img img {
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
   width: 60px; /* Ajusta el tamaño del logo si es necesario */
   height: auto;
@@ -216,6 +221,31 @@ body {
  
 .barra-superior {
 =======
+/* Contenedor principal */
+.contenedor-principal {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* Tarjeta de pedido */
+.tarjeta-pedido {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.encabezado-pedido {
+>>>>>>> Stashed changes
+=======
+  height: 50px;
+  width: auto;
+}
+
 /* Contenedor principal */
 .contenedor-principal {
   display: grid;
