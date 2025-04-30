@@ -2,12 +2,12 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Seguimiento de Pedido</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seguimiento de Pedido | Brisas Gems</title>
   <link rel="stylesheet" href="../css/progreso-de-pedido.css">
 </head>
 <body>
-
-  <!-- Encabezado generico para todas la pag -->
+  <!-- ENCABEZADO (conservando rutas originales) -->
   <header>
     <a href="../index.html" class="logo-container">
       <div class="logo"></div>
@@ -18,13 +18,13 @@
     <nav class="nav-links">
       <a href="../personalizacion/personalizacion.html">Personalización</a>
       <a href="../portafolio/portafolio.html">Portafolio</a>
-      <a href="../progreso-de-pedido/progreso-de-pedido.html">Progreso de Pedido</a>
+      <a href="../progreso-de-pedido/progreso-de-pedido.html" class="active">Progreso de Pedido</a>
     </nav>
     <div class="user-links">
       <a href="../gestion-de-usuarios/login.html" class="login-link">Iniciar sesión</a>
-      <!--<a href="perfil.html" class="perfil-link">Perfil</a>-->
     </div>
   </header>
+<<<<<<< Updated upstream
   <hr>
   
   <!-- CONTENIDO PRINCIPAL -->
@@ -38,25 +38,83 @@
           <img src="../imagenes/progreso-pedido/vista previa 1.jpg" alt="">
           <img src="../imagenes/progreso-pedido/vista previa 2.jpg" alt="">
           <img src="../imagenes/progreso-pedido/vista previa 3.jpg" alt="">
+=======
+
+  <!-- CONTENIDO PRINCIPAL MEJORADO -->
+  <main class="contenedor-principal">
+    <!-- LISTA DE PEDIDOS (RF-016) -->
+    <section class="seccion-pedidos">
+      <h1 class="titulo-principal">Seguimiento de Pedidos</h1>
+      
+      <!-- Tarjeta de pedido activo -->
+      <article class="tarjeta-pedido" data-id-pedido="EMR-12345">
+        <div class="encabezado-pedido">
+          <h2>ANILLO DE COMPROMISO</h2>
+          <a href="#" class="boton-lista-pedidos">VER TODOS MIS PEDIDOS</a>
+>>>>>>> Stashed changes
         </div>
-        <div class="progreso">
-          <p><strong>75%</strong></p>
-          <div class="barra">
-            <div class="relleno"></div>
+
+        <!-- Visualización de imágenes (RF-020/RF-021) -->
+        <div class="galeria-pedido">
+          <img src="../imagenes/progreso-pedido/vista previa 1.jpg" alt="Vista previa del anillo" class="imagen-principal">
+          <div class="miniaturas">
+            <img src="../imagenes/progreso-pedido/vista previa 1.jpg" alt="Vista frontal">
+            <img src="../imagenes/progreso-pedido/vista previa 2.jpg" alt="Vista lateral">
+            <img src="../imagenes/progreso-pedido/vista previa 3.jpg" alt="Detalle">
           </div>
         </div>
+
+        <!-- Barra de progreso (RF-017) -->
+        <div class="estado-progreso">
+          <p class="porcentaje-progreso"><strong>75% completado</strong></p>
+          <div class="barra-progreso">
+            <div class="relleno-progreso" style="width: 75%"></div>
+          </div>
+          <ul class="etapas-progreso">
+            <li class="etapa-completada">Confirmado</li>
+            <li class="etapa-completada">Diseño</li>
+            <li class="etapa-activa">Producción</li>
+            <li class="etapa-pendiente">Finalizado</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- DETALLES DEL PEDIDO (RF-018) -->
+    <aside class="detalles-pedido">
+      <h3>DETALLE DEL PRODUCTO</h3>
+      <ul class="lista-detalles">
+        <li><strong>Número de pedido:</strong> #EMR-12345</li>
+        <li><strong>Estado:</strong> <span class="estado-destacado">En producción</span></li>
+        <li><strong>Piedra:</strong> Esmeralda colombiana</li>
+        <li><strong>Material:</strong> Oro blanco 18k</li>
+        <li><strong>Talla:</strong> 6.5</li>
+        <li><strong>Precio total:</strong> $2.500.000</li>
+        <li><strong>Anticipo:</strong> $1.000.000</li>
+        <li><strong>Saldo pendiente:</strong> $1.500.000</li>
+        <li><strong>Fecha estimada:</strong> 20/04/2025</li>
+      </ul>
+      
+      <!-- Notificaciones (RF-019) -->
+      <div class="notificaciones">
+        <label>
+          <input type="checkbox" id="recibir-notificaciones" checked>
+          Recibir notificaciones por email
+        </label>
+        <button class="boton-problema">NOTIFICAR PROBLEMA</button>
       </div>
+    </aside>
+  </main>
 
-      <div class="detalle">
-        <h3>DETALLE DEL PRODUCTO</h3>
-        <p><strong>Número de pedido:</strong> #EMR-12345</p>
-        <p><strong>Estado:</strong> En producción (75%)</p>
-        <p><strong>Piedra:</strong> Esmeralda</p>
-        <p><strong>Material:</strong> Oro blanco 18k</p>
-        <p><strong>Talla:</strong> 6.5</p>
-        <p><strong>Precio total:</strong> $2.500.000</p>
-        <p><strong>Anticipo:</strong> $1.000.000</p>
-        <p><strong>Saldo pendiente:</strong> $1.500.000</p>
-        <p><strong>Fecha estimada de entrega:</strong> 20 de abril de 2025</p>
+  <!-- Modal para notificaciones (nuevo) -->
+  <div class="modal-notificacion" id="modalNotificacion">
+    <div class="contenido-modal">
+      <span class="cerrar-modal">&times;</span>
+      <h3>¡Actualización de pedido!</h3>
+      <p id="mensaje-notificacion">Tu pedido ha avanzado a la etapa de producción.</p>
+    </div>
+  </div>
 
-        <a href="#" class="notificar">NOTIFICAR CUALQUIER PROBLEMA</a>
+  <script src="../js/progreso-de-pedido.js"></script>
+</body>
+</html>

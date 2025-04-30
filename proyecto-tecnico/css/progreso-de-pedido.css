@@ -1,9 +1,28 @@
-/* HEADER / NAV */
+/* Variables reutilizables */
+:root {
+  --color-primario: #0a8048;
+  --color-secundario: #d3fbe2;
+  --color-texto: #333;
+  --color-borde: #ddd;
+  --border-radius: 8px;
+}
+
+/* Estructura general */
+body {
+  background-color: #f5f5f5;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--color-texto);
+}
+
+/* Header (conservando estilos originales) */
 header {
-  position: static; 
-  width: 100%;
   background-color: #ffffff;
+<<<<<<< Updated upstream
   border-bottom: none solid #ddd;
+=======
+  border-bottom: 1px solid var(--color-borde);
+>>>>>>> Stashed changes
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
@@ -19,14 +38,8 @@ header {
   color: inherit;
 }
 
-.logo {
-  font-size: 20px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  margin-right: 10px; /* Espacio entre el nombre y el logo */
-}
-
 .logo-img img {
+<<<<<<< Updated upstream
   width: 60px; /* Ajusta el tamaño del logo si es necesario */
   height: auto;
 }
@@ -121,11 +134,13 @@ body {
 
 .encabezado-global .logo img {
   height: 55px;
+=======
+  height: 50px;
+>>>>>>> Stashed changes
   width: auto;
-  object-fit: contain;
-  vertical-align: middle;
 }
 
+<<<<<<< Updated upstream
 .nav-links {
   display: flex;
   gap: 25px;
@@ -200,151 +215,192 @@ body {
 
  
 .barra-superior {
+=======
+/* Contenedor principal */
+.contenedor-principal {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* Tarjeta de pedido */
+.tarjeta-pedido {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.encabezado-pedido {
+>>>>>>> Stashed changes
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-  position: relative;
 }
 
-.barra-superior h1 {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 28px;
-  color: #0a8048;
-}
-
-.lista-pedidos {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 10px 15px;
-  border: 2px solid #0a8048;
-  color: #0a8048;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  background-color: #fff;
-  transition: background 0.2s;
-}
-
-.lista-pedidos:hover {
-  background-color: #d3fbe2;
-}
-
-/* === PEDIDO === */
-.pedido {
-  display: flex;
-  gap: 30px;
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 25px;
-  border: 2px solid #333;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  overflow: visible;
-}
-
- 
-.producto {
-  width: 75%;
-  overflow: visible;
-  height: auto;
-  position: relative;
-}
-
-.producto h2 {
-  font-size: 22px;
-  margin-bottom: 15px;
-  color: #0a8048;
-  text-align: center;
+/* Galería de imágenes (rutas originales) */
+.galeria-pedido {
+  margin-bottom: 25px;
 }
 
 .imagen-principal {
-  width: 250px;
+  width: 100%;
+  max-width: 400px;
   height: auto;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--border-radius);
   display: block;
-  margin: 0 auto 15px auto;
-  border-radius: 10px;
-  border: 2px solid #333;
-  transition: background-color 0.2s;
-}
-
-.imagen-principal:hover {
-  background-color: #c0392b;
+  margin: 0 auto 15px;
 }
 
 .miniaturas {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
+  justify-content: center;
+  gap: 10px;
 }
 
 .miniaturas img {
   width: 80px;
   height: 80px;
   border-radius: 5px;
-  border: 2px solid #333;
+  border: 1px solid var(--color-borde);
+  cursor: pointer;
+  transition: transform 0.3s;
 }
 
-/* === PROGRESO === */
-.progreso {
-  text-align: center;
+.miniaturas img:hover {
+  transform: scale(1.05);
 }
 
-.progreso p {
-  font-weight: bold;
-  font-size: 16px;
-  margin-bottom: 8px;
-}
-
-.barra {
+/* Barra de progreso mejorada (RF-017) */
+.barra-progreso {
   background-color: #e0e0e0;
-  height: 20px;
-  border-radius: 10px;
+  height: 12px;
+  border-radius: 6px;
+  margin: 15px 0;
   overflow: hidden;
 }
 
-.relleno {
-  background-color: #1e8449;
+.relleno-progreso {
+  background-color: var(--color-primario);
   height: 100%;
-  width: 75%;
+  border-radius: 6px;
+  transition: width 0.5s ease;
 }
 
-/* === DETALLE === */
-.detalle {
-  width: 55%;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  padding: 20px;
-  border: 2px solid #333;
-  overflow: auto;
+.etapas-progreso {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+  font-size: 14px;
 }
 
-.detalle h3 {
-  font-size: 18px;
-  margin-bottom: 15px;
-  color: #1e8449;
+.etapas-progreso li {
+  position: relative;
+  padding-top: 25px;
+  text-align: center;
+  flex: 1;
 }
 
-.detalle p {
-  margin-bottom: 10px;
-  font-size: 15px;
+.etapas-progreso li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  border: 3px solid #e0e0e0;
 }
 
-/* === BOTÓN NOTIFICAR === */
-.notificar {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 15px;
-  border: 2px solid #c0392b;
-  color: #c0392b;
-  text-decoration: none;
-  border-radius: 8px;
+.etapa-completada::before {
+  background-color: var(--color-primario);
+  border-color: var(--color-primario);
+}
+
+.etapa-activa::before {
+  border-color: var(--color-primario);
+}
+
+/* Detalles del pedido */
+.detalles-pedido {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  align-self: start;
+}
+
+.lista-detalles {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-detalles li {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--color-borde);
+}
+
+.estado-destacado {
+  color: var(--color-primario);
   font-weight: bold;
-  transition: background 0.2s;
 }
 
-.notificar:hover {
-  background-color: #f9d6d5;
+/* Botones */
+.boton-lista-pedidos, 
+.boton-problema {
+  background-color: transparent;
+  border: 2px solid var(--color-primario);
+  color: var(--color-primario);
+  padding: 8px 15px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.boton-lista-pedidos:hover,
+.boton-problema:hover {
+  background-color: var(--color-primario);
+  color: white;
+}
+
+/* Modal de notificaciones (RF-019) */
+.modal-notificacion {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenido-modal {
+  background: white;
+  padding: 25px;
+  border-radius: var(--border-radius);
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+}
+
+.cerrar-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
 }
