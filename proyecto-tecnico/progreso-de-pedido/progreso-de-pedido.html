@@ -3,28 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sistema interactivo de Brisas Gems para la personalización de joyas en línea. Permite al usuario diseñar piezas únicas con visualización en tiempo real, acceder a un catálogo con recomendaciones personalizadas, hacer seguimiento del estado del pedido y comunicarse eficientemente con el equipo de diseño, mejorando la experiencia del cliente y reduciendo tiempos de respuesta">
+  <meta name="author" content="Johan Bocanegra">
+  <link rel="icon" href="../imagenes/icono.png">
   <title>Seguimiento de Pedido | Brisas Gems</title>
   <link rel="stylesheet" href="../css/progreso-de-pedido.css">
 </head>
 <body>
-  <!-- ENCABEZADO (conservando rutas originales) -->
-  <header>
-    <a href="../index.html" class="logo-container">
-      <div class="logo">Brisas Gems</div>
-      <div class="logo-img">
-        <img src="../imagenes/logo.png" alt="logo">
+  <header class="header-joyeria">
+    <div class="contenedor-header">
+      <a href="../index.html" class="logo-joyeria">
+        <img src="../imagenes/logo.png" alt="Brisas Gems" class="logo-img">
+        <span class="nombre-joyeria">Brisas Gems</span>
+      </a>
+      
+      <nav class="navegacion-principal">
+        <div class="nav-contenedor">
+          <a href="../personalizacion/personalizacion.html" class="nav-enlace">
+            <div class="nav-contenido">
+              <span class="nav-icono">✦</span>
+              <span class="nav-texto">Personalización</span>
+            </div>
+            <div class="nav-subtexto">Crea tu joya única</div>
+          </a>
+          
+          <a href="../portafolio/portafolio.html" class="nav-enlace">
+            <div class="nav-contenido">
+              <span class="nav-icono">✧</span>
+              <span class="nav-texto">Portafolio</span>
+            </div>
+            <div class="nav-subtexto">Nuestras creaciones</div>
+          </a>
+          
+          <a href="../progreso-de-pedido/progreso-de-pedido.html" class="nav-enlace active">
+            <div class="nav-contenido">
+              <span class="nav-icono">✷</span>
+              <span class="nav-texto">Progreso</span>
+            </div>
+            <div class="nav-subtexto">Sigue tu pedido</div>
+          </a>
+        </div>
+      </nav>
+      
+      <div class="acciones-usuario">
+        <a href="../gestion-de-usuarios/login.html" class="boton-login">
+          <span class="icono-login">👤</span>
+          <span>Iniciar sesión</span>
+        </a>
       </div>
-    </a>
-    <nav class="nav-links">
-      <a href="../personalizacion/personalizacion.html">Personalización</a>
-      <a href="../portafolio/portafolio.html">Portafolio</a>
-      <a href="../progreso-de-pedido/progreso-de-pedido.html" class="active">Progreso de Pedido</a>
-    </nav>
-    <div class="user-links">
-      <a href="../gestion-de-usuarios/login.html" class="login-link">Iniciar sesión</a>
     </div>
   </header>
-
   <!-- CONTENIDO PRINCIPAL MEJORADO -->
   <main class="contenedor-principal">
     <!-- LISTA DE PEDIDOS (RF-016) -->
