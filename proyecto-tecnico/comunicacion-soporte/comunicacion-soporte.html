@@ -2,66 +2,138 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Soporte y Comunicación</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sistema interactivo de Brisas Gems para la personalización de joyas en línea. Permite al usuario diseñar piezas únicas con visualización en tiempo real, acceder a un catálogo con recomendaciones personalizadas, hacer seguimiento del estado del pedido y comunicarse eficientemente con el equipo de diseño, mejorando la experiencia del cliente y reduciendo tiempos de respuesta">
+  <meta name="author" content="Johan Bocanegra">
+  <link rel="icon" href="../imagenes/icono.png">
+  <title>Seguimiento de Pedido | Brisas Gems</title>
   <link rel="stylesheet" href="../css/modulo-soporte.css">
 </head>
 <body>
-  
-  <!-- Encabezado generico para todas la pag -->
-  <header>
-    <a href="../index.html" class="logo-container">
-      <div class="logo">Brisas Gems</div>
-      <div class="logo-img">
-        <img src="../imagenes/logo-general-removebg-preview.png" alt="logo">
+  <!-- Header con el diseño idéntico al otro módulo -->
+  <header class="header-joyeria">
+    <div class="contenedor-header">
+      <a href="../index.html" class="logo-joyeria">
+        <img src="../imagenes/logo.png" alt="Brisas Gems" class="logo-img">
+        <span class="nombre-joyeria">Brisas Gems</span>
+      </a>
+      
+      <nav class="navegacion-principal">
+        <div class="nav-contenedor">
+          <a href="../personalizacion/personalizacion.html" class="nav-enlace">
+            <div class="nav-contenido">
+              <span class="nav-icono">✦</span>
+              <span class="nav-texto">Personalización</span>
+            </div>
+            <div class="nav-subtexto">Crea tu joya única</div>
+          </a>
+          
+          <a href="../portafolio/portafolio.html" class="nav-enlace">
+            <div class="nav-contenido">
+              <span class="nav-icono">✧</span>
+              <span class="nav-texto">Portafolio</span>
+            </div>
+            <div class="nav-subtexto">Nuestras creaciones</div>
+          </a>
+          
+          <a href="../progreso-de-pedido/progreso-de-pedido.html" class="nav-enlace active">
+            <div class="nav-contenido">
+              <span class="nav-icono">✷</span>
+              <span class="nav-texto">Progreso</span>
+            </div>
+            <div class="nav-subtexto">Sigue tu pedido</div>
+          </a>
+        </div>
+      </nav>
+      
+      <div class="acciones-usuario">
+        <a href="../gestion-de-usuarios/login.html" class="boton-login">
+          <span class="icono-login">👤</span>
+          <span>Iniciar sesión</span>
+        </a>
       </div>
-    </a>
-    <nav class="nav-links">
-      <a href="../personalizacion/personalizacion.html">Personalización</a>
-      <a href="../portafolio/portafolio.html">Portafolio</a>
-      <a href="../progreso-de-pedido/progreso-de-pedido.html">Progreso de Pedido</a>
-    </nav>
-    <div class="user-links">
-      <a href="../gestion-de-usuarios/login.html" class="login-link">Iniciar sesión</a>
-      <!--<a href="perfil.html" class="perfil-link">Perfil</a>-->
     </div>
   </header>
 
-  <!-- MÓDULO: SOPORTE Y COMUNICACIÓN -->
-  <section class="soporte">
-    <h2>Soporte y Comunicación</h2>
-    <p>¿Tienes dudas o necesitas ayuda durante la personalización? Contáctanos aquí:</p>
-
-    <form id="form-soporte" class="formulario-soporte">
-      <label for="nombre">Nombre completo:</label>
-      <input type="text" id="nombre" name="nombre" required>
-
-      <label for="correo">Correo electrónico:</label>
-      <input type="email" id="correo" name="correo" required>
-
-      <label for="mensaje">Mensaje o consulta:</label>
-      <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-
-      <label for="presupuesto">Presupuesto estimado (COP):</label>
-      <input type="number" id="presupuesto" name="presupuesto" required>
-
-      <label for="fecha">Fecha estimada para recibir el anillo:</label>
-      <input type="date" id="fecha" name="fecha" required>
-
-      <div class="terminos">
-        <input type="checkbox" id="aceptaTerminos" required>
-        <label for="aceptaTerminos">
-          Acepto los <a href="#" target="_blank">términos y condiciones</a>.
-        </label>
-      </div>
-
-      <button type="submit">Enviar solicitud</button>
-    </form>
-
-    <div id="whatsappContacto" class="whatsapp-contacto" style="display: none;">
-      <p>¿Prefieres hablar por WhatsApp?</p>
-      <a href="https://wa.me/573001112233" target="_blank">
-        <button>Contactar por WhatsApp</button>
+  <!-- Contenido principal del módulo -->
+  <main class="contenedor-soporte">
+    <h1 class="titulo-principal">
+      <img src="../imagenes/logo.png" alt="Brisas Gems" class="logo-titulo">
+      Soporte y Comunicación
+    </h1>
+    
+    <section class="seccion-formulario">
+      <h2><i class="fas fa-envelope icono-seccion"></i> Formulario de Contacto</h2>
+      
+      <form id="formulario-contacto" class="formulario">
+        <div class="grupo-formulario">
+          <label for="nombre"><i class="fas fa-user"></i> Nombre completo*</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        
+        <div class="grupo-formulario">
+          <label for="email"><i class="fas fa-envelope"></i> Correo electrónico*</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="grupo-formulario">
+          <label for="telefono"><i class="fas fa-phone"></i> Teléfono (WhatsApp)</label>
+          <input type="tel" id="telefono" name="telefono">
+        </div>
+        
+        <div class="grupo-formulario">
+          <label for="asunto"><i class="fas fa-tag"></i> Asunto*</label>
+          <select id="asunto" name="asunto" required>
+            <option value="">Seleccione un asunto...</option>
+            <option value="personalizacion">Personalización de joya</option>
+            <option value="seguimiento">Seguimiento de pedido</option>
+            <option value="pago">Consulta sobre pago</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+        
+        <div class="grupo-formulario">
+          <label for="mensaje"><i class="fas fa-comment"></i> Mensaje*</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+        </div>
+        
+        <div class="grupo-formulario terminos">
+          <input type="checkbox" id="terminos" name="terminos" required>
+          <label for="terminos">He leído y acepto los <a href="#" id="ver-terminos">Términos y Condiciones</a></label>
+        </div>
+        
+        <button type="submit" class="boton-enviar">
+          <i class="fas fa-paper-plane"></i> Enviar formulario
+        </button>
+      </form>
+    </section>
+    
+    <section class="seccion-whatsapp">
+      <h2><i class="fab fa-whatsapp icono-seccion"></i> Contacto por WhatsApp</h2>
+      <p>Para una atención más inmediata, contáctenos directamente por WhatsApp:</p>
+      <a href="https://wa.me/573001234567?text=Hola%20Brisas%20Gems,%20tengo%20una%20consulta" class="boton-whatsapp" id="boton-whatsapp" disabled>
+        <i class="fab fa-whatsapp"></i> Chatear con soporte
       </a>
+      <small>*Disponible después de enviar el formulario de contacto</small>
+    </section>
+  </main>
+
+  <!-- Modal de Términos y Condiciones -->
+  <div class="modal-terminos" id="modalTerminos">
+    <div class="contenido-modal">
+      <span class="cerrar-modal">&times;</span>
+      <h3>Términos y Condiciones</h3>
+      <div class="contenido-terminos">
+        <p>1. Al enviar este formulario, acepta que Brisas Gems almacene y procese su información para atender su consulta.</p>
+        <p>2. Nos comprometemos a responder en un plazo máximo de 48 horas hábiles.</p>
+        <p>3. La información proporcionada será tratada con confidencialidad según nuestra política de privacidad.</p>
+        <p>4. El servicio de WhatsApp está disponible de lunes a viernes de 9:00 am a 6:00 pm.</p>
+        <p>5. Brisas Gems se reserva el derecho de no responder consultas que no cumplan con las normas de respeto y educación.</p>
+      </div>
+      <button class="boton-aceptar-terminos">Aceptar términos</button>
     </div>
-  </section>
+  </div>
+
+  <script src="../js/comunicacion-soporte.js"></script>
+</body>
+</html>

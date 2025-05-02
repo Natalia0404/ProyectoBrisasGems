@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Sistema interactivo de Brisas Gems para la personalización de joyas en línea. Permite al usuario diseñar piezas únicas con visualización en tiempo real, acceder a un catálogo con recomendaciones personalizadas, hacer seguimiento del estado del pedido y comunicarse eficientemente con el equipo de diseño, mejorando la experiencia del cliente y reduciendo tiempos de respuesta">
+        <meta name="author" content="Johan Bocanegra">
+        <link rel="icon" href="../imagenes/icono.png">
+        <title>Seguimiento de Pedido | Brisas Gems</title>
+        <link rel="stylesheet" href="../css/historial-personalizaciones.css">
+      </head>
+      <body>
+        <header class="header-joyeria">
+          <div class="contenedor-header">
+            <a href="../index.html" class="logo-joyeria">
+              <img src="../imagenes/logo.png" alt="Brisas Gems" class="logo-img">
+              <span class="nombre-joyeria">Brisas Gems</span>
+            </a>
+            
+            <nav class="navegacion-principal">
+              <div class="nav-contenedor">
+                <a href="../personalizacion/personalizacion.html" class="nav-enlace">
+                  <div class="nav-contenido">
+                    <span class="nav-icono">✦</span>
+                    <span class="nav-texto">Personalización</span>
+                  </div>
+                  <div class="nav-subtexto">Crea tu joya única</div>
+                </a>
+                
+                <a href="../portafolio/portafolio.html" class="nav-enlace">
+                  <div class="nav-contenido">
+                    <span class="nav-icono">✧</span>
+                    <span class="nav-texto">Portafolio</span>
+                  </div>
+                  <div class="nav-subtexto">Nuestras creaciones</div>
+                </a>
+                
+                <a href="../progreso-de-pedido/progreso-de-pedido.html" class="nav-enlace active">
+                  <div class="nav-contenido">
+                    <span class="nav-icono">✷</span>
+                    <span class="nav-texto">Progreso</span>
+                  </div>
+                  <div class="nav-subtexto">Sigue tu pedido</div>
+                </a>
+              </div>
+            </nav>
+            
+            <div class="acciones-usuario">
+              <a href="../gestion-de-usuarios/login.html" class="boton-login">
+                <span class="icono-login">👤</span>
+                <span>Iniciar sesión</span>
+              </a>
+            </div>
+          </div>
+        </header>
+
+  <!-- Contenido principal -->
+  <main class="contenedor-principal">
+    <h1 class="titulo-principal">
+      <i class="fas fa-history icono-titulo"></i>
+      Historial de Personalizaciones
+    </h1>
+    
+    <div class="filtros">
+      <div class="grupo-filtro">
+        <label for="filtro-fecha"><i class="fas fa-calendar-alt"></i> Filtrar por fecha:</label>
+        <select id="filtro-fecha" class="selector-filtro">
+          <option value="todos">Todos</option>
+          <option value="ultimo-mes">Último mes</option>
+          <option value="ultimos-3-meses">Últimos 3 meses</option>
+          <option value="ultimo-ano">Último año</option>
+        </select>
+      </div>
+      
+      <div class="grupo-filtro">
+        <label for="filtro-estado"><i class="fas fa-check-circle"></i> Filtrar por estado:</label>
+        <select id="filtro-estado" class="selector-filtro">
+          <option value="todos">Todos</option>
+          <option value="completados">Completados</option>
+          <option value="en-proceso">En proceso</option>
+          <option value="cancelados">Cancelados</option>
+        </select>
+      </div>
+    </div>
+    
+    <section class="lista-personalizaciones">
+      <!-- Mensaje cuando no hay personalizaciones -->
+      <div class="sin-resultados" id="sin-resultados">
+        <i class="fas fa-box-open"></i>
+        <h3>No tienes personalizaciones registradas</h3>
+        <p>Aún no has creado diseños personalizados. ¡Comienza ahora!</p>
+        <a href="../personalizacion/personalizacion.html" class="boton-primario">
+          <i class="fas fa-gem"></i> Crear nueva personalización
+        </a>
+      </div>
+      
+      <!-- Lista de personalizaciones (ejemplo con datos) -->
+      <div class="personalizaciones-container" id="personalizaciones-container">
+        <!-- Ejemplo de tarjeta de personalización -->
+        <article class="tarjeta-personalizacion">
+          <div class="encabezado-tarjeta">
+            <span class="fecha">15/01/2025</span>
+            <span class="estado completado">Completado</span>
+          </div>
+          
+          <div class="contenido-tarjeta">
+            <div class="imagen-container">
+              <img src="../imagenes/historial-personalizaciones/anillo morado frente.jpg" alt="Diseño personalizado" class="imagen-personalizacion">
+            </div>
+            
+            <div class="detalles">
+              <h3>Anillo de compromiso con esmeralda</h3>
+              <ul class="especificaciones">
+                <li><strong>Material:</strong> Oro blanco 18k</li>
+                <li><strong>Piedra principal:</strong> Esmeralda colombiana (1.2 ct)</li>
+                <li><strong>Piedras secundarias:</strong> Diamantes (0.5 ct total)</li>
+                <li><strong>Talla:</strong> 6.5</li>
+              </ul>
+              
+              <div class="acciones">
+                <button class="boton-secundario ver-detalle">
+                  <i class="fas fa-eye"></i> Ver detalles
+                </button>
+                <button class="boton-secundario reutilizar">
+                  <i class="fas fa-redo"></i> Reutilizar diseño
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+        
+        <!-- Segunda tarjeta de ejemplo -->
+        <article class="tarjeta-personalizacion">
+          <div class="encabezado-tarjeta">
+            <span class="fecha">10/12/2024</span>
+            <span class="estado en-proceso">En proceso</span>
+          </div>
+          
+          <div class="contenido-tarjeta">
+            <div class="imagen-container">
+              <img src="../imagenes/historial-personalizaciones/anillo rojo frente.jpg" alt="Diseño personalizado" class="imagen-personalizacion">
+            </div>
+            
+            <div class="detalles">
+              <h3>Anillo de compromiso clásico</h3>
+              <ul class="especificaciones">
+                <li><strong>Material:</strong> Oro amarillo 14k</li>
+                <li><strong>Piedra principal:</strong> Diamante (0.8 ct)</li>
+                <li><strong>Piedras secundarias:</strong> Diamantes (0.3 ct total)</li>
+                <li><strong>Talla:</strong> 7.0</li>
+              </ul>
+              
+              <div class="acciones">
+                <button class="boton-secundario ver-detalle">
+                  <i class="fas fa-eye"></i> Ver detalles
+                </button>
+                <button class="boton-secundario reutilizar">
+                  <i class="fas fa-redo"></i> Reutilizar diseño
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal de detalles -->
+  <div class="modal-detalles" id="modalDetalles">
+    <div class="contenido-modal">
+      <span class="cerrar-modal">&times;</span>
+      <div class="contenido-detalles" id="contenido-detalles">
+        <!-- Se llenará dinámicamente con JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/historial-personalizaciones.js"></script>
+</body>
+</html>
