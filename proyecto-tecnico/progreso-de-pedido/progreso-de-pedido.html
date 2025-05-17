@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sistema interactivo de Brisas Gems para la personalización de joyas en línea. Permite al usuario diseñar piezas únicas con visualización en tiempo real, acceder a un catálogo con recomendaciones personalizadas, hacer seguimiento del estado del pedido y comunicarse eficientemente con el equipo de diseño, mejorando la experiencia del cliente y reduciendo tiempos de respuesta">
+  <meta name="description" content="Sistema interactivo de Brisas Gems para la personalización de joyas en línea">
   <meta name="author" content="Johan Bocanegra">
   <link rel="icon" href="../imagenes/icono.png">
   <title>Seguimiento de Pedido | Brisas Gems</title>
@@ -21,52 +21,39 @@
         <div class="nav-contenedor">
           <a href="../personalizacion/personalizacion.html" class="nav-enlace">
             <div class="nav-contenido">
-              <span class="nav-icono">✦</span>
-              <span class="nav-texto">Personalización</span>
+              <span class="nav-texto">✦ Personalización</span>
             </div>
             <div class="nav-subtexto">Crea tu joya única</div>
           </a>
           
           <a href="../portafolio/portafolio.html" class="nav-enlace">
             <div class="nav-contenido">
-              <span class="nav-icono">✧</span>
-              <span class="nav-texto">Portafolio</span>
+              <span class="nav-texto">✦ Portafolio</span>
             </div>
             <div class="nav-subtexto">Nuestras creaciones</div>
           </a>
           
           <a href="../progreso-de-pedido/progreso-de-pedido.html" class="nav-enlace active">
             <div class="nav-contenido">
-              <span class="nav-icono">✷</span>
-              <span class="nav-texto">Progreso</span>
+              <span class="nav-texto">✦ Progreso</span>
             </div>
             <div class="nav-subtexto">Sigue tu pedido</div>
           </a>
         </div>
       </nav>
-      
-      <div class="acciones-usuario">
-        <a href="../gestion-de-usuarios/login.html" class="boton-login">
-          <span class="icono-login">👤</span>
-          <span>Iniciar sesión</span>
-        </a>
-      </div>
     </div>
   </header>
-  <!-- CONTENIDO PRINCIPAL MEJORADO -->
+
   <main class="contenedor-principal">
-    <!-- LISTA DE PEDIDOS (RF-016) -->
     <section class="seccion-pedidos">
-      <h1 class="titulo-principal">Seguimiento de Pedidos</h1>
+      <h1 class="titulo-principal">SEGUIMIENTO DE PEDIDO</h1>
       
-      <!-- Tarjeta de pedido activo -->
       <article class="tarjeta-pedido" data-id-pedido="EMR-12345">
         <div class="encabezado-pedido">
           <h2>ANILLO DE COMPROMISO</h2>
-          <a href="../Consultar Historial de Personalizaciones/historial-personalizaciones.html" class="boton-lista-pedidos">VER TODOS MIS PEDIDOS</a>
+          <a href="../historial-personalizaciones/historial-personalizaciones.html" class="boton-lista-pedidos">VER TODOS MIS PEDIDOS</a>
         </div>
 
-        <!-- Visualización de imágenes (RF-020/RF-021) -->
         <div class="galeria-pedido">
           <img src="../imagenes/progreso-pedido/vista previa 1.jpg" alt="Vista previa del anillo" class="imagen-principal">
           <div class="miniaturas">
@@ -76,7 +63,6 @@
           </div>
         </div>
 
-        <!-- Barra de progreso (RF-017) -->
         <div class="estado-progreso">
           <p class="porcentaje-progreso"><strong>75% completado</strong></p>
           <div class="barra-progreso">
@@ -92,9 +78,8 @@
       </article>
     </section>
 
-    <!-- DETALLES DEL PEDIDO (RF-018) -->
     <aside class="detalles-pedido">
-      <h3>DETALLE DEL PRODUCTO</h3>
+      <h3 class="detalle-producto">DETALLE DEL PRODUCTO</h3>
       <ul class="lista-detalles">
         <li><strong>Número de pedido:</strong> #EMR-12345</li>
         <li><strong>Estado:</strong> <span class="estado-destacado">En producción</span></li>
@@ -107,7 +92,6 @@
         <li><strong>Fecha estimada:</strong> 20/04/2025</li>
       </ul>
       
-      <!-- Notificaciones (RF-019) -->
       <div class="notificaciones">
         <label>
           <input type="checkbox" id="recibir-notificaciones" checked>
@@ -118,7 +102,6 @@
     </aside>
   </main>
 
-  <!-- Modal para notificaciones (nuevo) -->
   <div class="modal-notificacion" id="modalNotificacion">
     <div class="contenido-modal">
       <span class="cerrar-modal">&times;</span>
@@ -126,7 +109,45 @@
       <p id="mensaje-notificacion">Tu pedido ha avanzado a la etapa de producción.</p>
     </div>
   </div>
-
+    <!-- Footer (nuevo) -->
+    <footer class="footer-joyeria">
+      <div class="contenedor-footer">
+        <div class="columna-footer">
+          <h4>Brisas Gems</h4>
+          <p>Joyería fina y personalizada con los más altos estándares de calidad.</p>
+          <div class="redes-sociales">
+            <a href="#"><img src="../imagenes/icono facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="../imagenes/icono instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="../imagenes/icono_whatsApp.png" alt="WhatsApp"></a>
+          </div>
+        </div>
+        
+        <div class="columna-footer">
+          <h4>Contacto</h4>
+          <p><i class="icono-footer">📍</i> Av Jiménez #5-43, Emerald Trade Center, Bogotá</p>
+          <p><i class="icono-footer">📞</i> +57 XXX XXX XXXX</p>
+          <p><i class="icono-footer">✉️</i> info@brisasgem.com</p>
+        </div>
+        
+        <div class="columna-footer">
+          <h4>Enlaces</h4>
+          <a href="../index.html">Inicio</a>
+          <a href="../personalizacion/personalizacion.html">Personalización</a>
+          <a href="../portafolio/portafolio.html">Portafolio</a>
+          <a href="../progreso-de-pedido/progreso-de-pedido.html">Seguimiento</a>
+        </div>
+      </div>
+      
+      <div class="derechos-footer">
+        <p>© 2025 Brisas Gems - Todos los derechos reservados</p>
+        <p>Desarrollado por SENA CEET - Ficha 2996176 ADSO</p>
+      </div>
+    </footer>
+  
+    <script src="../js/progreso-de-pedido.js"></script>
+  </body>
+  </html>
   <script src="../js/progreso-de-pedido.js"></script>
+
 </body>
 </html>
