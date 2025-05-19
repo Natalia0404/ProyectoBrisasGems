@@ -76,10 +76,96 @@ h3 {
 h4 {
   font-size: var(--font-size-lg);
 }
-/*header*/
+/* ==================== HEADER ==================== */
+/* ==================== VARIABLES ROOT ==================== */
+:root {
+  /* Colores */
+  --color-primario: #0a8048;
+  --color-secundario: #d3fbe2;
+  --color-texto: #303030;
+  --color-borde: #ddd;
+  --color-fondo: #f5f5f5;
+  --color-footer-bg: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+  --color-blanco: #fff;
+  --color-gris: #666;
+  --color-gris-claro: #888;
+
+  /* Bordes */
+  --border-radius: 8px;
+  --border: 1px solid var(--color-borde);
+
+  /* Transiciones */
+  --transition: all 0.3s ease;
+
+  /* Sombras */
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+  /* Espaciados */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Tamaños de fuente */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.9rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.1rem;
+  --font-size-xl: 1.8rem;
+}
+
+
+/* ==================== RESET Y BASE ==================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-fondo);
+  font-family: 'Times New Roman', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--color-texto);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ==================== TIPOGRAFÍA ==================== */
+h1, h2, h3, h4 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2, h3 {
+  color: var(--color-primario);
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+h4 {
+  font-size: var(--font-size-lg);
+}
+
+
+/* ==================== HEADER ==================== */
 .header-joyeria {
   background: var(--color-footer-bg);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   padding: 0 2rem;
   position: sticky;
@@ -105,8 +191,9 @@ h4 {
 }
 
 .logo-img {
+  padding-left: 0px;
   height: 50px;
-  margin-right: 12px;
+  margin-right: 7px;
   transition: var(--transition);
 }
 
@@ -124,10 +211,12 @@ h4 {
   bottom: -12px;
   left: 0;
   font-size: 0.6rem;
-  color: #888;
+  color: var(--color-gris-claro);
   font-family: 'Times New Roman', serif;
 }
 
+
+/* ==================== NAVEGACIÓN ==================== */
 .navegacion-principal {
   flex: 1;
   display: flex;
@@ -136,7 +225,7 @@ h4 {
 
 .nav-contenedor {
   display: flex;
-  gap: 6rem;
+  gap: 10rem;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -175,7 +264,7 @@ h4 {
 
 .nav-subtexto {
   font-size: 0.75rem;
-  color: #666;
+  color: var(--color-gris);
   margin-top: 0.25rem;
   transition: var(--transition);
 }
@@ -191,7 +280,6 @@ h4 {
   background-color: var(--color-primario);
   transition: var(--transition);
 }
-
   .main-content {
     display: flex;
     flex-direction: row;
@@ -337,27 +425,27 @@ h4 {
   }
   .footer-joyeria {
     background: var(--color-footer-bg);
+    padding: 40px 20px 20px;
+    margin-top: 50px;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
     border-top: 1px solid rgba(0, 0, 0, 0.05);
-    padding: 2.5rem 1.25rem 1.25rem;
-    margin-top: 3rem;
-    box-shadow: 0 -0.25rem 0.75rem rgba(0, 0, 0, 0.08);
   }
   
   .contenedor-footer {
-    max-width: 1200px;
-    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
   }
   
   .columna-footer h4 {
     color: var(--color-primario);
-    margin-bottom: 1.25rem;
     font-size: 1.1rem;
     font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
     position: relative;
-    padding-bottom: 0.625rem;
   }
   
   .columna-footer h4::after {
@@ -365,7 +453,7 @@ h4 {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 3rem;
+    width: 50px;
     height: 2px;
     background-color: var(--color-primario);
   }
@@ -373,8 +461,7 @@ h4 {
   .columna-footer p,
   .columna-footer a {
     color: var(--color-texto);
-    margin-bottom: 0.625rem;
-    display: block;
+    margin-bottom: 10px;
     text-decoration: none;
     font-size: 0.9rem;
     transition: var(--transition);
@@ -385,20 +472,10 @@ h4 {
     padding-left: 5px;
   }
   
-  .enlaces-footer {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .enlaces-footer li {
-    margin-bottom: 0.5rem;
-  }
-  
   .redes-sociales {
     display: flex;
-    gap: 1rem;
-    margin-top: 1.25rem;
+    gap: 15px;
+    margin-top: 20px;
   }
   
   .redes-sociales a {
@@ -421,21 +498,17 @@ h4 {
     opacity: 1;
   }
   
-  .icono-footer {
-    margin-right: 0.5rem;
-    color: var(--color-primario);
-  }
-  
   .derechos-footer {
-    max-width: 1200px;
-    margin: 2.5rem auto 0;
-    padding-top: 1.25rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
     text-align: center;
+    color: var(--color-gris);
     font-size: 0.8rem;
-    color: var(--color-texto-secundario);
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
   }
   
   .derechos-footer p:first-child {
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
   }
+  
