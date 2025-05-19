@@ -1,18 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const filtroFecha = document.getElementById('filtro-fecha');
-  const filtroEstado = document.getElementById('filtro-estado');
-  const sinResultados = document.getElementById('sin-resultados');
-  const personalizacionesContainer = document.getElementById('personalizaciones-container');
-  const modalDetalles = document.getElementById('modalDetalles');
-  const cerrarModal = document.querySelector('.cerrar-modal');
-  const contenidoDetalles = document.getElementById('contenido-detalles');
+  // Cachear selectores DOM
+  const DOM = {
+    filtroFecha: document.getElementById('filtro-fecha'),
+    filtroEstado: document.getElementById('filtro-estado'),
+    sinResultados: document.getElementById('sin-resultados'),
+    personalizacionesContainer: document.getElementById('personalizaciones-container'),
+    modalDetalles: document.getElementById('modalDetalles'),
+    cerrarModal: document.querySelector('.cerrar-modal'),
+    contenidoDetalles: document.getElementById('contenido-detalles'),
+    tarjetas: document.querySelectorAll('.tarjeta-personalizacion')
+  };
 
+  // Constantes para estados y clases
+  const ESTADOS = {
+    COMPLETADO: 'completado',
+    EN_PROCESO: 'en-proceso'
+  };
+
+  const CLASES = {
+    OCULTO: 'oculto',
+    ESTADO: 'estado'
+  };
+
+  // Datos de las personalizaciones
   const personalizaciones = [
     {
       id: 'P-001',
       fecha: '15/01/2025',
-      estado: 'completado',
-      imagen: '../imagenes/personalizaciones/anillo-1.jpg',
+      estado: ESTADOS.COMPLETADO,
+      imagen: '../imagenes/Portafolio/anillo sencillo verde frente.jpg',
       nombre: 'Anillo de compromiso con esmeralda',
       especificaciones: {
         material: 'Oro blanco 18k',
@@ -27,8 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       id: 'P-002',
       fecha: '10/12/2024',
-      estado: 'en-proceso',
-      imagen: '../imagenes/personalizaciones/anillo-2.jpg',
+      estado: ESTADOS.EN_PROCESO,
+      imagen: '../imagenes/Portafolio/anillo azul grande frente.jpg',
       nombre: 'Anillo de compromiso clásico',
       especificaciones: {
         material: 'Oro amarillo 14k',
@@ -42,49 +58,71 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
-  function verificarResultados() {
-    const visibles = document.querySelectorAll('.tarjeta-personalizacion:not(.oculto)').length;
+  /**
+   * Verifica si hay resultados visibles y actualiza la UI
+   */
+  const verificarResultados = () => {
+    const visibles = document.querySelectorAll(`.tarjeta-personalizacion:not(.${CLASES.OCULTO})`).length;
     const hayResultados = visibles > 0;
 
-    sinResultados.style.display = hayResultados ? 'none' : 'block';
-    personalizacionesContainer.style.display = hayResultados ? 'block' : 'none';
-  }
+    DOM.sinResultados.style.display = hayResultados ? 'none' : 'block';
+    DOM.personalizacionesContainer.style.display = hayResultados ? 'block' : 'none';
+  };
 
-  function aplicarFiltros() {
-    const estado = filtroEstado.value;
-    const fecha = filtroFecha.value;
+  /**
+   * Aplica los filtros seleccionados a las tarjetas
+   */
+  const aplicarFiltros = () => {
+    const estado = DOM.filtroEstado.value;
+    const fecha = DOM.filtroFecha.value;
 
-    document.querySelectorAll('.tarjeta-personalizacion').forEach(tarjeta => {
-      const estadoTarjeta = tarjeta.querySelector('.estado').classList[1];
+    DOM.tarjetas.forEach(tarjeta => {
+      const estadoTarjeta = tarjeta.querySelector(`.${CLASES.ESTADO}`).classList[1];
       const coincideEstado = estado === 'todos' || estado === estadoTarjeta;
-      const coincideFecha = true; // Por ahora, siempre verdadero
+      const coincideFecha = true; // Implementar filtrado por fecha si es necesario
 
-      tarjeta.classList.toggle('oculto', !(coincideEstado && coincideFecha));
+      tarjeta.classList.toggle(CLASES.OCULTO, !(coincideEstado && coincideFecha));
     });
 
     verificarResultados();
-  }
+  };
 
-  function mostrarDetalles(id) {
+  /**
+   * Genera HTML para las especificaciones del producto
+   * @param {Object} especificaciones 
+   * @returns {string} HTML generado
+   */
+  const generarEspecificacionesHTML = (especificaciones) => {
+    return Object.entries(especificaciones)
+      .map(([key, value]) => {
+        const label = key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1');
+        return `<li><strong>${label}:</strong> ${value}</li>`;
+      })
+      .join('');
+  };
+
+  /**
+   * Muestra los detalles de una personalización en el modal
+   * @param {string} id - ID de la personalización
+   */
+  const mostrarDetalles = (id) => {
     const item = personalizaciones.find(p => p.id === id);
     if (!item) return;
 
-    const especificacionesHTML = Object.entries(item.especificaciones).map(([key, value]) => {
-      const label = key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1');
-      return `<li><strong>${label}:</strong> ${value}</li>`;
-    }).join('');
+    const especificacionesHTML = generarEspecificacionesHTML(item.especificaciones);
+    const estadoTexto = item.estado === ESTADOS.COMPLETADO ? 'Completado' : 'En proceso';
 
-    contenidoDetalles.innerHTML = `
+    DOM.contenidoDetalles.innerHTML = `
       <h2>${item.nombre}</h2>
       <div class="detalle-contenido">
         <div class="imagen-detalle">
-          <img src="${item.imagen}" alt="${item.nombre}">
+          <img src="${item.imagen}" alt="${item.nombre}" loading="lazy">
         </div>
         <div class="info-detalle">
           <h3>Especificaciones</h3>
           <ul>
             <li><strong>Fecha:</strong> ${item.fecha}</li>
-            <li><strong>Estado:</strong> <span class="estado ${item.estado}">${item.estado === 'completado' ? 'Completado' : 'En proceso'}</span></li>
+            <li><strong>Estado:</strong> <span class="${CLASES.ESTADO} ${item.estado}">${estadoTexto}</span></li>
             ${especificacionesHTML}
           </ul>
           <h3>Detalles adicionales</h3>
@@ -93,19 +131,14 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `;
 
-    modalDetalles.style.display = 'flex';
-  }
+    DOM.modalDetalles.style.display = 'flex';
+  };
 
-  filtroFecha.addEventListener('change', aplicarFiltros);
-  filtroEstado.addEventListener('change', aplicarFiltros);
-
-  cerrarModal.addEventListener('click', () => modalDetalles.style.display = 'none');
-
-  window.addEventListener('click', e => {
-    if (e.target === modalDetalles) modalDetalles.style.display = 'none';
-  });
-
-  document.addEventListener('click', e => {
+  /**
+   * Maneja el evento click en los botones de acción
+   * @param {Event} e - Evento de click
+   */
+  const manejarClickAcciones = (e) => {
     const btnDetalle = e.target.closest('.ver-detalle');
     const btnReutilizar = e.target.closest('.reutilizar');
 
@@ -117,7 +150,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnReutilizar) {
       alert('Funcionalidad de reutilizar diseño en desarrollo');
     }
+  };
+
+  // Event Listeners
+  DOM.filtroFecha.addEventListener('change', aplicarFiltros);
+  DOM.filtroEstado.addEventListener('change', aplicarFiltros);
+  DOM.cerrarModal.addEventListener('click', () => DOM.modalDetalles.style.display = 'none');
+  
+  window.addEventListener('click', e => {
+    if (e.target === DOM.modalDetalles) DOM.modalDetalles.style.display = 'none';
   });
 
+  document.addEventListener('click', manejarClickAcciones);
+
+  // Inicialización
   verificarResultados();
 });

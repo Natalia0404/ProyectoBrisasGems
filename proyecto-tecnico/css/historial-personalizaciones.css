@@ -1,3 +1,4 @@
+/* ==================== VARIABLES ROOT ==================== */
 :root {
   /* Colores */
   --color-primario: #0a8048;
@@ -9,25 +10,25 @@
   --color-blanco: #fff;
   --color-gris: #666;
   --color-gris-claro: #888;
-  
+
   /* Bordes */
   --border-radius: 8px;
   --border: 1px solid var(--color-borde);
-  
+
   /* Transiciones */
   --transition: all 0.3s ease;
-  
+
   /* Sombras */
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   --shadow-hover: 0 5px 15px rgba(0, 0, 0, 0.1);
-  
+
   /* Espaciados */
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
-  
+
   /* Tamaños de fuente */
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.9rem;
@@ -36,7 +37,7 @@
   --font-size-xl: 1.8rem;
 }
 
-/* Reset y estilos base */
+/* ==================== RESET Y BASE ==================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -53,7 +54,7 @@ body {
   flex-direction: column;
 }
 
-/* Tipografía */
+/* ==================== TIPOGRAFÍA ==================== */
 h1, h2, h3, h4 {
   font-weight: 600;
   line-height: 1.2;
@@ -76,15 +77,17 @@ h3 {
 h4 {
   font-size: var(--font-size-lg);
 }
-/*header*/
+
+/* ==================== HEADER ==================== */
 .header-joyeria {
   background: var(--color-footer-bg);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   padding: 0 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
+  will-change: transform;
 }
 
 .contenedor-header {
@@ -105,9 +108,11 @@ h4 {
 }
 
 .logo-img {
+  padding-left: 0;
   height: 50px;
-  margin-right: 12px;
+  margin-right: 7px;
   transition: var(--transition);
+  will-change: transform;
 }
 
 .nombre-joyeria {
@@ -124,10 +129,11 @@ h4 {
   bottom: -12px;
   left: 0;
   font-size: 0.6rem;
-  color: #888;
+  color: var(--color-gris-claro);
   font-family: 'Times New Roman', serif;
 }
 
+/* ==================== NAVEGACIÓN ==================== */
 .navegacion-principal {
   flex: 1;
   display: flex;
@@ -136,7 +142,7 @@ h4 {
 
 .nav-contenedor {
   display: flex;
-  gap: 6rem;
+  gap: 10rem;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -150,6 +156,7 @@ h4 {
   padding: 0.5rem 1rem;
   position: relative;
   transition: var(--transition);
+  will-change: transform;
 }
 
 .nav-enlace:hover {
@@ -175,7 +182,7 @@ h4 {
 
 .nav-subtexto {
   font-size: 0.75rem;
-  color: #666;
+  color: var(--color-gris);
   margin-top: 0.25rem;
   transition: var(--transition);
 }
@@ -192,7 +199,6 @@ h4 {
   transition: var(--transition);
 }
 
-
 /* Contenido principal */
 .contenedor-principal {
   flex: 1;
@@ -202,6 +208,7 @@ h4 {
 }
 
 .titulo-principal {
+  color: #087a40;
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
@@ -269,6 +276,7 @@ h4 {
   overflow: hidden;
   margin-bottom: var(--spacing-md);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
 }
 
 .tarjeta-personalizacion:hover {
@@ -358,6 +366,7 @@ h4 {
   transition: var(--transition);
   cursor: pointer;
   font-size: var(--font-size-sm);
+  will-change: transform;
 }
 
 .boton-primario {
@@ -423,35 +432,37 @@ h4 {
   color: var(--color-gris);
   background: none;
   border: none;
+  will-change: transform;
 }
 
 .contenido-detalles {
   margin-top: var(--spacing-md);
 }
 
+/* ==================== FOOTER ==================== */
 .footer-joyeria {
   background: var(--color-footer-bg);
+  padding: 40px 20px 20px;
+  margin-top: 50px;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
   border-top: 1px solid rgba(0, 0, 0, 0.05);
-  padding: 2.5rem 1.25rem 1.25rem;
-  margin-top: 3rem;
-  box-shadow: 0 -0.25rem 0.75rem rgba(0, 0, 0, 0.08);
 }
 
 .contenedor-footer {
-  max-width: 1200px;
-  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
 }
 
 .columna-footer h4 {
   color: var(--color-primario);
-  margin-bottom: 1.25rem;
   font-size: 1.1rem;
   font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
   position: relative;
-  padding-bottom: 0.625rem;
 }
 
 .columna-footer h4::after {
@@ -459,7 +470,7 @@ h4 {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 3rem;
+  width: 50px;
   height: 2px;
   background-color: var(--color-primario);
 }
@@ -467,8 +478,7 @@ h4 {
 .columna-footer p,
 .columna-footer a {
   color: var(--color-texto);
-  margin-bottom: 0.625rem;
-  display: block;
+  margin-bottom: 10px;
   text-decoration: none;
   font-size: 0.9rem;
   transition: var(--transition);
@@ -479,25 +489,16 @@ h4 {
   padding-left: 5px;
 }
 
-.enlaces-footer {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.enlaces-footer li {
-  margin-bottom: 0.5rem;
-}
-
 .redes-sociales {
   display: flex;
-  gap: 1rem;
-  margin-top: 1.25rem;
+  gap: 15px;
+  margin-top: 20px;
 }
 
 .redes-sociales a {
   display: inline-block;
   transition: var(--transition);
+  will-change: transform;
 }
 
 .redes-sociales a:hover {
@@ -515,127 +516,16 @@ h4 {
   opacity: 1;
 }
 
-.icono-footer {
-  margin-right: 0.5rem;
-  color: var(--color-primario);
-}
-
 .derechos-footer {
-  max-width: 1200px;
-  margin: 2.5rem auto 0;
-  padding-top: 1.25rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
   text-align: center;
+  color: var(--color-gris);
   font-size: 0.8rem;
-  color: var(--color-texto-secundario);
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .derechos-footer p:first-child {
-  margin-bottom: 0.5rem;
-}
-
-/* Responsivo */
-@media (max-width: 600px) {
-  .contenedor-footer {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .redes-sociales {
-    justify-content: center;
-  }
-}
-
-/* Media Queries - Mobile First */
-@media (min-width: 576px) {
-  .nav-contenedor {
-    gap: 2rem;
-  }
-  
-  .contenido-tarjeta {
-    flex-direction: row;
-  }
-  
-  .acciones {
-    flex-direction: row;
-  }
-}
-
-@media (min-width: 768px) {
-  .nav-contenedor {
-    gap: 4rem;
-  }
-  
-  .nav-subtexto {
-    display: block;
-  }
-  
-  .filtros {
-    flex-direction: row;
-  }
-  
-  .grupo-filtro {
-    flex-direction: row;
-  }
-}
-
-@media (min-width: 992px) {
-  .nav-contenedor {
-    gap: 8rem;
-  }
-  
-  .contenedor-header {
-    flex-direction: row;
-  }
-}
-
-@media (max-width: 575px) {
-  .contenedor-header {
-    flex-direction: column;
-    height: auto;
-    padding: var(--spacing-md) 0;
-  }
-  
-  .nav-contenedor {
-    width: 100%;
-    justify-content: space-around;
-    gap: 0;
-  }
-  
-  .nav-enlace {
-    flex: 1;
-    padding: var(--spacing-sm) var(--spacing-xs);
-  }
-  
-  .nav-subtexto {
-    display: none;
-  }
-  
-  .contenido-tarjeta {
-    flex-direction: column;
-  }
-  
-  .imagen-container {
-    flex: 0 0 auto;
-    margin-bottom: var(--spacing-sm);
-  }
-  
-  .acciones {
-    flex-direction: column;
-  }
-  
-  .boton-secundario {
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .filtros {
-    flex-direction: column;
-    gap: var(--spacing-sm);
-  }
-  
-  .grupo-filtro {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  margin-bottom: 8px;
 }
