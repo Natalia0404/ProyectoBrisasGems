@@ -1,14 +1,42 @@
-/* ==================== VARIABLES Y RESET ==================== */
 :root {
+  /* Colores */
   --color-primario: #0a8048;
   --color-secundario: #d3fbe2;
   --color-texto: #303030;
   --color-borde: #ddd;
+  --color-fondo: #f5f5f5;
   --color-footer-bg: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+  --color-blanco: #fff;
+  --color-gris: #666;
+  --color-gris-claro: #888;
+  
+  /* Bordes */
   --border-radius: 8px;
+  --border: 1px solid var(--color-borde);
+  
+  /* Transiciones */
   --transition: all 0.3s ease;
+  
+  /* Sombras */
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 5px 15px rgba(0, 0, 0, 0.1);
+  
+  /* Espaciados */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  
+  /* Tamaños de fuente */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.9rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.1rem;
+  --font-size-xl: 1.8rem;
 }
 
+/* Reset y estilos base */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,13 +44,39 @@
 }
 
 body {
-  background-color: #f5f5f5;
+  background-color: var(--color-fondo);
   font-family: 'Times New Roman', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--color-texto);
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* ==================== HEADER ==================== */
+/* Tipografía */
+h1, h2, h3, h4 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: var(--color-primario);
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: var(--color-primario);
+}
+
+h4 {
+  font-size: var(--font-size-lg);
+}
+/*header*/
 .header-joyeria {
   background: var(--color-footer-bg);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -40,6 +94,7 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 80px;
+  flex-wrap: wrap;
 }
 
 .logo-joyeria {
@@ -47,10 +102,6 @@ body {
   align-items: center;
   text-decoration: none;
   transition: var(--transition);
-}
-
-.logo-joyeria:hover {
-  opacity: 0.9;
 }
 
 .logo-img {
@@ -77,10 +128,17 @@ body {
   font-family: 'Times New Roman', serif;
 }
 
+.navegacion-principal {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
 .nav-contenedor {
   display: flex;
-  gap: 8rem;
-  margin-right: 150px;
+  gap: 6rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .nav-enlace {
@@ -133,6 +191,7 @@ body {
   background-color: var(--color-primario);
   transition: var(--transition);
 }
+
 
 /* ==================== CONTENIDO PRINCIPAL ==================== */
 .contenedor-principal {
