@@ -9,6 +9,7 @@
   <title>Seguimiento de Pedido | Brisas Gems</title>
   <link rel="stylesheet" href="../css/progreso-de-pedido.css">
 </head>
+
 <body>
   <header class="header-joyeria">
     <div class="contenedor-header">
@@ -17,7 +18,7 @@
         <span class="nombre-joyeria">Brisas Gems</span>
       </a>
       
-      <nav class="navegacion-principal">
+      <nav class="navegacion-principal" aria-label="Navegación principal">
         <div class="nav-contenedor">
           <a href="../personalizacion/personalizacion.html" class="nav-enlace">
             <div class="nav-contenido">
@@ -33,7 +34,7 @@
             <div class="nav-subtexto">Nuestras creaciones</div>
           </a>
           
-          <a href="../progreso-de-pedido/progreso-de-pedido.html" class="nav-enlace active">
+          <a href="../progreso-de-pedido/progreso-de-pedido.html" class="nav-enlace active" aria-current="page">
             <div class="nav-contenido">
               <span class="nav-texto">✦ Progreso</span>
             </div>
@@ -45,18 +46,20 @@
   </header>
 
   <main class="contenedor-principal">
-    <section class="seccion-pedidos">
-      <h1 class="titulo-principal">SEGUIMIENTO DE PEDIDO</h1>
+    <section class="seccion-pedidos" aria-labelledby="titulo-seguimiento">
+      <h1 class="titulo-principal" id="titulo-seguimiento">SEGUIMIENTO DE PEDIDO</h1>
       
       <article class="tarjeta-pedido" data-id-pedido="EMR-12345">
         <div class="encabezado-pedido">
           <h2>ANILLO DE COMPROMISO</h2>
-          <a href="../historial-personalizaciones/historial-personalizaciones.html" class="boton-lista-pedidos">VER TODOS MIS PEDIDOS</a>
+          <a href="../historial-personalizaciones/historial-personalizaciones.html" class="boton-lista-pedidos">
+            VER TODOS MIS PEDIDOS
+          </a>
         </div>
 
         <div class="galeria-pedido">
           <img src="../imagenes/progreso-pedido/vista previa 1.jpg" alt="Vista previa del anillo" class="imagen-principal">
-          <div class="miniaturas">
+          <div class="miniaturas" role="group" aria-label="Miniaturas del producto">
             <img src="../imagenes/progreso-pedido/vista previa 1.jpg" alt="Vista frontal">
             <img src="../imagenes/progreso-pedido/vista previa 2.jpg" alt="Vista lateral">
             <img src="../imagenes/progreso-pedido/vista previa 3.jpg" alt="Detalle">
@@ -65,7 +68,7 @@
 
         <div class="estado-progreso">
           <p class="porcentaje-progreso"><strong>75% completado</strong></p>
-          <div class="barra-progreso">
+          <div class="barra-progreso" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
             <div class="relleno-progreso" style="width: 75%"></div>
           </div>
           <ul class="etapas-progreso">
@@ -78,8 +81,8 @@
       </article>
     </section>
 
-    <aside class="detalles-pedido">
-      <h3 class="detalle-producto">DETALLE DEL PRODUCTO</h3>
+    <aside class="detalles-pedido" aria-labelledby="titulo-detalle">
+      <h3 class="detalle-producto" id="titulo-detalle">DETALLE DEL PRODUCTO</h3>
       <ul class="lista-detalles">
         <li><strong>Número de pedido:</strong> #EMR-12345</li>
         <li><strong>Estado:</strong> <span class="estado-destacado">En producción</span></li>
@@ -93,7 +96,7 @@
       </ul>
       
       <div class="notificaciones">
-        <label>
+        <label for="recibir-notificaciones">
           <input type="checkbox" id="recibir-notificaciones" checked>
           Recibir notificaciones por email
         </label>
@@ -102,52 +105,50 @@
     </aside>
   </main>
 
-  <div class="modal-notificacion" id="modalNotificacion">
+  <div class="modal-notificacion" id="modalNotificacion" hidden>
     <div class="contenido-modal">
-      <span class="cerrar-modal">&times;</span>
+      <button class="cerrar-modal" aria-label="Cerrar modal">&times;</button>
       <h3>¡Actualización de pedido!</h3>
       <p id="mensaje-notificacion">Tu pedido ha avanzado a la etapa de producción.</p>
     </div>
   </div>
-    <!-- Footer (nuevo) -->
-    <footer class="footer-joyeria">
-      <div class="contenedor-footer">
-        <div class="columna-footer">
-          <h4>Brisas Gems</h4>
-          <p>Joyería fina y personalizada con los más altos estándares de calidad.</p>
-          <div class="redes-sociales">
-            <a href="#"><img src="../imagenes/icono facebook.png" alt="Facebook"></a>
-            <a href="#"><img src="../imagenes/icono instagram.png" alt="Instagram"></a>
-            <a href="#"><img src="../imagenes/icono_whatsApp.png" alt="WhatsApp"></a>
-          </div>
-        </div>
-        
-        <div class="columna-footer">
-          <h4>Contacto</h4>
-          <p><i class="icono-footer">📍</i> Av Jiménez #5-43, Emerald Trade Center, Bogotá</p>
-          <p><i class="icono-footer">📞</i> +57 XXX XXX XXXX</p>
-          <p><i class="icono-footer">✉️</i> info@brisasgem.com</p>
-        </div>
-        
-        <div class="columna-footer">
-          <h4>Enlaces</h4>
-          <a href="../index.html">Inicio</a>
-          <a href="../personalizacion/personalizacion.html">Personalización</a>
-          <a href="../portafolio/portafolio.html">Portafolio</a>
-          <a href="../progreso-de-pedido/progreso-de-pedido.html">Seguimiento</a>
+
+  <footer class="footer-joyeria">
+    <div class="contenedor-footer">
+      <div class="columna-footer">
+        <h4>Brisas Gems</h4>
+        <p>✦ Joyería fina y personalizada con los más altos estándares de calidad.</p>
+        <div class="redes-sociales">
+          <a href="#" aria-label="Facebook"><img src="../imagenes/icono facebook.png" alt=""></a>
+          <a href="#" aria-label="Instagram"><img src="../imagenes/icono instagram.png" alt=""></a>
+          <a href="#" aria-label="WhatsApp"><img src="../imagenes/icono_whatsApp.png" alt=""></a>
         </div>
       </div>
       
-      <div class="derechos-footer">
-        <p>© 2025 Brisas Gems - Todos los derechos reservados</p>
-        <p>Desarrollado por SENA CEET - Ficha 2996176 ADSO</p>
+      <div class="columna-footer">
+        <h4>Contacto</h4>
+        <p><i class="icono-footer">✦</i> Av Jiménez #5-43, Emerald Trade Center, Bogotá</p>
+        <p><i class="icono-footer">✦</i> +57 6017654312</p>
+        <p><i class="icono-footer">✦</i> info@brisasgem.com</p>
       </div>
-    </footer>
-  
-    <script src="../js/progreso-de-pedido.js"></script>
-  </body>
-  </html>
-  <script src="../js/progreso-de-pedido.js"></script>
+      
+      <div class="columna-footer">
+        <h4>Enlaces</h4>
+        <nav aria-label="Enlaces rápidos">
+          <a href="../index.html">✦ Inicio</a>
+          <a href="../personalizacion/personalizacion.html">✦ Personalización</a>
+          <a href="../portafolio/portafolio.html">✦ Portafolio</a>
+          <a href="../progreso-de-pedido/progreso-de-pedido.html">✦ Progreso</a>
+        </nav>
+      </div>
+    </div>
+    
+    <div class="derechos-footer">
+      <p>© 2025 Brisas Gems - Todos los derechos reservados</p>
+      <p>Desarrollado por SENA CEET - Ficha 2996176 ADSO</p>
+    </div>
+  </footer>
 
+  <script src="../js/progreso-de-pedido.js"></script>
 </body>
 </html>
