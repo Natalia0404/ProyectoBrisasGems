@@ -9,24 +9,49 @@
 
 <body>
   <!-- Encabezado generico para todas la pag -->
-  <header>
-    <a href="../index.html" class="logo-container">
-      <div class="logo"></div>
-      <div class="logo-img">
-        <img src="../imagenes/logo-general-removebg-preview.png" alt="logo">
-      </div>
-    </a>
-    <nav class="nav-links">
-      <a href="../personalizacion/personalizacion.html">Personalización</a>
-      <a href="../portafolio/portafolio.html">Portafolio</a>
-      <a href="../progreso-de-pedido/progreso-de-pedido.html">Progreso de Pedido</a>
-    </nav>
-    <div class="user-links">
-      <a href="../gestion-de-usuarios/login.html" class="login-link">Iniciar sesión</a>
-      <!--<a href="perfil.html" class="perfil-link">Perfil</a>-->
+  <header class="header-joyeria">
+    <div class="contenedor-header">
+      
+      <a href="../index.html" class="logo-joyeria" aria-label="Inicio Brisas Gems">
+        <img src="../imagenes/logo.png" alt="Logo Brisas Gems" class="logo-img" width="50" height="50">
+        <span class="nombre-joyeria">Brisas Gems</span>
+      </a>
+  
+      <nav class="navegacion-principal" aria-label="Navegación principal">
+        <ul class="nav-contenedor">
+          
+          <li>
+            <a href="../personalizacion/personalizacion.html" class="nav-enlace active">
+              <div class="nav-contenido">
+                <span class="nav-texto">✦ Personalización</span>
+              </div>
+              <div class="nav-subtexto">Crea tu joya única</div>
+            </a>
+          </li>
+          
+          <li>
+            <a href="../portafolio/portafolio.html" class="nav-enlace">
+              <div class="nav-contenido">
+                <span class="nav-texto">✦ Portafolio</span>
+              </div>
+              <div class="nav-subtexto">Nuestras creaciones</div>
+            </a>
+          </li>
+          
+          <li>
+            <a href="../progreso-de-pedido/progreso-de-pedido.html" class="nav-enlace" aria-current="page">
+              <div class="nav-contenido">
+                <span class="nav-texto">✦ Progreso</span>
+              </div>
+              <div class="nav-subtexto">Sigue tu pedido</div>
+            </a>
+          </li>
+  
+        </ul>
+      </nav>
+      
     </div>
   </header>
-  <hr>
 
   <main class="customizer">
     <div class="container">
@@ -145,8 +170,50 @@
 
   </main>
 
-  <footer>
-    <p>&copy; 2025 Plataforma de Personalización de Joyas</p>
+  <footer class="footer-joyeria">
+    <div class="contenedor-footer">
+      
+      <div class="columna-footer">
+        <h4>Brisas Gems</h4>
+        <p>✦ Joyería fina y personalizada con los más altos estándares de calidad.</p>
+        <div class="redes-sociales">
+          <a href="#" target="_blank" rel="noopener" aria-label="Facebook Brisas Gems">
+            <img src="../imagenes/icono facebook.png" alt="Facebook Brisas Gems">
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="Instagram Brisas Gems">
+            <img src="../imagenes/icono instagram.png" alt="Instagram Brisas Gems">
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="WhatsApp Brisas Gems">
+            <img src="../imagenes/icono_whatsApp.png" alt="WhatsApp Brisas Gems">
+          </a>
+        </div>
+      </div>
+  
+      <div class="columna-footer">
+        <h4>Contacto</h4>
+        <p><i class="icono-footer">✦</i> Av Jiménez #5-43, Emerald Trade Center, Bogotá</p>
+        <p><i class="icono-footer">✦</i> +57 6017654312</p>
+        <p><i class="icono-footer">✦</i> info@brisasgem.com</p>
+      </div>
+  
+      <div class="columna-footer">
+        <h4>Enlaces</h4>
+        <nav aria-label="Enlaces rápidos">
+          <ul class="enlaces-footer">
+            <li><a href="../index.html"> Inicio</a></li>
+            <li><a href="../personalizacion/personalizacion.html"> Personalización</a></li>
+            <li><a href="../portafolio/portafolio.html"> Portafolio</a></li>
+            <li><a href="../progreso-de-pedido/progreso-de-pedido.html"> Progreso</a></li>
+          </ul>
+        </nav>
+      </div>
+  
+    </div>
+  
+    <div class="derechos-footer">
+      <p>© 2025 Brisas Gems - Todos los derechos reservados</p>
+      <p>Desarrollado por SENA CEET - Ficha 2996176 ADSO</p>
+    </div>
   </footer>
 </body>
 </html>

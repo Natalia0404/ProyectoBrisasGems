@@ -1,60 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Sistema interactivo de Brisas Gems para la personalización de joyas en línea. Permite al usuario diseñar piezas únicas con visualización en tiempo real, acceder a un catálogo con recomendaciones personalizadas, hacer seguimiento del estado del pedido y comunicarse eficientemente con el equipo de diseño, mejorando la experiencia del cliente y reduciendo tiempos de respuesta">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sistema interactivo de Brisas Gems para la personalización de joyas en línea">
   <meta name="author" content="Johan Bocanegra">
   <link rel="icon" href="../imagenes/icono.png">
-  <title>Portafolio</title>
-  <link rel="stylesheet" href="../css/portafolio.css" />
+  <title>Portafolio | Brisas Gems</title>
+  <link rel="stylesheet" href="../css/portafolio.css">
+  <link rel="preload" href="../imagenes/logo.png" as="image">
 </head>
 <body>
-
-  <body>
-    <!-- Encabezado generico para todas la pag -->
   <header class="header-joyeria">
     <div class="contenedor-header">
-      <a href="../index.html" class="logo-joyeria">
-        <img src="../imagenes/logo.png" alt="Brisas Gems" class="logo-img">
+      
+      <a href="../index.html" class="logo-joyeria" aria-label="Inicio Brisas Gems">
+        <img src="../imagenes/logo.png" alt="Logo Brisas Gems" class="logo-img" width="50" height="50">
         <span class="nombre-joyeria">Brisas Gems</span>
-        
       </a>
-      
-      <nav class="navegacion-principal">
-        <div class="nav-contenedor">
-          <a href="../personalizacion/personalizacion.html" class="nav-enlace">
-            <div class="nav-contenido">
-              <span class="nav-icono">✦</span>
-              <span class="nav-texto">Personalización</span>
-            </div>
-      
-          </a>
+  
+      <nav class="navegacion-principal" aria-label="Navegación principal">
+        <ul class="nav-contenedor">
           
-          <a href="../portafolio/portafolio.html" class="nav-enlace">
-            <div class="nav-contenido">
-              <span class="nav-icono">✦</span>
-              <span class="nav-texto">Portafolio</span>
-            </div>
-           
-          </a>
+          <li>
+            <a href="../personalizacion/personalizacion.html" class="nav-enlace">
+              <div class="nav-contenido">
+                <span class="nav-texto">✦ Personalización</span>
+              </div>
+              <div class="nav-subtexto">Crea tu joya única</div>
+            </a>
+          </li>
           
-          <a href="../progreso-de-pedido/progreso-de-pedido.html" class="nav-enlace">
-            <div class="nav-contenido">
-              <span class="nav-icono">✦</span>
-              <span class="nav-texto">Progreso</span>
-            </div>
+          <li>
+            <a href="../portafolio/portafolio.html" class="nav-enlace active">
+              <div class="nav-contenido">
+                <span class="nav-texto">✦ Portafolio</span>
+              </div>
+              <div class="nav-subtexto">Nuestras creaciones</div>
+            </a>
+          </li>
           
-          </a>
-        </div>
+          <li>
+            <a href="../progreso-de-pedido/progreso-de-pedido.html" class="nav-enlace" aria-current="page">
+              <div class="nav-contenido">
+                <span class="nav-texto">✦ Progreso</span>
+              </div>
+              <div class="nav-subtexto">Sigue tu pedido</div>
+            </a>
+          </li>
+  
+        </ul>
       </nav>
       
-      <div class="acciones-usuario">
-        <a href="../gestion-de-usuarios/login.html" class="boton-login">
-          <span class="icono-login">👤</span>
-          <span>Iniciar sesión</span>
-        </a>
-      </div>
     </div>
   </header>
 
@@ -111,6 +108,51 @@
     alert("Este hermoso anillo nupcial con esmeralda redonda está elaborado en oro amarillo con detalles brillantes a los costados. Es perfecto para un compromiso lleno de amor y elegancia. 💚✨");
   }
 </script>
+<footer class="footer-joyeria">
+  <div class="contenedor-footer">
+    
+    <div class="columna-footer">
+      <h4>Brisas Gems</h4>
+      <p>✦ Joyería fina y personalizada con los más altos estándares de calidad.</p>
+      <div class="redes-sociales">
+        <a href="#" target="_blank" rel="noopener" aria-label="Facebook Brisas Gems">
+          <img src="../imagenes/icono facebook.png" alt="Facebook Brisas Gems">
+        </a>
+        <a href="#" target="_blank" rel="noopener" aria-label="Instagram Brisas Gems">
+          <img src="../imagenes/icono instagram.png" alt="Instagram Brisas Gems">
+        </a>
+        <a href="#" target="_blank" rel="noopener" aria-label="WhatsApp Brisas Gems">
+          <img src="../imagenes/icono_whatsApp.png" alt="WhatsApp Brisas Gems">
+        </a>
+      </div>
+    </div>
+
+    <div class="columna-footer">
+      <h4>Contacto</h4>
+      <p><i class="icono-footer">✦</i> Av Jiménez #5-43, Emerald Trade Center, Bogotá</p>
+      <p><i class="icono-footer">✦</i> +57 6017654312</p>
+      <p><i class="icono-footer">✦</i> info@brisasgem.com</p>
+    </div>
+
+    <div class="columna-footer">
+      <h4>Enlaces</h4>
+      <nav aria-label="Enlaces rápidos">
+        <ul class="enlaces-footer">
+          <li><a href="../index.html"> Inicio</a></li>
+          <li><a href="../personalizacion/personalizacion.html"> Personalización</a></li>
+          <li><a href="../portafolio/portafolio.html"> Portafolio</a></li>
+          <li><a href="../progreso-de-pedido/progreso-de-pedido.html"> Progreso</a></li>
+        </ul>
+      </nav>
+    </div>
+
+  </div>
+
+  <div class="derechos-footer">
+    <p>© 2025 Brisas Gems - Todos los derechos reservados</p>
+    <p>Desarrollado por SENA CEET - Ficha 2996176 ADSO</p>
+  </div>
+</footer>
 
 </body>
 </html>
