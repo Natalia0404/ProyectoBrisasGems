@@ -188,6 +188,7 @@ h4 {
   align-items: center;
   text-decoration: none;
   transition: var(--transition);
+  margin-right: 100px;
 }
 
 .logo-img {
@@ -195,6 +196,7 @@ h4 {
   height: 50px;
   margin-right: 7px;
   transition: var(--transition);
+
 }
 
 .nombre-joyeria {
@@ -303,7 +305,7 @@ h4 {
   .categoria p {
     font-weight: bold;
     margin-top: 20px;
-    color :#000000;
+    color :#0a8048;
   }
 
   .categoria img {
@@ -317,7 +319,7 @@ h4 {
 
   .categoria img:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 10px #feffff00;
+    box-shadow: 0 0 10px #00000000;
   }
 
   .preview {
@@ -361,7 +363,8 @@ h4 {
     height: auto;
     border-radius: 12px;
     margin-bottom: 20px;
-    box-shadow: 0 0 15px #fbfbfb00;
+    box-shadow: 1px 1px 5px #000000;
+    border: 2px solid #ffffff;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
   }
 
@@ -372,23 +375,24 @@ h4 {
 
   .miniaturas {
     display: flex;
-    gap: 10px;
+    gap: 40px;
     margin-top: 10px;
   }
 
   .miniaturas img {
-    width: 60px;
+    width: 70px;
     height: auto;
     cursor: pointer;
-    border: 2px solid #b6e5cc00;
+    border: 2px solid #ffffff;
     padding: 3px;
     border-radius: 8px;
     transition: transform 0.2s ease;
+    box-shadow: 1px 1px 5px #323232;
   }
 
   .miniaturas img:hover {
-    transform: scale(1.1);
-    border-color: #000000;
+    transform: scale(1.05);
+    border-color: hsl(0, 100%, 99%);
   }
 
   .botones-preview {
