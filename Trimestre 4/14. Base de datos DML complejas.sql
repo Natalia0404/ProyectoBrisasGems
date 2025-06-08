@@ -1,3 +1,8 @@
+-- =========================
+-- JOINS CONSULTAS AVANZADAS
+-- =========================
+
+
 -- 1. Mostrar todos los pedidos junto con la información del cliente, el estado del pedido
 --    y los detalles de personalización si existen.
 --    Es útil para generar reportes de producción o atención al cliente.

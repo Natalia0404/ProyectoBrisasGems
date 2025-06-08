@@ -1,3 +1,8 @@
+-- ===============
+-- JOINS CONSULTAS
+-- ===============
+
+
 -- 1. inner join — detalles de pedidos con info del usuario y estado
 -- Así puedes listar pedidos con el nombre del cliente y el estado del pedido, útil para tu administración.
 select 
@@ -49,11 +54,3 @@ join usuarios u2 on u1.id_rol = u2.id_rol and u1.id_usuario != u2.id_usuario
 join rol r on u1.id_rol = r.id_rol
 order by rol, usuario1;
 
--- 6. inner join entre tablas en diferentes bases (ejemplo)
--- Solo si manejas varias bases, pero puede ser útil.
-select 
-    p.nombre,
-    pe.id_pedido,
-    pe.fecha_pedido
-from public.usuarios p
-join orders.pedido pe on p.id_usuario = pe.id_usuario;
