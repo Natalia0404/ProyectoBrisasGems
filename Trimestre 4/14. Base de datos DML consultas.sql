@@ -1,56 +1,62 @@
--- ===============
--- JOINS CONSULTAS
--- ===============
+-- ===================
+-- CONSULTAS CON JOINS
+-- ===================
 
 
 -- 1. inner join — detalles de pedidos con info del usuario y estado
 -- Así puedes listar pedidos con el nombre del cliente y el estado del pedido, útil para tu administración.
 select 
-    p.id_pedido,
-    u.nombre as nombre_usuario,
-    p.fecha_pedido,
-    ep.estado as estado_pedido
+    p.ped_id,
+    u.usu_nombre as nombre_usuario,
+    p.ped_fecha_creacion,
+    ep.est_nombre as estado_pedido
 from pedido p
-inner join usuarios u on p.id_usuario = u.id_usuario
-inner join estado_pedido ep on p.id_estado = ep.id_estado;
+inner join usuarios u on p.usu_id_admin = u.usu_id
+inner join estado_pedido ep on p.est_id = ep.est_id;
 
 -- 2. left join — todos los usuarios y sus pedidos si existen
 -- Para ver qué usuarios aún no han realizado pedidos.
 select 
-    u.nombre,
-    p.id_pedido,
-    p.fecha_pedido
+    u.usu_nombre,
+    p.ped_id,
+    p.ped_fecha_creacion
 from usuarios u
-left join pedido p on u.id_usuario = p.id_usuario;
+left join pedido p on u.usu_id = p.usu_id_admin;
 
 -- 3. join con alias — personalizaciones y valores para un pedido específico
 -- Muestra las personalizaciones elegidas para un pedido, mostrando nombre de opción y su valor.
 select 
-    dp.id_detalle_personalizacion,
-    op.opcion_personalizacion,
-    vp.valor_personalizacion
+    dp.det_id,
+    op.opc_nombre,
+    vp.val_nombre
 from detalle_personalizacion dp
-join opcion_personalizacion op on dp.id_opcion_personalizacion = op.id_opcion_personalizacion
-join valor_personalizacion vp on dp.id_valor_personalizacion = vp.id_valor_personalizacion
-where dp.id_pedido = 123; -- cambia 123 por el id que quieras
+join valor_personalizacion vp on dp.val_id = vp.val_id
+join opcion_personalizacion op on vp.opc_id = op.opc_id
+join personalizacion per on dp.per_id = per.per_id
+join pedido p on per.per_id = p.per_id
+where p.ped_id = 1; -- puedes cambiar por cualquier ID rea
 
 
 -- 4. cross join — combinar todas las opciones y valores
 -- Para explorar todas las combinaciones posibles (aunque no todas existan realmente en tus datos).
 select 
-    op.opcion_personalizacion,
-    vp.valor_personalizacion
+    op.opc_nombre,
+    vp.val_nombre
 from opcion_personalizacion op
 cross join valor_personalizacion vp;
 
 -- 5. self join — usuarios con el mismo rol
 -- Para ver qué usuarios comparten el mismo rol, útil para gestión de permisos o grupos.
 select 
-    u1.nombre as usuario1,
-    u2.nombre as usuario2,
-    r.descripcion as rol
+    u1.usu_nombre as usuario1,
+    u2.usu_nombre as usuario2,
+    r.rol_nombre as rol
 from usuarios u1
-join usuarios u2 on u1.id_rol = u2.id_rol and u1.id_usuario != u2.id_usuario
-join rol r on u1.id_rol = r.id_rol
+join usuarios u2 on u1.rol_id = u2.rol_id and u1.usu_id != u2.usu_id
+join rol r on u1.rol_id = r.rol_id
 order by rol, usuario1;
+
+-- ===================
+-- CONSULTAS AVANZADAS
+-- ===================
 
