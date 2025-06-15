@@ -1,0 +1,30 @@
+@import "./variables.css";
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Times New Roman', serif;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+a:hover {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.2rem; }
+h4 { font-size: var(--font-lg); }
+
+ul, ol {
+  list-style: none;
+}
