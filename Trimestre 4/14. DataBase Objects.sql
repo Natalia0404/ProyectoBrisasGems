@@ -1,3 +1,11 @@
+-- Show all procedures and functions in the population database
+select routine_type,
+       routine_name
+from   information_schema.routines
+where  routine_schema='population';
+
+
+
 -- ============================
 -- VISTA: v_pedidos_con_estado_render
 -- Muestra los pedidos con su fecha y un indicador si tienen render 3D asociado.
