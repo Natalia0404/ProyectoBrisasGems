@@ -1,0 +1,57 @@
+@import "./variables.css";
+@import "./reset.css";
+@import "./base.css";
+@import "./utilities.css";
+
+/* — Componentes globales — */
+.header {
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.footer {
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-md) 0;
+  margin-top: var(--space-lg);
+}
+
+/* — Botones genéricos — */
+.btn {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius);
+  background-color: transparent;
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+.btn:hover,
+.btn:focus {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
+/* — Tarjetas genéricas — */
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--space-md);
+  transition: var(--transition-base);
+}
+.card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* — Media Queries — */
+@media (min-width: var(--bp-md)) {
+  .container {
+    width: 960px;
+    margin-inline: auto;
+  }
+}

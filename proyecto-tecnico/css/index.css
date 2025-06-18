@@ -19,7 +19,7 @@
   --transition: all 0.3s ease;
 
   /* Sombras */
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow: 0 4px 12px rgba(12, 7, 7, 0.08);
   --shadow-hover: 0 5px 15px rgba(0, 0, 0, 0.1);
 
   /* Espaciados */
