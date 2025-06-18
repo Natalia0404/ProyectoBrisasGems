@@ -87,3 +87,11 @@ ren_fecha_aprobacion 	date,
 ped_id 					int,
 foreign key (ped_id) references pedido (ped_id)
 );
+
+create table formulario_contacto (
+	form_id int primary key auto_increment,
+	form_mensaje text not null,
+	form_fecha date not null,
+	usu_id int not null,
+	foreign key (usu_id) references usuarios (usu_id)
+);
