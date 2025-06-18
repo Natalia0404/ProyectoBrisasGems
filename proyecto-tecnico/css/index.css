@@ -37,7 +37,9 @@
   --font-size-xl: 1.8rem;
 }
 
-
+header{
+  padding: auto;
+}
 /* ==================== RESET Y BASE ==================== */
 * {
   box-sizing: border-box;
