@@ -97,7 +97,7 @@ h4 {
 }
 
 .contenedor-header {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -138,12 +138,35 @@ h4 {
   font-family: 'Times New Roman', serif;
 }
 
+.boton-sesion {
+  display: inline-flex;            
+  align-items: center;             
+  padding: 10px 10px;               
+  background-color: #fff;   
+  border: 1px solid #989797;          
+  border-radius: 100px;           
+  color: #383838;                 
+  text-decoration: none;           
+  font-size: 14px;  
+  width: 100px; 
+  height: 40px;
+  justify-content:left;
+  margin-left: 250px;
+ 
+        
+}
+
+.boton-sesion:hover {
+  background-color: #0a8048;
+}
+
 
 /* ==================== NAVEGACIÓN ==================== */
 .navegacion-principal {
   flex: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .nav-contenedor {
@@ -166,7 +189,7 @@ h4 {
 
 .nav-enlace:hover {
   color: var(--color-primario);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .nav-enlace.active {
@@ -202,6 +225,7 @@ h4 {
   height: 2px;
   background-color: var(--color-primario);
   transition: var(--transition);
+  display: inline-block;
 }
   
   .acciones-usuario {
