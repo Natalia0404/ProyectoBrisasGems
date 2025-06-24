@@ -1,111 +1,118 @@
--- ==================
--- INSERCIONES Y CRUD
--- ==================
+-- ===========
+-- INSERCIONES
+-- ===========
 
--- 1. tabla tipo_de_documento
-insert into tipo_de_documento (tipdoc_id, tipdoc_nombre)
+-- tabla tipo_de_documento
+insert into tipo_de_documento (tipdoc_nombre)
 values
-	(1, 'Cédula de ciudadanía'),
-	(2, 'Cédula de extranjería'),
-	(3, 'Pasaporte');
+	('Cédula de ciudadanía'),
+	('Cédula de extranjería'),
+	('Pasaporte');
 
--- 2. tabla rol
-insert into rol (rol_id, rol_nombre) 
+-- tabla rol
+insert into rol (rol_nombre) 
 values
-	(1, 'usuario'),
-	(2, 'cliente');
+	('usuario'),
+	('administrador'),
+	('diseñador');
 
--- 3. tabla estado_pedido
-insert into estado_pedido (est_id, est_nombre)
+-- tabla usuarios
+insert into usuarios (usu_nombre, usu_correo, usu_telefono, usu_password, rol_id, tipdoc_id) 
 values
-	(1, 'diseño'),
-	(2, 'tallado'),
-	(3, 'engaste'),
-	(4, 'pulido'),
-	(5, 'finalizado');
+	-- administradores
+	('ana administrador',     'ana@gmail.com',            '3001000001', 'hash-ana001',     2, 1),
+	('catalina lópez',        'catalina.admin@gmail.com', '3001000002', 'hash-catalina002', 2, 1),
+	('jorge herrera',         'jorgeherrera@gmail.com',   '3001000003', 'hash-jorge003',    2, 2),
 
--- 4. tabla opcion_personalizacion
-insert into opcion_personalizacion (opc_id, opc_nombre) 
-values
-	(1, 'seleccionar gema'),
-	(2, 'seleccionar forma'),
-	(3, 'seleccionar material del anillo'),
-	(4, 'modificar tamaño de joya'),
-	(5, 'seleccionar talla del anillo');
-
-
--- 5. tabla valor_personalizacion
-insert into valor_personalizacion (val_id, val_nombre, opc_id) 
-values
-	-- opciones para “seleccionar gema” (opc_id = 1)
-	(1,  'esmeralda',    1),
-	(2,  'diamante',     1),
-	(3,  'ruby',       1),
-
-	-- opciones para “seleccionar forma” (opc_id = 2)
-	(4,  'redonda',      2),
-	(5,  'cuadrada',     2),
-	(6,  'ovalada',      2),
-
-	-- opciones para “seleccionar material del anillo” (opc_id = 3)
-	(7,  'oro amarillo', 3),
-	(8,  'oro blanco',   3),
-	(9,  'plata',        3),
-	(10, 'platino',      3),
-
-	-- opciones para “modificar tamaño de joya” (opc_id = 4)
-	(11, '6 mm',      4),
-	(12, '7 mm',      4),
-	(13, '9 mm',       4),
-
-	-- opciones para “seleccionar talla del anillo” (opc_id = 5)
-	(14, 'talla 6',      5),
-	(15, 'talla 7',      5),
-	(16, 'talla 8',      5),
-	(17, 'talla 9',      5);
-
--- 6. tabla usuarios 
-insert into usuarios (usu_id, usu_nombre, usu_correo, usu_telefono, usu_password, rol_id, tipdoc_id) 
-values
-	-- administrador
-	(1,  'ana administrador', 'ana@gmail.com', '3001000001', 'hash-ana001', 1, 1),
+	-- diseñadores
+	('soledad martínez',      'soledad@gmail.com',        '3001000004', 'hash-soledad004',  3, 1),
+	('tomás agudelo',         'tomas@gmail.com',          '3001000005', 'hash-tomas005',    3, 2),
+	('paula cárdenas',        'paula@gmail.com',          '3001000006', 'hash-paula006',    3, 1),
 
 	-- clientes
-	(2,  'luis pérez','luisperez@gmail.com',   '3001000002', 'hash-luis002', 2, 1),
-	(3,  'carla gómez','carlagomez@gmail.com',  '3001000003', 'hash-carla003', 2, 2),
-	(4,  'diego torres', 'diegotorres@gmail.com', '3001000004', 'hash-diego004', 2, 1),
-	(5,  'sofía rodríguez', 'sofiarodriguez@gmail.com','3001000005','hash-sofia005',  2, 2),
-	(6,  'camilo díaz', 'camilodiaz@gmail.com',  '3001000006', 'hash-camilo006', 2, 1),
-	(7,  'valentina castro', 'valentinacastro@gmail.com','3001000007','hash-valentina007',2, 2),
-	(8,  'santiago morales', 'santiagomorales@gmail.com','3001000008','hash-santiago008',2, 1),
-	(9,  'laura sánchez', 'laurasanchez@gmail.com','3001000009', 'hash-laura009', 2, 2),
-	(10, 'marcela fernández', 'marcelaf@gmail.com',    '3001000010', 'hash-marcela010', 2, 1),
-	(11, 'felipe castro', 'felipecastro@gmail.com','3001000011', 'hash-felipe011', 2, 2),
-	(12, 'daniela mendoza', 'danielamendoza@gmail.com','3001000012','hash-daniela012',  2, 1),
-	(13, 'alejandro rojas', 'alejandrorojas@gmail.com','3001000013','hash-alejandro013',2, 2),
-	(14, 'juliana álvarez', 'julianaalvarez@gmail.com','3001000014','hash-juliana014', 2, 1),
-	(15, 'sebastián díaz', 'sebastiandiaz@gmail.com','3001000015','hash-sebastian015',2, 2);
+	('valentina castro',      'valentinacastro@gmail.com','3001000007','hash-valentina007',1, 2),
+	('santiago morales',      'santiagomorales@gmail.com','3001000008','hash-santiago008',1, 1),
+	('laura sánchez',         'laurasanchez@gmail.com',   '3001000009','hash-laura009',    1, 2),
+	('marcela fernández',     'marcelaf@gmail.com',       '3001000010','hash-marcela010',  1, 1),
+	('felipe castro',         'felipecastro@gmail.com',   '3001000011','hash-felipe011',   1, 2),
+	('daniela mendoza',       'danielamendoza@gmail.com', '3001000012','hash-daniela012',  1, 1),
+	('alejandro rojas',       'alejandrorojas@gmail.com', '3001000013','hash-alejandro013',1, 2),
+	('juliana álvarez',       'julianaalvarez@gmail.com', '3001000014','hash-juliana014',  1, 1),
+	('sebastián díaz',        'sebastiandiaz@gmail.com',  '3001000015','hash-sebastian015',1, 2);
 
--- 7. tabla personalizacion (15 registros nuevos: per_id de 1 a 15)
-insert into personalizacion (per_id, per_fecha, usu_id_cliente) 
+-- tabla tokens (versión sin tok_id manual)
+insert into tokens (token, tipo, fecha_expiracion, usu_id) values
+	('token-activo-ana',     'activacion',   '2025-07-01 23:59:59', 1),
+	('token-recu-luis',      'recuperacion', '2025-06-30 23:59:59', 2),
+	('token-recu-carla',     'recuperacion', '2025-06-30 23:59:59', 3),
+	('token-activo-diego',   'activacion',   '2025-07-01 23:59:59', 4);
+
+
+-- ===============================
+-- 2. PERSONALIZACIÓN DE PRODUCTOS
+-- ===============================
+
+-- tabla opcion_personalizacion
+insert into opcion_personalizacion (opc_nombre) 
 values
-	(1,  '2025-06-01', 1),
-	(2,  '2025-06-02', 2),
-	(3,  '2025-06-03', 3),
-	(4,  '2025-06-04', 4),
-	(5,  '2025-06-05', 5),
-	(6,  '2025-06-06', 6),
-	(7,  '2025-06-07', 7),
-	(8,  '2025-06-08', 8),
-	(9,  '2025-06-09', 9),
-	(10, '2025-06-10', 10),
-	(11, '2025-06-11', 11),
-	(12, '2025-06-12', 12),
-	(13, '2025-06-13', 13),
-	(14, '2025-06-14', 14),
-	(15, '2025-06-15', 15);
+	('seleccionar gema'),
+	('seleccionar forma'),
+	('seleccionar material del anillo'),
+	('modificar tamaño de joya'),
+	('seleccionar talla del anillo');
 
--- 8. tabla detalle_personalizacion (cada per_id tiene 5 selecciones)
+-- 5. tabla valor_personalizacion (sin val_id, con opc_id basado en el orden de inserción anterior)
+insert into valor_personalizacion (val_nombre, opc_id) 
+values
+	-- opciones para “seleccionar gema” (opc_id = 1)
+	('esmeralda',    1),
+	('diamante',     1),
+	('ruby',         1),
+
+	-- opciones para “seleccionar forma” (opc_id = 2)
+	('redonda',      2),
+	('cuadrada',     2),
+	('ovalada',      2),
+
+	-- opciones para “seleccionar material del anillo” (opc_id = 3)
+	('oro amarillo', 3),
+	('oro blanco',   3),
+	('plata',        3),
+	('platino',      3),
+
+	-- opciones para “modificar tamaño de joya” (opc_id = 4)
+	('6 mm',         4),
+	('7 mm',         4),
+	('9 mm',         4),
+
+	-- opciones para “seleccionar talla del anillo” (opc_id = 5)
+	('talla 6',      5),
+	('talla 7',      5),
+	('talla 8',      5),
+	('talla 9',      5);
+
+
+-- tabla personalizacion (sin per_id, autoincremental)
+insert into personalizacion (per_fecha, usu_id_cliente) 
+values
+	('2025-06-01', 1),
+	('2025-06-02', 2),
+	('2025-06-03', 3),
+	('2025-06-04', 4),
+	('2025-06-05', 5),
+	('2025-06-06', 6),
+	('2025-06-07', 7),
+	('2025-06-08', 8),
+	('2025-06-09', 9),
+	('2025-06-10', 10),
+	('2025-06-11', 11),
+	('2025-06-12', 12),
+	('2025-06-13', 13),
+	('2025-06-14', 14),
+	('2025-06-15', 15);
+
+
+-- tabla detalle_personalizacion (cada per_id tiene 5 selecciones)
 insert into detalle_personalizacion (det_id, per_id, val_id) 
 values
 	-- per_id = 1 (ana)
@@ -213,7 +220,20 @@ values
 	(74, 15, 12),  -- tamaño: mediano
 	(75, 15, 17);  -- talla anillo: talla 9
 
--- 9. tabla pedido 
+-- =============================
+-- 3. GESTIÓN DE PEDIDOS
+-- =============================
+
+-- tabla estado_pedido
+insert into estado_pedido (est_id, est_nombre)
+values
+	(1, 'diseño'),
+	(2, 'tallado'),
+	(3, 'engaste'),
+	(4, 'pulido'),
+	(5, 'finalizado');
+
+-- tabla pedido 
 insert into pedido (ped_id, ped_codigo, ped_fecha_creacion, ped_comentarios, est_id, per_id, usu_id_admin) 
 values
 	(1,  'p-20250601-001', '2025-06-01', 'pedido de ana',            1,  1,  1),
@@ -232,7 +252,7 @@ values
 	(14, 'p-20250614-014', '2025-06-14', 'pedido de juliana',        4, 14, 14),
 	(15, 'p-20250615-015', '2025-06-15', 'pedido de sebastián',       5, 15, 15);
 
--- 10. tabla foto_producto_final
+-- tabla foto_producto_final
 -- solo para pedidos cuyo estado NO es “diseño” (est_id > 1)
 insert into foto_producto_final (fot_id, fot_imagen_final, fot_fecha_subida, ped_id) 
 values
@@ -249,7 +269,7 @@ values
 	(11, 'https://tienda.com/fotos/ped14.jpg', '2025-06-15', 14),
 	(12, 'https://tienda.com/fotos/ped15.jpg', '2025-06-16', 15);
 
--- 11. tabla render_3d
+-- tabla render_3d
 -- similarmente, para los mismos pedidos (est_id > 1)
 insert into render_3d (ren_id, ren_imagen, ren_fecha_aprobacion, ped_id) 
 values
@@ -266,6 +286,31 @@ values
 	(11, 'https://tienda.com/renders/ped14.png', '2025-06-14', 14),
 	(12, 'https://tienda.com/renders/ped15.png', '2025-06-15', 15);
 
+
+-- =============================
+-- 4. EXPERIENCIA DEL CLIENTE
+-- =============================
+
+-- tabla contacto Contactos con y sin usuarios asociados
+insert into contacto_formulario (con_id, usu_id, con_nombre, con_email, con_telefono, con_mensaje, con_via, con_terminos)
+values
+(1, 2, 'Luis Pérez', 'luisperez@gmail.com', '3001000002', 'Estoy interesado en un diseño nuevo.', 'formulario', true),
+(2, null, 'Carolina López', 'carolina@gmail.com', '3001234567', '¿Puedo personalizar una joya con una piedra propia?', 'whatsapp', true),
+(3, 5, 'Sofía Rodríguez', 'sofiarodriguez@gmail.com', '3001000005', '¿Cuánto demora el proceso completo?', 'formulario', true),
+(4, null, 'Mauricio Díaz', 'mauricio.d@gmail.com', '3109876543', 'Quiero una cita personalizada.', 'formulario', true);
+
+-- Inspiraciones de diseño para el portafolio
+insert into portafolio_inspiracion (por_id, por_titulo, por_descripcion, por_imagen, por_video, por_categoria, usu_id)
+values
+(1, 'Anillo Aurora', 'Inspirado en los colores del amanecer.', 'https://tienda.com/inspiracion/aurora.jpg', null, 'anillo', 1),
+(2, 'Colgante Estelar', 'Diseño con diamantes en forma de estrella.', 'https://tienda.com/inspiracion/estelar.jpg', 'https://tienda.com/videos/estelar.mp4', 'colgante', 3),
+(3, 'Sortija Real', 'Sortija clásica con rubí central.', 'https://tienda.com/inspiracion/sortija.jpg', null, 'anillo', 4),
+(4, 'Anillo Personalizado', 'Basado en un diseño de cliente', 'https://tienda.com/inspiracion/personalizado.jpg', null, 'cliente', 2);
+
+
+-- ====
+-- CRUD
+-- ====
 
 -- ========================
 -- ACTUALIZACIONES DE DATOS
