@@ -40,6 +40,7 @@ create table usuarios (
     usu_docnum		int,
 	rol_id 			int,
 	tipdoc_id 		int,
+    usu_activo      boolean not null default 0,
 	foreign key (tipdoc_id) references tipo_de_documento (tipdoc_id),
 	foreign key (rol_id) references rol (rol_id)
 );
@@ -117,10 +118,11 @@ create table contacto_formulario (
     foreign key (usu_id) references usuarios (usu_id)
 );
 
---  Token de recuperación de contraseña
-create table token_recuperacion (
+--  Token de activacion y recuperacion 
+create table tokens (
     tok_id             int primary key auto_increment,
     token              varchar(255) not null,
+    tipo               enum('activacion', 'recuperacion') not null default 'recuperacion', -- NUEVO
     fecha_expiracion   datetime not null,
     usu_id             int,
     foreign key (usu_id) references usuarios (usu_id)

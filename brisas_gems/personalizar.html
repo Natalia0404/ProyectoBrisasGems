@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Personalización de Anillo</title>
-  <link rel="stylesheet" href="../assets/css-global/main.css">
-  <link rel="stylesheet" href="../css/personalizacion.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/assets/css-global/main.css">
+  <link rel="stylesheet" href="./css/personalizacion.css">
   <meta charset="UTF-8">
   <meta name="author" content="Fabian Sanchez">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" shrink-to-fit=no">
@@ -13,7 +14,10 @@
  </head>
 
 <body>
-  <!-- Encabezado generico para todas la pag -->
+  <!-- ------ -->
+  <!-- HEADER -->
+  <!-- ------ -->
+
   <header class="header-joyeria">
     <div class="contenedor-header">
       
@@ -58,122 +62,92 @@
     </div>
   </header>
 
-  <main class="customizer">
-    <div class="container">
-    <!-- Vista previa del anillo -->
-      <section class="preview">
-      <h2>Vista previa</h2>
-      <img src="../imagenes/personalizacion/vista-previa/vista-frontal.jpg" alt="Vista previa del anillo" id="ring-preview">
-      <div class="preview-thumbnails">
-        <img src="../imagenes/personalizacion/vista-previa/vista-frontal.jpg" alt="Vista Frontal">
-        <img src="../imagenes/personalizacion/vista-previa/vista-perfil.jpg" alt="Vista Perfil">
-        <img src="../imagenes/personalizacion/vista-previa/vista-contorno.jpg" alt="Vista Contorno">
-      </div>
-      </section>
 
-    <!-- Opciones de personalización -->
-    <section class="customization">
-      <!-- RF-007 Selección de gema -->
-      <div class="option-section" id="center-gemstone">
-        <h3>PIEDRA CENTRAL</h3>
-        <div class="option-list">
-          <button class="option-item" data-gem="diamante">
-            <img src="../imagenes/personalizacion/gemas/diamante.png" alt="Diamante">
-            <span>Diamante</span>
-          </button>
-          <button class="option-item selected" data-gem="esmeralda">
-            <img src="../imagenes/personalizacion/gemas/esmeralda.png" alt="Esmeralda">
-            <span>Esmeralda</span>
-          </button>
-          <button class="option-item" data-gem="zafiro">
-            <img src="../imagenes/personalizacion/gemas/zafiro.png" alt="Zafiro">
-            <span>Zafiro</span>
-          </button>
-          <button class="option-item" data-gem="ruby">
-            <img src="../imagenes/personalizacion/gemas/ruby.png" alt="Ruby">
-            <span>Ruby</span>
-          </button>
-        </div>
-      </div>
-      
-        <!-- RF-008 Selección de forma -->
-        <div class="option-section" id="center-stone-shape">
-          <h3>FORMA DE LA PIEDRA CENTRAL</h3>
-          <div class="option-list">
-            <button class="option-item selected" data-shape="round">
-              <img src="../imagenes/personalizacion/forma/redonda.png" alt="Round">
-              <span>Redonda</span>
-            </button>
-            <button class="option-item" data-shape="oval">
-              <img src="../imagenes/personalizacion/forma/ovalada.png" alt="Oval">
-              <span>Ovalada</span>
-            </button>
-          </div>
-        </div>
+  <!-- ---- -->
+  <!-- MAIN -->
+  <!-- ---- -->
+   
+  <main class="container my-5">
+    <div class="row">
+      <!-- Columna izquierda: Vista previa del anillo -->
+      <div class="col-md-6 mb-4 mb-md-0">
+        <section>
+          <h2 class="h5 text-center" >Vista previa del anillo</h2>
+          <img id="vista-principal" src="./img/personalizacion/vista-previa/vista-superior.jpg" alt="Vista previa del anillo" class="img-fluid mb-3 d-block mx-auto"  style="max-height: 300px;">
 
-        <!-- RF-0010 Tamaño de la joya -->
-        <div class="option-section" id="stone-size">
-          <h3>TAMAÑO DE LA PIEDRA CENTRAL</h3>
-          <div class="option-list">
-            <button class="option-item" data-size="6">
-              <img src="../imagenes/personalizacion/tama-piedra-central/6mm.png" alt="6mm">
-              <span>6 MM.</span>
-            </button>
-            <button class="option-item selected" data-size="7">
-              <img src="../imagenes/personalizacion/tama-piedra-central/7mm.png" alt="7mm">
-              <span>7 MM.</span>
-            </button>
+          <!-- Miniaturas para cambiar vista -->
+          <div class="d-flex justify-content-center gap-3">
+            <img src="./img/personalizacion/vista-previa/vista-superior.jpg" alt="Vista Superior" class="img-thumbnail miniatura" width="70" onclick="cambiarVista(this)">
+            <img src="./img/personalizacion/vista-previa/vista-frontal.jpg" alt="Vista Frontal" class="img-thumbnail miniatura" width="70" onclick="cambiarVista(this)">
+            <img src="./img/personalizacion/vista-previa/vista-perfil.jpg" alt="Vista Perfil" class="img-thumbnail miniatura" width="70" onclick="cambiarVista(this)">
           </div>
-        </div>
-      
-        <!-- RF-009 Material del anillo -->
-        <div class="option-section" id="ring-material">
-          <h3>MATERIAL DEL ANILLO</h3>
-          <div class="option-list">
-            <button class="option-item" data-material="gold">
-              <img src="../imagenes/personalizacion/material/oro-amarillo.png" alt="Gold">
-              <span>Oro Amarillo</span>
-            </button>
-            <button class="option-item" data-material="white-gold">
-              <img src="../imagenes/personalizacion/material/oro-blanco.png" alt="White Gold">
-              <span>Oro Blanco</span>
-            </button>
-            <button class="option-item" data-material="rose-gold">
-              <img src="../imagenes/personalizacion/material/oro-rosa.png" alt="Rose Gold">
-              <span>Rose Gold</span>
-            </button>
-            <button class="option-item" data-material="platinum">
-              <img src="../imagenes/personalizacion/material/platino.png" alt="Platinum">
-              <span>Platino</span>
-            </button>
-          </div>
-        </div>
-      
-        <!-- RF-0011 Talla del anillo -->
-        <div class="option-section" id="ring-size">
-          <h3>TALLA DEL ANILLO</h3>
-          <div class="option-list">
-            <select class="ring-size-selector">
-              <option disabled selected>Choose your ring size</option>
-              <option value="5">Size 5</option>
-              <option value="6">Size 6</option>
-              <option value="7">Size 7</option>
-              <option value="8">Size 8</option>
-              <option value="9">Size 9</option>
-              <!-- más tallas según tabla estándar -->
-            </select>
-            <p class="help-text">No sabes cual es tu talla? <a href="#">Aprende como medir tu talla</a></p>
-          </div>
-        </div>
-        <div class="form-group">
-          <a href="../comunicacion-soporte/comunicacion-soporte.html" class="button">Adquiere tu anillo</a>
-        </div>
-      </section>
-      
+        </section>
+      </div>
+
+
+
+
+  <!-- Columna derecha: Opciones de personalización -->
+<div class="col-md-6">
+  <section class="mb-4">
+    <h3 class="h5">Piedra central</h3>
+    <div class="d-flex flex-wrap gap-3">
+      <button class="btn btn-outline-primary"><img src="./img/personalizacion/gemas/diamante.png" alt="Diamante" width="40"><br>Diamante</button>
+      <button class="btn btn-outline-primary active"><img src="./img/personalizacion/gemas/esmeralda.png" alt="Esmeralda" width="40"><br>Esmeralda</button>
+      <button class="btn btn-outline-primary"><img src="./img/personalizacion/gemas/zafiro.png" alt="Zafiro" width="40"><br>Zafiro</button>
+      <button class="btn btn-outline-primary"><img src="./img/personalizacion/gemas/ruby.png" alt="Rubí" width="40"><br>Rubí</button>
     </div>
-    
+  </section>
 
-  </main>
+  <section class="mb-4">
+    <h3 class="h5">Forma de la piedra</h3>
+    <div class="d-flex flex-wrap gap-3">
+      <button class="btn btn-outline-secondary active"><img src="./img/personalizacion/forma/redonda.png" alt="Redonda" width="40"><br>Redonda</button>
+      <button class="btn btn-outline-secondary"><img src="./img/personalizacion/forma/ovalada.png" alt="Ovalada" width="40"><br>Ovalada</button>
+    </div>
+  </section>
+
+  <section class="mb-4">
+    <h3 class="h5">Tamaño de la piedra</h3>
+    <div class="d-flex gap-3">
+      <button class="btn btn-outline-dark"><img src="./img/personalizacion/tama-piedra-central/6mm.png" alt="6mm" width="40"><br>6 mm</button>
+      <button class="btn btn-outline-dark active"><img src="./img/personalizacion/tama-piedra-central/7mm.png" alt="7mm" width="40"><br>7 mm</button>
+    </div>
+  </section>
+
+  <section class="mb-4">
+    <h3 class="h5">Material del anillo</h3>
+    <div class="d-flex flex-wrap gap-3">
+      <button class="btn btn-outline-warning"><img src="./img/personalizacion/material/oro-amarillo.png" alt="Oro Amarillo" width="40"><br>Oro Amarillo</button>
+      <button class="btn btn-outline-secondary"><img src="./img/personalizacion/material/oro-blanco.png" alt="Oro Blanco" width="40"><br>Oro Blanco</button>
+      <button class="btn btn-outline-danger"><img src="./img/personalizacion/material/oro-rosa.png" alt="Oro Rosa" width="40"><br>Oro Rosa</button>
+      <button class="btn btn-outline-dark"><img src="./img/personalizacion/material/platino.png" alt="Platino" width="40"><br>Platino</button>
+    </div>
+  </section>
+
+  <section class="mb-4">
+    <h3 class="h5">Talla del anillo</h3>
+    <div class="form-group">
+      <select class="form-select">
+        <option disabled selected>Elige tu talla</option>
+        <option value="5">Talla 5</option>
+        <option value="6">Talla 6</option>
+        <option value="7">Talla 7</option>
+        <option value="8">Talla 8</option>
+        <option value="9">Talla 9</option>
+      </select>
+      <small class="form-text text-muted">¿No sabes tu talla? <a href="#">Aprende cómo medirla</a></small>
+    </div>
+  </section>
+
+  <div class="text-end">
+    <a href="../contacto/contacto.html" class="btn btn-primary">Adquiere tu anillo</a>
+  </div>
+</div>
+
+  <!-- ------ -->
+  <!-- FOOTER -->
+  <!-- ------ -->
 
   <footer class="footer-joyeria">
     <div class="contenedor-footer">
@@ -220,5 +194,6 @@
       <p>Desarrollado por SENA CEET - Ficha 2996176 ADSO</p>
     </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
