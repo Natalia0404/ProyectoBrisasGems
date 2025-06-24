@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Iniciar sesión</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">.
   <link rel="stylesheet" href="../css/gestion-de-usuario.css" />
   <link rel="stylesheet" href="../assets/css-global/main.css">
 </head>
@@ -20,7 +21,7 @@
     </a>
     <nav class="nav-links">
       <a href="../personalizacion/personalizacion.html">Personalización</a>
-      <a href="../portafolio/portafolio.html">Portafolio</a>
+      <a href="../portafolio/portafolio.html">Portafolio</a> 
       <a href="../progreso-de-pedido/progreso-de-pedido.html">Progreso de Pedido</a>
     </nav>
     <div class="user-links">
@@ -30,31 +31,61 @@
   </header>
   <hr>
 
-  <main class="form-container">
-    <h2>Iniciar sesión</h2>
-    <form id="login-form">
-      <div class="form-group">
-        <label for="correo">Correo electrónico</label>
-        <input type="email" id="correo" name="correo" required />
+
+  <!-- ---- -->
+  <!-- MAIN -->
+  <!-- ---- -->
+
+  <main class="container my-5" style="max-width: 500px;">
+  <!-- Sección de Inicio de Sesión -->
+  <section class="form-section mb-5" aria-labelledby="titulo-login">
+    <h2 id="titulo-login" class="h5 mb-4">Iniciar Sesión</h2>
+    <form action="#" method="post" aria-label="Formulario de inicio de sesión">
+      <div class="mb-3">
+        <label for="login-usuario" class="form-label">Usuario o correo electrónico *</label>
+        <input type="text" class="form-control" id="login-usuario" name="usuario" required>
       </div>
 
-      <div class="form-group">
-        <label for="contrasena">Contraseña</label>
-        <input type="password" id="contrasena" name="contrasena" required />
+      <div class="mb-3">
+        <label for="login-password" class="form-label">Contraseña *</label>
+        <input type="password" class="form-control" id="login-password" name="password" required>
       </div>
 
-      <div class="form-group">
-        <a href="perfil.html" class="btn">Iniciar sesión</a>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-custom">Iniciar Sesión</button>
       </div>
 
-      <div class="form-links">
-        <a href="recuperar.html">¿Olvidaste tu contraseña?</a>
+      <div class="mt-3 text-end">
+        <a href="#" class="text-decoration-none">¿Olvidaste tu contraseña?</a>
       </div>
-
-      <p class="form-message success hidden">Inicio de sesión exitoso. Redirigiendo...</p>
-      <p class="form-message error hidden">Correo o contraseña incorrectos.</p>
     </form>
-  </main>
+  </section>
+
+  <hr class="my-4">
+
+  <!-- Sección de Registro -->
+  <section class="form-section" aria-labelledby="titulo-registro">
+    <h2 id="titulo-registro" class="h5 mb-4">Registrarse</h2>
+    <form action="#" method="post" aria-label="Formulario de registro">
+      <div class="mb-3">
+        <label for="registro-email" class="form-label">Correo electrónico *</label>
+        <input type="email" class="form-control" id="registro-email" name="email" required>
+      </div>
+
+      <p class="form-text text-muted">
+        Se enviará un enlace para establecer tu contraseña al correo registrado.
+      </p>
+
+      <p class="form-text text-muted mt-2">
+        Tus datos personales se usarán para apoyar tu experiencia en esta web, gestionar el acceso a tu cuenta y otros fines descritos en nuestra <a href="#" class="text-decoration-none">política de privacidad</a>.
+      </p>
+
+      <div class="d-grid mt-3">
+        <button type="submit" class="btn btn-custom">Registrarse</button>
+      </div>
+    </form>
+  </section>
+</main>
 
 </body>
 </html>
