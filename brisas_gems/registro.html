@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crear cuenta</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css-global/main.css">
+  <link rel="stylesheet" href="../css/gestion-de-usuario.css">
+  
+</head>
+<body>
+
+  <body>
+    <!-- Encabezado generico para todas la pag -->
+    <header>
+      <a href="../index.html" class="logo-container">
+        <div class="logo">Brisas Gems</div>
+        <div class="logo-img">
+          <img src="../imagenes/logo-general-removebg-preview.png" alt="logo">
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="../personalizacion/personalizacion.html">Personalización</a>
+      <a href="../portafolio/portafolio.html">Portafolio</a>
+      <a href="../progreso-de-pedido/progreso-de-pedido.html">Progreso de Pedido</a>
+    </nav>
+    <div class="user-links">
+      <a href="../gestion-de-usuarios/login.html" class="login-link">Iniciar sesión</a>
+      <!--<a href="perfil.html" class="perfil-link">Perfil</a>-->
+    </div>
+  </header>
+  <hr>
+
+  <!-- ---- -->
+  <!-- MAIN -->
+  <!-- ---- -->
+
+  <main class="container my-5" style="max-width: 600px;">
+  <section class="form-section" aria-labelledby="titulo-registro">
+    <h2 id="titulo-registro" class="h5 mb-4 text-center">Crear cuenta</h2>
+
+    <form action="./php/procesar_registro" method="post" aria-label="Formulario de registro">
+
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre completo *</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="correo" class="form-label">Correo electrónico *</label>
+        <input type="email" class="form-control" id="correo" name="correo" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="telefono" class="form-label">Teléfono *</label>
+        <input type="text" class="form-control" id="telefono" name="telefono" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="tipdoc_id" class="form-label">Tipo de documento *</label>
+        <select class="form-select" id="tipdoc_id" name="tipdoc_id" required>
+          <option value="">Selecciona...</option>
+          <option value="1">Cédula de ciudadanía</option>
+          <option value="2">Cédula de extranjería</option>
+          <option value="3">Pasaporte</option>
+          <!-- Puedes hacer que estas opciones se carguen dinámicamente -->
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="usu_docnum" class="form-label">Número de documento *</label>
+        <input type="text" class="form-control" id="usu_docnum" name="usu_docnum" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Contraseña *</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+      </div>
+
+      <!-- Puedes ocultar este campo si el rol por defecto es cliente -->
+      <input type="hidden" name="rol_id" value="1"> <!-- Por ejemplo, 1 = cliente -->
+
+      <div class="d-grid mt-4">
+        <button type="submit" class="btn btn-success">Registrarse</button>
+      </div>
+
+      <p class="form-text text-muted mt-3">
+        Recibirás un enlace de activación en tu correo electrónico.
+      </p>
+
+    </form>
+  </section>
+</main>
+
+</body>
+</html>

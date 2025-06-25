@@ -39,11 +39,11 @@
   <main class="container my-5" style="max-width: 500px;">
   <!-- Sección de Inicio de Sesión -->
   <section class="form-section mb-5" aria-labelledby="titulo-login">
-    <h2 id="titulo-login" class="h5 mb-4">Iniciar Sesión</h2>
-    <form action="#" method="post" aria-label="Formulario de inicio de sesión">
+    <h2 id="titulo-login" class="h5 mb-4 text-center">Iniciar Sesión</h2>
+    <form action="procesar_login.php" method="post" aria-label="Formulario de inicio de sesión">
       <div class="mb-3">
-        <label for="login-usuario" class="form-label">Usuario o correo electrónico *</label>
-        <input type="text" class="form-control" id="login-usuario" name="usuario" required>
+        <label for="login-correo" class="form-label">Correo electrónico *</label>
+        <input type="email" class="form-control" id="login-correo" name="correo" required>
       </div>
 
       <div class="mb-3">
@@ -51,39 +51,18 @@
         <input type="password" class="form-control" id="login-password" name="password" required>
       </div>
 
-      <div class="d-grid">
-        <button type="submit" class="btn btn-custom">Iniciar Sesión</button>
+      <div class="mb-3 d-grid">
+        <button type="submit" class="btn btn-success">Iniciar Sesión</button>
       </div>
 
       <div class="mt-3 text-end">
-        <a href="#" class="text-decoration-none">¿Olvidaste tu contraseña?</a>
+        <a href="recuperar.html" class="text-decoration-none">¿Olvidaste tu contraseña?</a>
       </div>
     </form>
-  </section>
 
-  <hr class="my-4">
-
-  <!-- Sección de Registro -->
-  <section class="form-section" aria-labelledby="titulo-registro">
-    <h2 id="titulo-registro" class="h5 mb-4">Registrarse</h2>
-    <form action="#" method="post" aria-label="Formulario de registro">
-      <div class="mb-3">
-        <label for="registro-email" class="form-label">Correo electrónico *</label>
-        <input type="email" class="form-control" id="registro-email" name="email" required>
-      </div>
-
-      <p class="form-text text-muted">
-        Se enviará un enlace para establecer tu contraseña al correo registrado.
-      </p>
-
-      <p class="form-text text-muted mt-2">
-        Tus datos personales se usarán para apoyar tu experiencia en esta web, gestionar el acceso a tu cuenta y otros fines descritos en nuestra <a href="#" class="text-decoration-none">política de privacidad</a>.
-      </p>
-
-      <div class="d-grid mt-3">
-        <button type="submit" class="btn btn-custom">Registrarse</button>
-      </div>
-    </form>
+    <p class="mt-4 text-center">
+      ¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a>
+    </p>
   </section>
 </main>
 
