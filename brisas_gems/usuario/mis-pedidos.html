@@ -7,54 +7,33 @@
   <meta name="author" content="Johan Bocanegra">
   <link rel="icon" href="../imagenes/icono.png">
   <title>Seguimiento de Pedido | Brisas Gems</title>
-  <link rel="stylesheet" href="../css/progreso-de-pedido.css">
-  <link rel="stylesheet" href="../assets/css-global/main.css">
+<!-- Estilos globales primero -->
+<link rel="stylesheet" href="../css/assets/css-global/main.css">
+<link rel="stylesheet" href="../css/progreso-de-pedido.css">
+
 </head>
 
 <body>
-  <header class="header-joyeria">
+  <header class="encabezado">
     <div class="contenedor-header">
-      
-      <a href="../index.html" class="logo-joyeria" aria-label="Inicio Brisas Gems">
-        <img src="../imagenes/logo.png" alt="Logo Brisas Gems" class="logo-img" width="50" height="50">
-        <span class="nombre-joyeria">Brisas Gems</span>
+      <a href="#" class="logo">
+        <img src="../img/logo.png" alt="Logo Brisas Gems">
       </a>
   
-      <nav class="navegacion-principal" aria-label="Navegación principal">
-        <ul class="nav-contenedor">
-          
-          <li>
-            <a href="../personalizacion/personalizacion.html" class="nav-enlace">
-              <div class="nav-contenido">
-                <span class="nav-texto">✦ Personalización</span>
-              </div>
-              <div class="nav-subtexto">Crea tu joya única</div>
-            </a>
-          </li>
-          
-          <li>
-            <a href="../portafolio/portafolio.html" class="nav-enlace">
-              <div class="nav-contenido">
-                <span class="nav-texto">✦ Portafolio</span>
-              </div>
-              <div class="nav-subtexto">Nuestras creaciones</div>
-            </a>
-          </li>
-          
-          <li>
-            <a href="../progreso-de-pedido/progreso-de-pedido.html" class="nav-enlace active" aria-current="page">
-              <div class="nav-contenido">
-                <span class="nav-texto">✦ Progreso</span>
-              </div>
-              <div class="nav-subtexto">Sigue tu pedido</div>
-            </a>
-          </li>
-  
-        </ul>
+      <nav class="nav-principal">
+        <a href="#">Personalización</a>
+        <img src="../img/icono personalizar.svg" alt="icono-personalizar">
+        <a href="#">Inspiración</a>
       </nav>
+  
+      <a href="#" class="boton-login">
+        <img src="../img/icono inicio de sesion.svg" alt="Icono Iniciar Sesión" class="icono-login">
+        Iniciar Sesión
+      </a>
       
     </div>
   </header>
+  
 
   <main class="contenedor-principal">
     <section class="seccion-pedidos" aria-labelledby="titulo-seguimiento">
@@ -73,7 +52,7 @@
           <div class="miniaturas" role="group" aria-label="Miniaturas del producto">
             <img src="../img/progreso-pedido/vista previa 1.jpg" alt="Vista frontal">
             <img src="../img/progreso-pedido/vista previa 2.jpg" alt="Vista lateral">
-            <img src="../img/progreso-pedido/vista previa 3.jpg" alt="Detalle">
+            <img src="/img/progreso-pedido/vista-previa 3.jpg" alt="Detalle">
           </div>
         </div>
 
@@ -129,35 +108,34 @@
       
       <div class="columna-footer">
         <h4>Brisas Gems</h4>
-        <p>✦ Joyería fina y personalizada con los más altos estándares de calidad.</p>
+        <p>🟢 Joyería fina y personalizada con los más altos estándares de calidad.</p>
         <div class="redes-sociales">
           <a href="#" target="_blank" rel="noopener" aria-label="Facebook Brisas Gems">
-            <img src="../img/icono-facebook.png" alt="Facebook Brisas Gems">
+            <img src="../img/icono-whatsApp.png" alt="Facebook Brisas Gems">
           </a>
           <a href="#" target="_blank" rel="noopener" aria-label="Instagram Brisas Gems">
             <img src="../img/icono instagram.png" alt="Instagram Brisas Gems">
           </a>
           <a href="#" target="_blank" rel="noopener" aria-label="WhatsApp Brisas Gems">
-            <img src="../img/icono-whatsApp.png" alt="WhatsApp Brisas Gems">
+            <img src="../img/icono-facebook.png" alt="WhatsApp Brisas Gems">
           </a>
         </div>
       </div>
   
       <div class="columna-footer">
         <h4>Contacto</h4>
-        <p><i class="icono-footer">✦</i> Av Jiménez #5-43, Emerald Trade Center, Bogotá</p>
-        <p><i class="icono-footer">✦</i> +57 6017654312</p>
-        <p><i class="icono-footer">✦</i> info@brisasgem.com</p>
+        <p><span class="icono-footer">🟢</span> Av Jiménez #5-43, Emerald Trade Center, Bogotá</p>
+        <p><span class="icono-footer">🟢</span> +57 6017654312</p>
+        <p><span class="icono-footer">🟢</span> info@brisasgem.com</p>
       </div>
   
       <div class="columna-footer">
         <h4>Enlaces</h4>
         <nav aria-label="Enlaces rápidos">
           <ul class="enlaces-footer">
-            <li><a href="../index.html"> Inicio</a></li>
+            <li><a href="/index.html"> Inicio</a></li>
             <li><a href="../personalizar.html"> Personalización</a></li>
-            <li><a href="../inspiracion.html"> Portafolio</a></li>
-            <li><a href="../usuario/mis-pedidos.html"> Progreso</a></li>
+            <li><a href="../inspiracion.html"> Inspiración</a></li>
           </ul>
         </nav>
       </div>
@@ -169,7 +147,7 @@
       <p>Desarrollado por SENA CEET - Ficha 2996176 ADSO</p>
     </div>
   </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
   <script src="../js/progreso-de-pedido.js"></script>
 </body>
-</html>
+</html> 
