@@ -1,14 +1,12 @@
 <?php
-// Datos de conexión para XAMPP (localhost)
-$host = 'localhost';
-$usuario = 'root';
-$contrasena = ''; // En XAMPP, normalmente se deja vacío
-$basedatos = 'brisas_gems'; // Asegúrate de que así se llame tu base de datos
+$host = "localhost";
+$user = "root";
+$password = ""; // SIN contraseña
+$database = "brisas_gems";
 
-// Crear conexión
-$conn = new mysqli($host, $usuario, $contrasena, $basedatos);
+$conn = new mysqli($host, $user, $password, $database);
 
-// Verificar conexión
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
+?>
