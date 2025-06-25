@@ -1,360 +1,140 @@
-:root {
-  /* Colores */
-  --color-primario: #0a8048;
-  --color-secundario: #d3fbe2;
-  --color-texto: #303030;
-  --color-borde: #ddd;
-  --color-fondo: #f5f5f5;
-  --color-footer-bg: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
-  --color-blanco: #fff;
-  --color-gris: #666;
-  --color-gris-claro: #888;
-  
-  /* Bordes */
-  --border-radius: 8px;
-  --border: 1px solid var(--color-borde);
-  
-  /* Transiciones */
-  --transition: all 0.3s ease;
-  
-  /* Sombras */
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --shadow-hover: 0 5px 15px rgba(0, 0, 0, 0.1);
-  
-  /* Espaciados */
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
-  
-  /* Tamaños de fuente */
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.9rem;
-  --font-size-md: 1rem;
-  --font-size-lg: 1.1rem;
-  --font-size-xl: 1.8rem;
+/* ==================== HEADER BASE ==================== */
+header.encabezado {
+  position: fixed;               /* Fija el header en la parte superior del viewport */
+  top: 0;                        /* Pega al borde superior */
+  left: 0;                       /* Pega al borde izquierdo */
+  right: 0;                      /* Pega al borde derecho */
+  z-index: 1000;                 /* Superpone sobre otros elementos */
+  backdrop-filter: none;         /* Sin filtro de fondo (hoy no desenfoca) */
+  background-color: var(--color-surface); /* Fondo tomado de la variable global */
+  border-bottom: 1px solid var(--color-primary); /* Borde inferior sutil */
+  box-shadow: var(--shadow);     /* Sombra global definida */
+  padding: var(--space-md) var(--space-xl); /* Espaciado interior: vertical y horizontal */
 }
 
-/* Reset y estilos base */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-color: var(--color-fondo);
-  font-family: 'Times New Roman', Tahoma, Geneva, Verdana, sans-serif;
-  color: var(--color-texto);
-  line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Tipografía */
-h1, h2, h3, h4 {
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-h1 {
-  font-size: 2rem;
-}
-
-h2 {
-  font-size: 1.5rem;
-  color: var(--color-primario);
-}
-
-h3 {
-  font-size: 1.2rem;
-  color: var(--color-primario);
-}
-
-h4 {
-  font-size: var(--font-size-lg);
-}
-/* ==================== HEADER ==================== */
-/* ==================== VARIABLES ROOT ==================== */
-:root {
-  /* Colores */
-  --color-primario: #0a8048;
-  --color-secundario: #d3fbe2;
-  --color-texto: #303030;
-  --color-borde: #ddd;
-  --color-fondo: #f5f5f5;
-  --color-footer-bg: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
-  --color-blanco: #fff;
-  --color-gris: #666;
-  --color-gris-claro: #888;
-
-  /* Bordes */
-  --border-radius: 8px;
-  --border: 1px solid var(--color-borde);
-
-  /* Transiciones */
-  --transition: all 0.3s ease;
-
-  /* Sombras */
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --shadow-hover: 0 5px 15px rgba(0, 0, 0, 0.1);
-
-  /* Espaciados */
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
-
-  /* Tamaños de fuente */
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.9rem;
-  --font-size-md: 1rem;
-  --font-size-lg: 1.1rem;
-  --font-size-xl: 1.8rem;
-}
-
-
-/* ==================== RESET Y BASE ==================== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-color: var(--color-fondo);
-  font-family: 'Times New Roman', Tahoma, Geneva, Verdana, sans-serif;
-  color: var(--color-texto);
-  line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-
-/* ==================== TIPOGRAFÍA ==================== */
-h1, h2, h3, h4 {
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-h1 {
-  font-size: 2rem;
-}
-
-h2, h3 {
-  color: var(--color-primario);
-}
-
-h2 {
-  font-size: 1.5rem;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-h4 {
-  font-size: var(--font-size-lg);
-}
-
-
-/* ==================== HEADER ==================== */
-.header-joyeria {
-  background: var(--color-footer-bg);
-  box-shadow: var(--shadow);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  padding: 0 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
+/* Contenedor centrado dentro del header */
 .contenedor-header {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 80px;
-  flex-wrap: wrap;
+  max-width: 1200px;             /* Ancho máximo del contenedor */
+  margin: 0 auto;                /* Centrado horizontal automático */
+  display: flex;                 /* Flexbox para alinear su contenido */
+  align-items: center;           /* Centrado vertical */
+  justify-content: space-between;/* Distribuye espacio entre hijos */
+  gap: var(--space-xl);          /* Separación entre elementos flex */
 }
 
-.logo-joyeria {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  transition: var(--transition);
+/* ==================== LOGO ==================== */
+.logo {
+  display: flex;                 /* Flex para centrar verticalmente su contenido */
+  align-items: center;           /* Centrado vertical de la imagen */
+}
+.logo img {
+  width: 200px;                  /* Ancho fijo del logo */
+  object-fit: contain;           /* Ajusta la imagen sin deformarla */
+  transition: transform var(--transition-base); /* Transición suave definida globalmente */
+}
+.logo img:hover {
+  transform: scale(1.05);        /* Aumenta ligeramente el tamaño al pasar el ratón */
 }
 
-.logo-img {
-  padding-left: 0px;
-  height: 50px;
-  margin-right: 7px;
-  transition: var(--transition);
+/* ==================== NAVEGACIÓN PRINCIPAL ==================== */
+.nav-principal {
+    display: flex;                        /* Usa Flexbox para alinear los enlaces */
+    gap: var(--space-xxl);               /* Espaciado horizontal entre los enlaces */
+    justify-content: space-evenly;       /* Distribuye el espacio uniformemente */
+    flex-grow: 1;                         /* El nav ocupa todo el espacio posible */
+  }
+.nav-principal a {
+    text-decoration: none;               /* Elimina el subrayado predeterminado */
+    color: var(--color-text);            /* Usa el color de texto definido globalmente */
+    font-size: var(--font-size-lg);      /* Tamaño de texto (por variable) */
+    font-weight: var(--font-weight-normal); /* Peso de fuente estándar */
+    position: relative;                  /* Necesario para posicionar los pseudo-elementos */
+    transition: color var(--transition-base); /* Transición suave del color al pasar el cursor */
+  }
+  
+  .nav-principal a::after,
+  .nav-principal a::before {
+    content: "";                         /* Se crean dos líneas (superior e inferior) */
+    position: absolute;                  /* Posición absoluta dentro del <a> */
+    width: 100%;                         /* Ancho completo del enlace */
+    height: 2px;                         /* Grosor de las líneas */
+    background: linear-gradient(to right, #0b6b10, #15ad3b); /* Degradado en verde esmeralda */
+    transform: scaleX(0);                /* Oculta las líneas inicialmente */
+    transition: transform 0.4s ease-out; /* Transición suave para el efecto */
+    left: 0;                             /* Alineado al borde izquierdo */
+  }
+  
+  /* Línea inferior */
+  .nav-principal a::after {
+    bottom: -5px;                        /* Posición debajo del enlace */
+    transform-origin: right;            /* Se expande de derecha a izquierda */
+  }
+  
+  /* Línea superior */
+  .nav-principal a::before {
+    top: -5px;                           /* Posición arriba del enlace */
+    transform-origin: left;             /* Se expande de izquierda a derecha */
+  }
+  
+/* ======================================
+HOVER: activa las animaciones
+====================================== */
+.nav-principal a:hover {
+    color: var(--color-primary);         /* Cambia el color del texto al pasar el mouse */
+  }
+  
+.nav-principal a:hover::after,
+.nav-principal a:hover::before {
+    transform: scaleX(1);                /* Expande las líneas en ambos sentidos */
+  }
+
+/* Estado activo: restaura hover permanentemente */
+.nav-principal a.active {
+  color: var(--color-primary);            /* mismo color que en hover */
 }
 
-.nombre-joyeria {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--color-primario);
-  position: relative;
-}
-
-.nombre-joyeria::after {
-  content: 'Joyería fina';
-  position: absolute;
-  bottom: -12px;
-  left: 0;
-  font-size: 0.6rem;
-  color: var(--color-gris-claro);
-  font-family: 'Times New Roman', serif;
+.nav-principal a.active::before,
+.nav-principal a.active::after {
+  transform: scaleX(1);                  /* líneas expandidas como en hover */
 }
 
 
-/* ==================== NAVEGACIÓN ==================== */
-.navegacion-principal {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+/* ==================== BOTÓN DE INICIO DE SESIÓN ==================== */
+.boton-login {
+  display: inline-flex;          /* Para alinear texto e imagen horizontalmente */
+  align-items: center;           /* Centra verticalmente */
+  gap: 8px;                     /* Espacio entre imagen y texto */
+  padding: var(--space-xs) var(--space-sm);         /* Espaciado interno vertical y horizontal */
+  background-color: var(--color-surface);           /* Fondo en color primario (verde institucional) */
+  color: var(--color-text);                      /* Color del texto (blanco u otro según variable) */
+  border-radius: var(--radius-lg);                     /* Bordes redondeados definidos por variable */
+  font-size: var(--font-size-lg);                   /* Tamaño de fuente definido por variable */
+  text-decoration: none;                            /* Sin subrayado */
+  transition: background-color var(--transition-base); /* Transición suave al cambiar fondo */
+  border: 2px solid var(--color-primary);
+}
+.boton-login img.icono-login {
+  width: 25px;                   /* Ajusta el tamaño */
+  height: auto;
+  display: block;
 }
 
-.nav-contenedor {
-  display: flex;
-  gap: 10rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.nav-enlace {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: #333;
-  padding: 0.5rem 1rem;
-  position: relative;
-  transition: var(--transition);
-}
-
-.nav-enlace:hover {
-  color: var(--color-primario);
+.boton-login:hover {
+  color: var(--color-primary);
+  background-color: rgba(10, 128, 72, 0.1);
+  color: var(--color-primary);
+  border-color: rgba(10, 128, 72, 0.3);
   transform: translateY(-2px);
 }
-
-.nav-enlace.active {
-  color: var(--color-primario);
-  font-weight: 600;
-}
-
-.nav-contenido {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.nav-texto {
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-.nav-subtexto {
-  font-size: 0.75rem;
-  color: var(--color-gris);
-  margin-top: 0.25rem;
-  transition: var(--transition);
-}
-
-.nav-enlace.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 2px;
-  background-color: var(--color-primario);
-  transition: var(--transition);
-}
-
-
-/* ==================== NAVEGACIÓN ==================== */
-.navegacion-principal {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.nav-contenedor {
-  display: flex;
-  gap: 10rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.nav-enlace {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: #333;
-  padding: 0.5rem 1rem;
-  position: relative;
-  transition: var(--transition);
-}
-
-.nav-enlace:hover {
-  color: var(--color-primario);
-  transform: translateY(-2px);
-}
-
-.nav-enlace.active {
-  color: var(--color-primario);
-  font-weight: 600;
-}
-
-.nav-contenido {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.nav-texto {
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-.nav-subtexto {
-  font-size: 0.75rem;
-  color: var(--color-gris);
-  margin-top: 0.25rem;
-  transition: var(--transition);
-}
-
-.nav-enlace.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 2px;
-  background-color: var(--color-primario);
-  transition: var(--transition);
-}
-
   /* PERSONALIZADOR DE JOYAS */
+
   .container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     max-width: 1200pc;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding-top: 100px;
     gap: 60px;
   }
   
@@ -483,92 +263,77 @@ h4 {
   .button:hover {
     background-color: #333;
   }
-  /* ==================== FOOTER ==================== */
+/* ==================== FOOTER ==================== */
 .footer-joyeria {
-  background: var(--color-footer-bg);
-  padding: 40px 20px 20px;
-  margin-top: 50px;
-  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  background: var(--color-footer-bg, var(--color-surface)); /* Fondo con fallback */
+  padding: var(--space-xl) var(--space-md) var(--space-sm); /* Rellenos: top, laterales, bottom */
+  margin-top: var(--space-xl);      /* Espacio superior grande */
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08); /* Sombra por encima */
+  border-top: 1px solid var(--color-primary); /* Borde superior muy sutil */
 }
-
 .contenedor-footer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 30px;
+  display: grid;                    /* Grid para columnas */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas adaptables */
+  max-width: 1200px;                /* Ancho máximo */
+  margin: 0 auto;                   /* Centrado horizontal */
+  gap: var(--space-xl);             /* Espacio entre columnas */
 }
-
 .columna-footer h4 {
-  color: var(--color-primario);
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  position: relative;
+  color: var(--color-primary);      /* Título en color primario */
+  font-size: 1.1rem;                /* Tamaño ligeramente mayor */
+  font-weight: 600;                 /* Negrita media */
+  margin-bottom: var(--space-md);   /* Espacio inferior mediano */
+  padding-bottom: var(--space-sm);  /* Padding inferior pequeño */
+  position: relative;               /* Para la línea ::after */
 }
-
 .columna-footer h4::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 50px;
-  height: 2px;
-  background-color: var(--color-primario);
+  content: '';                      /* Línea decorativa */
+  position: absolute;               /* Absoluta respecto al h4 */
+  bottom: 0; left: 0;               /* Pegada a la base y al lado izquierdo */
+  width: 50px; height: 2px;         /* Dimensiones de la línea */
+  background-color: var(--color-primary); /* Color primario */
 }
-
 .columna-footer p,
 .columna-footer a {
-  color: var(--color-texto);
-  margin-bottom: 10px;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: var(--transition);
+  color: var(--color-text);         /* Texto en color global */
+  margin-bottom: var(--space-sm);   /* Espacio inferior pequeño */
+  text-decoration: none;            /* Sin subrayado */
+  font-size: 0.9rem;                /* Tamaño de fuente compacto */
+  transition: var(--transition-base); /* Transición global */
 }
-
 .columna-footer a:hover {
-  color: var(--color-primario);
-  padding-left: 5px;
+  color: var(--color-primary);      /* Texto primario al pasar */
+  padding-left: var(--space-xs);    /* Pequeño desplazamiento al texto */
 }
-
 .redes-sociales {
-  display: flex;
-  gap: 15px;
-  margin-top: 20px;
+  display: flex;                    /* Flex para iconos */
+  gap: var(--space-md);             /* Espacio entre iconos */
+  margin-top: var(--space-md);      /* Espacio superior mediano */
 }
-
 .redes-sociales a {
-  display: inline-block;
-  transition: var(--transition);
+  display: inline-block;            /* Inline-block para control de tamaño */
+  transition: var(--transition-base); /* Transición global */
 }
-
 .redes-sociales a:hover {
-  transform: translateY(-3px);
+  transform: translateY(-3px);      /* Eleva el icono */
 }
-
 .redes-sociales img {
-  width: 24px;
-  height: 24px;
-  opacity: 0.7;
-  transition: var(--transition);
+  width: 24px; height: 24px;        /* Tamaño consistente */
+  opacity: 0.7;                     /* Opacidad inicial */
+  transition: var(--transition-base); /* Transición global */
 }
-
 .redes-sociales img:hover {
-  opacity: 1;
+  opacity: 1;                       /* Opacidad completa al pasar */
 }
-
 .derechos-footer {
-  text-align: center;
-  color: var(--color-gris);
-  font-size: 0.8rem;
-  max-width: 1200px;
-  margin: 40px auto 0;
-  padding-top: 20px;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: center;               /* Centrado de texto */
+  color: var(--color-muted);        /* Texto en color atenuado */
+  font-size: 0.8rem;                /* Fuente pequeña */
+  max-width: 1200px;                /* Ancho máximo */
+  margin: var(--space-xl) auto 0;   /* Márgenes superior y centrado */
+  padding-top: var(--space-md);     /* Padding superior mediano */
+  border-top: 1px solid rgba(0, 0, 0, 0.05); /* Línea superior muy sutil */
 }
-
 .derechos-footer p:first-child {
-  margin-bottom: 8px;
+  margin-bottom: var(--space-xs);   /* Espacio inferior extra pequeño */
 }
