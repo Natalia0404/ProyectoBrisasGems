@@ -39,6 +39,8 @@ values
 	('alejandro rojas',       'alejandrorojas@gmail.com', '3001000013','hash-alejandro013',1, 2),
 	('juliana álvarez',       'julianaalvarez@gmail.com', '3001000014','hash-juliana014',  1, 1),
 	('sebastián díaz',        'sebastiandiaz@gmail.com',  '3001000015','hash-sebastian015',1, 2);
+    
+    select * from usuarios;
 
 -- tabla tokens (versión sin tok_id manual)
 insert into tokens (token, tipo, fecha_expiracion, usu_id) values
@@ -234,7 +236,7 @@ values
 	(5, 'finalizado');
 
 -- tabla pedido 
-insert into pedido (ped_id, ped_codigo, ped_fecha_creacion, ped_comentarios, est_id, per_id, usu_id_admin) 
+insert into pedido (ped_id, ped_codigo, ped_fecha_creacion, ped_comentarios, est_id, per_id, usu_id_empleado) 
 values
 	(1,  'p-20250601-001', '2025-06-01', 'pedido de ana',            1,  1,  1),
 	(2,  'p-20250602-002', '2025-06-02', 'pedido de luis',           2,  2,  2),
