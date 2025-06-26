@@ -8,149 +8,64 @@
 <link rel="icon" href="../imagenes/icono.png">
 <title>Actualizar Datos Personales</title>
 <link rel="stylesheet" href="../css/Actualizar-Datos-Personales.css">
-<link rel="stylesheet" href="../assets/css-global/main.css">
+<link rel="stylesheet" href="../css/assets/css-global/main.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Actualizar Datos Personales</h1>
-            <p class="subtitle">Administra tu información personal y preferencias</p>
+    <header class="encabezado">
+        <div class="contenedor-header">
+          <a href="#" class="logo">
+            <img src="../img/logo.png" alt="Logo Brisas Gems">
+          </a>
+      
+          <nav class="nav-principal">
+            <a href="#">Personalización</a>
+            <a href="./mis-pedidos.html">Mis Pedidos</a>
+            <a href="#">Inspiración</a>
+          </nav>
+      
+          <a href="./perfil.html"  class="boton-login active">
+            <img src="../img/icono-perfil.svg" alt="Icono Iniciar Sesión" class="icono-login">My Perfil
+          </a>
+          
         </div>
-        
-        <div id="successAlert" class="alert alert-success">
-            <span class="alert-icon">✓</span>
-            <div class="alert-content">
-                <h3>¡Actualización exitosa!</h3>
-                <p>Tus datos se han actualizado correctamente.</p>
-            </div>
-        </div>
-        
-        <div id="errorAlert" class="alert alert-error">
-            <span class="alert-icon">!</span>
-            <div class="alert-content">
-                <h3>Error al actualizar</h3>
-                <p>Hubo un problema al guardar tus cambios. Por favor, inténtalo de nuevo.</p>
-            </div>
-        </div>
-        
-        <form id="updateForm">
-            <div class="form-grid">
-                <!-- Columna Izquierda -->
-                <div class="form-column">
-                    <!-- Sección Foto de Perfil -->
-                    <div class="form-card">
-                        <h2 class="form-card-title">
-                            <span class="icon">👤</span>
-                            Foto de Perfil
-                        </h2>
-                        <div class="profile-section">
-                            <div class="profile-picture-container">
-                                <img src="placeholder-profile.jpg" alt="Foto de perfil" id="currentProfilePic" class="profile-picture">
-                                <div class="profile-actions">
-                                    <label for="profilePicture" class="btn btn-sm btn-secondary">
-                                        <span class="icon">🖼️</span> Cambiar
-                                    </label>
-                                    <input type="file" id="profilePicture" name="profilePicture" accept="image/*">
-                                    <button type="button" id="removePicture" class="btn-text btn-sm">
-                                        <span class="icon">🗑️</span> Eliminar
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Sección Datos Personales -->
-                    <div class="form-card">
-                        <h2 class="form-card-title">
-                            <span class="icon">📝</span>
-                            Información Personal
-                        </h2>
-                        <div class="form-group">
-                            <label for="nombres">Nombres</label>
-                            <input type="text" id="nombres" name="nombres" placeholder="Ej: María José" required>
-                            <div id="nombresError" class="error-message">Por favor ingresa tus nombres</div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="apellidos">Apellidos</label>
-                            <input type="text" id="apellidos" name="apellidos" placeholder="Ej: García López" required>
-                            <div id="apellidosError" class="error-message">Por favor ingresa tus apellidos</div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="documento">Número de Documento</label>
-                            <input type="text" id="documento" name="documento" placeholder="Ej: 12345678A" required>
-                            <div id="documentoError" class="error-message">Por favor ingresa tu documento</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Columna Derecha -->
-                <div class="form-column">
-                    <!-- Sección Contacto -->
-                    <div class="form-card">
-                        <h2 class="form-card-title">
-                            <span class="icon">📧</span>
-                            Información de Contacto
-                        </h2>
-                        <div class="form-group">
-                            <label for="email">Correo Electrónico</label>
-                            <input type="email" id="email" name="email" placeholder="Ej: tu@email.com" required>
-                            <div id="emailError" class="error-message">Por favor ingresa un correo válido</div>
-                            <div id="emailExistsError" class="error-message">Este correo ya está registrado</div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="telefono">Teléfono</label>
-                            <input type="tel" id="telefono" name="telefono" placeholder="Ej: 3001234567">
-                            <div id="telefonoError" class="error-message">Ingresa un teléfono válido</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Sección Contraseña -->
-                    <div class="form-card">
-                        <h2 class="form-card-title">
-                            <span class="icon">🔒</span>
-                            Seguridad
-                        </h2>
-                        <div class="form-group">
-                            <label for="currentPassword">Contraseña Actual</label>
-                            <input type="password" id="currentPassword" name="currentPassword" placeholder="••••••••">
-                            <div id="currentPasswordError" class="error-message">Contraseña incorrecta</div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="newPassword">Nueva Contraseña</label>
-                            <input type="password" id="newPassword" name="newPassword" placeholder="••••••••">
-                            <div id="passwordError" class="error-message">Mínimo 8 caracteres</div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="confirmPassword">Confirmar Contraseña</label>
-                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="••••••••">
-                            <div id="confirmPasswordError" class="error-message">Las contraseñas no coinciden</div>
-                        </div>
-                        
-                        <div class="password-strength">
-                            <div class="strength-meter">
-                                <div class="strength-bar" id="strengthBar"></div>
-                            </div>
-                            <div class="strength-label" id="strengthLabel">Seguridad: baja</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="form-footer">
-                <button type="button" id="cancelBtn" class="btn btn-outline">
-                    <span class="icon">✖</span> Cancelar
-                </button>
-                <button type="submit" class="btn btn-primary">
-                    <span class="icon">💾</span> Guardar Cambios
-                </button>
-            </div>
-        </form>
-    </div>
-
-    <script src="../js/Actualizar-Datos-Personales.js"></script>
+      </header>
+      <!-- Módulo: Actualizar Datos Personales (Formulario) -->
+<section id="actualizar-datos-personales" aria-labelledby="titulo-actualizar-datos">
+    <!-- Título del módulo -->
+    <h2 id="titulo-actualizar-datos">Actualizar Datos Personales</h2>
+  
+    <!-- Formulario para actualización de datos -->
+    <form id="form-actualizar-datos" action="/usuario/actualizar" method="post" novalidate>
+      <!-- Campo: Nombre completo -->
+      <div class="form-group">
+        <label for="nombre">Nombre Completo</label>
+        <input type="text" id="nombre" name="nombre" required aria-required="true" placeholder="Ingresa tu nombre completo">
+        <span class="error-message" id="error-nombre" aria-live="polite"></span>
+      </div>
+  
+      <!-- Campo: Correo electrónico -->
+      <div class="form-group">
+        <label for="email">Correo Electrónico</label>
+        <input type="email" id="email" name="email" required aria-required="true" placeholder="usuario@ejemplo.com">
+        <span class="error-message" id="error-email" aria-live="polite"></span>
+      </div>
+  
+      <!-- Campo: Número de teléfono -->
+      <div class="form-group">
+        <label for="telefono">Número de Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" pattern="^[0-9]{7,15}$" placeholder="Ej: 3123456789">
+        <span class="error-message" id="error-telefono" aria-live="polite"></span>
+      </div>
+  
+      <!-- Contenedor para mensaje de confirmación -->
+      <div class="confirmation-message" id="mensaje-confirmacion" role="status" aria-live="assertive" hidden>
+        Tus datos han sido actualizados correctamente.
+      </div>
+  
+      <!-- Botón de envío -->
+      <div class="form-actions">
+        <button type="submit">Actualizar</button>
+      </div>
+    </form>
+  </section>
 </body>
