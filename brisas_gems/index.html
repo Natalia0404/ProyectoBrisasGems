@@ -3,18 +3,17 @@
  <head>
   <title>Brisas Gems</title>
   <link rel="icon" href="../imagenes/icono.png"> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./css/assets/css-global/main.css">
   <meta charset="UTF-8">
   <meta name="author" content="Johan Bocanegra">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta name="description" content="Brisas Gems permite personalizar joyas en línea con visualización en tiempo real, catálogo inteligente, seguimiento de pedidos y contacto directo con el equipo de diseño.">
  </head>
  <body>
 
-  <!-- ------ -->
   <!-- HEADER -->
-  <!-- ------ -->
 
   <header class="encabezado">
     <div class="contenedor-header">
@@ -32,50 +31,54 @@
         <img src="../img/icono inicio de sesion.svg" alt="Icono Iniciar Sesión" class="icono-login">
         Iniciar Sesión
       </a>
-      
     </div>
   </header>
 
-   <main class="main-layout">
-     <section class="preview-section">
-       <h2>Anillo nupcial redondo con esmeralda</h2>
-       <img src="../img/index/anillo-mano.jpeg" alt="Anillo con esmeralda">
+ <!-- CARRUSEL DE FOTOS -->
+
+     <section class="carrusel">
+        <div class="slide active" style="background-image: url('./img/index/anillo-1.png');"></div>
+        <div class="slide" style="background-image: url('./img/index/anillo-2.png');"></div>
+        <div class="slide" style="background-image: url('./img/index/anillo-3.png');"></div>
      </section>
- 
+
+ <!-- INFORMACIÓN GENERAL --> 
      <section class="info-section">
        <div class="bienvenida">
          <p><strong>Bienvenido a Brisas Gems</strong></p>
-         <p>El lugar donde tus ideas cobran vida en forma de joyas exclusivas. Diseña paso a paso la pieza que refleje tu esencia y estilo único. Personaliza, crea y luce algo verdaderamente tuyo</p>
+         <p>El lugar donde tus ideas cobran vida en forma de joyas exclusivas. 
+          Diseña paso a paso la pieza que refleje tu esencia y estilo único. 
+          Personaliza, crea y luce algo verdaderamente tuyo</p>
        </div>
-       <div class="redes">
-         <p>Síganos</p>
-         <div class="iconos">
-           <span>📸</span>
-           <span>📘</span>
-           <span>📍</span>
-         </div>
-       </div>
-     </section>
- 
-     <aside class="catalogo">
-       <div class="categoria">
-         <h4>ANILLOS DE MATRIMONIO</h4>
-         <img src="../img/Portafolio/anillo azul grande frente.jpg" alt="matrimonio">
-         <img src="../img/Portafolio/anillo morado frente.jpg" alt="Matrimobio">
-      
-       </div>
-       <div class="categoria">
-         <h4>ANILLOS DE COMPROMISO</h4>
-         <img src="../img/Portafolio/anillo rojo grande frente.jpg">
-         <img src="../img/Portafolio/anillo azul frente.jpg">
-       <div class="categoria">
-         <h4>ANILLOS DE MODA</h4>
-         <img src="../img/Portafolio/anillo sencillo verde frente.jpg" alt="matrimonio">
-         <img src="../img/Portafolio/anillo rojo hipergrande frente.jpg" alt="matrimonio">
-       </div>
-     </aside>
-   </main>
-   <footer class="footer-joyeria">
+
+<section class="d-flex flex-wrap justify-content-center gap-3 p-4"> 
+ <div class="card" style="width: 18rem;">
+  <img src="./img/Portafolio/anillo azul frente.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Super piramide peruana.</p>
+  </div>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <img src="./img/Portafolio/anillo morado frente.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Super museo nacional.</p>
+  </div>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <img src="./img/Portafolio/anillo rojo frente.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Super medellin barrancabermeja.</p>
+  </div>
+</div>
+</section>
+
+
+   <footer class="footer-joyeria text-start">
     <div class="contenedor-footer">
       
       <div class="columna-footer">
@@ -119,5 +122,17 @@
       <p>Desarrollado por SENA CEET - Ficha 2996176 ADSO</p>
     </div>
   </footer>
+   <!-- Script para carrusel simple -->
+    <script>
+        let slides = document.querySelectorAll(".slide");
+        let index = 0;
+
+        setInterval(() => {
+            slides[index].classList.remove("active");
+            index = (index + 1) % slides.length;
+            slides[index].classList.add("active");
+        }, 4000); // Cambia de imagen cada 3 segundos
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
  </body>
  </html>
