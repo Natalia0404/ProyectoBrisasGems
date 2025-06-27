@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Sistema interactivo de Brisas Gems para la personalización de joyas en línea">
   <meta name="author" content="Johan Bocanegra">
-  <link rel="icon" href="/img/icono.png">
+  <link rel="icon" href="../img/icono.png">
   <title>Seguimiento de Pedido | Brisas Gems</title>
 <!-- Estilos globales primero -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 <link rel="stylesheet" href="../css/assets/css-global/main.css">
 <link rel="stylesheet" href="../css/progreso-de-pedido.css">
 </head>
@@ -33,73 +34,132 @@
   </header>
   
 
-  <main class="contenedor-principal">
-    <section class="seccion-pedidos" aria-labelledby="titulo-seguimiento">
-      <h1 class="titulo-principal" id="titulo-seguimiento">SEGUIMIENTO DE PEDIDO</h1>
-      
-      <article class="tarjeta-pedido" data-id-pedido="EMR-12345">
-        <div class="encabezado-pedido">
-          <h2>ANILLO DE COMPROMISO</h2>
-          <a href="../admin/historial-personalizaciones.html" class="boton-lista-pedidos">
-            VER TODOS MIS PEDIDOS
-          </a>
-        </div>
-
-        <div class="galeria-pedido">
-          <img src="../img/progreso-pedido/vista previa 1.jpg" alt="Vista previa del anillo" class="imagen-principal">
-          <div class="miniaturas" role="group" aria-label="Miniaturas del producto">
-            <img src="../img/progreso-pedido/vista previa 1.jpg" alt="Vista frontal">
-            <img src="../img/progreso-pedido/vista previa 2.jpg" alt="Vista lateral">
-            <img src="../img/progreso-pedido/vista-previa 3.jpg" alt="Detalle">
-          </div>
-        </div>
-
-        <div class="estado-progreso">
-          <p class="porcentaje-progreso"><strong>75% completado</strong></p>
-          <div class="barra-progreso" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-            <div class="relleno-progreso" style="width: 75%"></div>
-          </div>
-          <ul class="etapas-progreso">
-            <li class="etapa-completada">Confirmado</li>
-            <li class="etapa-completada">Diseño</li>
-            <li class="etapa-activa">Producción</li>
-            <li class="etapa-pendiente">Finalizado</li>
-          </ul>
-        </div>
-      </article>
-    </section>
-
-    <aside class="detalles-pedido" aria-labelledby="titulo-detalle">
-      <h3 class="detalle-producto" id="titulo-detalle">DETALLE DEL PRODUCTO</h3>
-      <ul class="lista-detalles">
-        <li><strong>Número de pedido:</strong> #EMR-12345</li>
-        <li><strong>Estado:</strong> <span class="estado-destacado">En producción</span></li>
-        <li><strong>Piedra:</strong> Esmeralda colombiana</li>
-        <li><strong>Material:</strong> Oro blanco 18k</li>
-        <li><strong>Talla:</strong> 6.5</li>
-        <li><strong>Precio total:</strong> $2.500.000</li>
-        <li><strong>Anticipo:</strong> $1.000.000</li>
-        <li><strong>Saldo pendiente:</strong> $1.500.000</li>
-        <li><strong>Fecha estimada:</strong> 20/04/2025</li>
-      </ul>
-      
-      <div class="notificaciones">
-        <label for="recibir-notificaciones">
-          <input type="checkbox" id="recibir-notificaciones" checked>
-          Recibir notificaciones por email
-        </label>
-        <button class="boton-problema">NOTIFICAR PROBLEMA</button>
+  <main class="container py-5 seguimiento-pedidos" id="seguimiento-pedidos">
+    <!-- Título del módulo -->
+    <h2 class="mb-4">Seguimiento de Pedidos</h2>
+  
+    <!-- RF-016: Lista de pedidos -->
+    <section>
+      <div class="table-responsive">
+        <table class="table table-hover align-middle">
+          <thead class="table-light">
+            <tr>
+              <th scope="col">Código</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Progreso</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Ejemplo de fila (se debe poblar dinámicamente desde backend) -->
+            <tr>
+              <td>BRG-0001</td>
+              <td>2025-06-20</td>
+              <td>En producción</td>
+              <td>
+                <!-- RF-017: Barra de progreso -->
+                <div class="progress" style="height: 1rem;">
+                  <div class="progress-bar" role="progressbar" style="width: 50%;" 
+                       aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                    50%
+                  </div>
+                </div>
+              </td>
+              <td>
+                <!-- Botones para ver detalle, render e imagen final -->
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#detallesPedidoModal" title="Ver detalles">
+                  <i class="bi bi-list"></i>
+                </button>
+                <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#render3DModal" title="Ver diseño 3D">
+                  <i class="bi bi-image"></i>
+                </button>
+                <button class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#imagenFinalModal" title="Ver imagen final">
+                  <i class="bi bi-camera"></i>
+                </button>
+              </td>
+            </tr>
+            <!-- /fila de ejemplo -->
+          </tbody>
+        </table>
       </div>
-    </aside>
-  </main>
-
-  <div class="modal-notificacion" id="modalNotificacion" hidden>
-    <div class="contenido-modal">
-      <button class="cerrar-modal" aria-label="Cerrar modal">&times;</button>
-      <h3>¡Actualización de pedido!</h3>
-      <p id="mensaje-notificacion">Tu pedido ha avanzado a la etapa de producción.</p>
+    </section>
+  
+    <!-- Modal RF-018: Detalles del pedido -->
+    <div class="modal fade" id="detallesPedidoModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title w-100 text-center">Detalles del Pedido BRG-0001</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Listado de opciones de personalización -->
+            <ul class="list-group">
+              <!-- Ejemplo dinámico -->
+              <li class="list-group-item">
+                <strong>Gema:</strong> Rubí
+              </li>
+              <li class="list-group-item">
+                <strong>Forma:</strong> Redonda
+              </li>
+              <li class="list-group-item">
+                <strong>Metal:</strong> Oro Blanco
+              </li>
+              <!-- /ejemplo -->
+            </ul>
+            <!-- Comentarios del pedido -->
+            <div class="mt-3">
+              <h6>Comentarios:</h6>
+              <p>Por favor incluir el estuche de terciopelo rojo.</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  
+    <!-- Modal RF-019: Render 3D -->
+    <div class="modal fade" id="render3DModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title w-100 text-center">Diseño Renderizado</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body text-center">
+            <!-- Incluir la imagen 3D desde render_3d.ren_imagen -->
+            <model-viewer src="../img/progreso-pedido/metaretail-anillo-simple/anillo.glb" alt="Render-3d" auto-rotate camera-controls ar style="width: 100%; height: 350px;"></model-viewer>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Modal RF-020: Imagen final -->
+    <div class="modal fade" id="imagenFinalModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title w-100 text-center">Imagen Final del Producto</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body text-center">
+            <!-- Incluir la imagen final desde foto_producto_final.fot_imagen_final -->
+            <img src="../img/progreso-pedido/vista previa 1.jpg" alt="Foto final del producto" class="img-fluid rounded">
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
 
   <footer class="footer-joyeria">
     <div class="contenedor-footer">
@@ -146,6 +206,6 @@
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-  <script src="../js/progreso-de-pedido.js"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </body>
 </html> 
