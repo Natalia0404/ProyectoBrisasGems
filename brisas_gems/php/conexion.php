@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $user = "root";
-$password = ""; // SIN contraseña
+$password = "5964"; // SIN contraseña
 $database = "brisas_gems";
 
 $conn = new mysqli($host, $user, $password, $database);
