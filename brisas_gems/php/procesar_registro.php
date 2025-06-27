@@ -2,7 +2,7 @@
 // procesar_registro.php
 
 require_once 'conexion.php'; // Conexión a la base de datos
-require_once '../funciones/token_generator.php'; // Generador de tokens (puedes usar bin2hex directamente)
+// require_once '../funciones/token_generator.php'; // Generador de tokens (puedes usar bin2hex directamente)
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // 1. Capturar datos del formulario
