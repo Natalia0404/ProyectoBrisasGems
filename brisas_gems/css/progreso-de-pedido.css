@@ -16,7 +16,8 @@ header.encabezado {
 .contenedor-header {
   max-width: 1200px;             /* Ancho máximo del contenedor */
   margin: 0 auto;                /* Centrado horizontal automático */
-  display: flex;                 /* Flexbox para alinear su contenido */
+  display: flex;    
+  flex-wrap: wrap;             /* Flexbox para alinear su contenido */
   align-items: center;           /* Centrado vertical */
   justify-content: space-between;/* Distribuye espacio entre hijos */
   gap: var(--space-xl);          /* Separación entre elementos flex */
@@ -124,281 +125,58 @@ HOVER: activa las animaciones
 .nav-principal a.active::before,
 .nav-principal a.active::after {
   transform: scaleX(1);                  /* líneas expandidas como en hover */
+
+}
+/* ============================= */
+/* Estilos específicos de Seguimiento de Pedidos */
+/* ============================= */
+#seguimiento-pedidos h2 {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--color-primary);
 }
 
-/* ==================== CONTENIDO PRINCIPAL ==================== */
-.lista-detalles {
-  max-width: 250px;     /* o el ancho que necesites */
-  margin: 0 auto;       /* centra la lista dentro del aside */
-  padding: 0;           /* asegúrate de resetear padding si lo hay */
-}
-.contenedor-principal {
-  display: grid;                  /* Grid para organizar columnas */
-  grid-template-columns: 2fr 1fr; /* Dos columnas (2/3 y 1/3 de ancho) */
-  gap: var(--space-lg);           /* Espacio entre columnas */
-  max-width: 1200px;              /* Ancho máximo */
-  margin: var(--space-lg) auto;   /* Márgenes superior/inferior y centrado */
-  padding-top: 120px;             /* Espacio superior para el header fijo */
-}
-.titulo-principal {
-  color: var(--color-primary);    /* Texto en color primario */
-  text-align: center;             /* Centrado de texto */
-  padding-bottom: var(--space-lg);/* Espacio inferior */
-  font-size: var(--font-size-xl); /* Tamaño de fuente extra grande */
+/* Ajuste de altura de botones en tabla */
+#seguimiento-pedidos .table .btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.4rem;
 }
 
-/* ==================== TARJETA Y DETALLES DE PEDIDO ==================== */
-.tarjeta-pedido,
-.detalles-pedido {
-  background: var(--color-surface); /* Fondo de superficie */
-  border-radius: var(--radius);     /* Bordes redondeados */
-  padding: var(--space-xl);         /* Relleno interior amplio */
-  box-shadow: var(--shadow);        /* Sombra global */
-  transition: var(--transition-base); /* Transición general */
-  border: 2px solid var(--color-primary);
-}
-.tarjeta-pedido:hover,
-.detalles-pedido:hover {
-  box-shadow: var(--shadow-lg);     /* Sombra más intensa al pasar */
-}
-.encabezado-pedido {
-  display: flex;                    /* Flex para alinear contenido */
-  justify-content: space-between;   /* Separar extremos */
-  align-items: center;              /* Centrar vertical */
-  margin-bottom: var(--space-md);   /* Espacio inferior mediano */
-}
-.galeria-pedido {
-  margin-bottom: var(--space-lg);   /* Espacio inferior grande */
-}
-.imagen-principal {
-  width: 100%;                      /* Ancho completo del contenedor */
-  max-width: 300px;                 /* Máximo 300px */
-  height: auto;                     /* Alto automático para mantener proporción */
-  margin: 0 auto var(--space-md);   /* Centrado horizontal y espacio inferior */
-  padding: var(--space-xs);         /* Relleno pequeño */
-  border-radius: var(--radius);     /* Bordes redondeados */
-  background-color: var(--color-surface); /* Fondo de superficie */
-  border: 2px solid var(--color-border); /* Borde definido globalmente */
-  display: block;                   /* Bloque para respetar margen auto */
-  transition: var(--transition-base); /* Transición global */
-}
-.imagen-principal:hover {
-  border-color: var(--color-primary); /* Borde primario al pasar */
-  transform: scale(1.3);           /* Ampliar imagen pricipal */
-}
-.miniaturas {
-  display: flex;                    /* Flex para miniaturas */
-  justify-content: center;          /* Centrar horizontal */
-  gap: var(--space-xl);             /* Espacio entre miniaturas */
-}
-.miniaturas img {
-  width: 80px; height: 80px;        /* Tamaño fijo de miniatura */
-  border-radius: var(--radius-sm);  /* Bordes ligeramente redondeados */
-  border: 2px solid var(--color-border); /* Borde sutil */
-  cursor: pointer;                  /* Cursor puntero para click */
-  transition: var(--transition-base); /* Transición global */
-}
-.miniaturas img:hover {
-  border-color: var(--color-primary); /* Borde primario al pasar */
-  transform: scale(1.05);           /* Ampliar miniatura */
+/* Iconos centrados */
+#seguimiento-pedidos .btn i {
+  font-size: 1.1rem;
 }
 
-/* ==================== PROGRESO DE PEDIDO ==================== */
-.estado-progreso {
-  margin: var(--space-md) 0;        /* Márgenes verticales mediano */
-}
-.porcentaje-progreso {
-  font-weight: 600;                 /* Negrita media */
-  color: var(--color-primary);      /* Color primario */
-  text-align: center;               /* Centrado de texto */
-  margin-bottom: var(--space-sm);   /* Espacio inferior pequeño */
-}
-.barra-progreso {
-  background-color: #e0e0e0;        /* Gris claro local */
-  height: 10px;                     /* Alto fijo */
-  border-radius: 5px;               /* Esquinas redondeadas */
-  margin: var(--space-sm) 0;        /* Margen vertical pequeño */
-  overflow: hidden;                 /* Oculta exceso del relleno */
-}
-.relleno-progreso {
-  background-color: var(--color-primary); /* Fondo primario */
-  height: 100%;                     /* Ocupa toda la altura */
-  border-radius: 5px;               /* Esquinas redondeadas */
-  transition: width 0.5s ease;      /* Transición suave de ancho */
-}
-.etapas-progreso {
-  display: flex;                    /* Flex para etapas */
-  justify-content: space-between;   /* Separar etapas */
-  list-style: none;                 /* Sin viñetas */
-  margin-top: var(--space-lg);      /* Espacio superior grande */
-  padding: 0;                       /* Sin padding */
-  position: relative;               /* Para línea de fondo */
-}
-.etapas-progreso::before {
-  content: '';                      /* Línea base */
-  position: absolute;               /* Absoluta dentro del contenedor */
-  top: 15px; left: 0; right: 0;     /* Posición horizontal completa */
-  height: 2px;                      /* Alto de la línea */
-  background-color: #e0e0e0;        /* Gris claro */
-  z-index: 1;                       /* Por debajo de los puntos */
-}
-.etapas-progreso li {
-  flex: 1;                          /* Cada etapa ocupa igual espacio */
-  position: relative;               /* Para el punto */
-  padding-top: 25px;                /* Espacio superior para el punto */
-  text-align: center;               /* Centrado del texto */
-  z-index: 2;                       /* Por encima de la línea */
-}
-.etapas-progreso li::before {
-  content: '';                      /* Punto de etapa */
-  width: 15px; height: 15px;        /* Tamaño del punto */
-  border-radius: 50%;               /* Circular */
-  background: #e0e0e0;              /* Fondo gris claro */
-  border: 3px solid var(--color-surface); /* Borde del color de superficie */
-  position: absolute;               /* Posición dentro del li */
-  top: 0; left: 50%;                /* Centrado horizontal */
-  transform: translateX(-50%);      /* Alinear el centro */
-}
-.etapa-completada {
-  color: var(--color-primary);      /* Texto en color primario */
-}
-.etapa-completada::before {
-  background: var(--color-primary); /* Punto en color primario */
-}
-.etapa-activa {
-  font-weight: bold;                /* Negrita para la etapa activa */
+/* Modales: sección de imagen */
+#seguimiento-pedidos .modal-body img {
+  max-height: 60vh;
+  object-fit: contain;
 }
 
-/* ==================== DETALLES ADICIONALES DE PEDIDO ==================== */
-.detalles-pedido {
-  margin-top: 62px;                 /* Espacio superior fijo */
-  position: sticky;                 /* Se adhiere al scroll */
-  top: 100px;                       /* Se pega 100px debajo del top */
+#seguimiento-pedidos {
+  margin-bottom: 3rem; /* O ajusta según el espaciado que quieras */
 }
-.detalle-producto {
-  color: var(--color-primary);      /* Texto primario */
-  font-size: 1.3rem;                /* Tamaño de fuente 1.3rem */
-  text-align: center;               /* Centrado de texto */
-  margin-bottom: var(--space-md);   /* Espacio inferior mediano */
-}
-.lista-detalles {
-  list-style: none;                 /* Sin viñetas */
-  margin-top: var(--space-lg);      /* Espacio superior grande */
-}
-.lista-detalles li {
-  display: flex;                    /* Flex para alinear datos */
-  justify-content: space-between;   /* Separar nombre y valor */
-  margin-bottom: var(--space-sm);   /* Espacio inferior pequeño */
-  padding-bottom: var(--space-sm);  /* Relleno inferior pequeño */
-  border-bottom: 1px dashed var(--color-border); /* Línea punteada */
-}
-.lista-detalles strong {
-  font-weight: 600;                 /* Negrita media */
-}
-.estado-destacado {
-  color: var(--color-primary);      /* Texto primario */
-  font-weight: bold;                /* Negrita */
+.seguimiento-pedidos {
+  margin-top: 8rem; /* O ajusta según el espaciado que quieras */
 }
 
-/* ==================== BOTONES ==================== */
-.boton-lista-pedidos,
-.boton-problema {
-  background: transparent;          /* Fondo transparente */
-  border: 2px solid var(--color-primary); /* Borde primario */
-  color: var(--color-text);         /* Texto en color de texto global */
-  padding: var(--space-xs) var(--space-sm); /* Espacio interior */
-  border-radius: var(--radius);     /* Bordes redondeados */
-  text-decoration: none;            /* Sin subrayado */
-  font-size: 0.9rem;                /* Tamaño de fuente 0.9rem */
-  cursor: pointer;                  /* Cursor pointer */
-  display: inline-block;            /* Inline-block para margen */
-  transition: var(--transition-base); /* Transición global */
-}
-.boton-lista-pedidos {
-  margin-top: var(--space-xs);      /* Espacio superior pequeño */
-}
-.boton-problema {
-  margin-top: var(--space-lg);      /* Espacio superior grande */
-  width: 100%;                      /* Ocupa todo el ancho */
-}
-.boton-lista-pedidos:hover,
-.boton-problema:hover {
-  background-color: rgba(10, 128, 72, 0.1); /* Fondo semitransparente */
-  color: var(--color-primary);      /* Texto primario */
-  border-color: rgba(10, 128, 72, 0.3); /* Borde semitransparente */
-  transform: translateY(-2px);      /* Eleva el botón */
+div h5{
+  color: var(--color-primary);
 }
 
-/* ==================== NOTIFICACIONES Y MODAL ==================== */
-.notificaciones {
-  margin-top: var(--space-lg);      /* Espacio superior grande */
+.img-fluid{
+  width: 100%;
+  height: 300px;
+
 }
-.notificaciones label {
-  display: flex;                    /* Flex para icono y texto */
-  align-items: center;              /* Centrar vertical */
-  gap: var(--space-xs);             /* Separación entre icono y texto */
-  cursor: pointer;                  /* Cursor de puntero */
-  transition: var(--transition-base); /* Transición global */
-}
-.notificaciones label:hover {
-  color: var(--color-primary);      /* Texto primario al pasar */
-}
-.modal-notificacion {
-  display: none;                    /* Oculto por defecto */
-  position: fixed;                  /* Fijo en pantalla */
-  top: 0; left: 0;                  /* Pegado al viewport */
-  width: 100%; height: 100%;        /* Cubre toda la pantalla */
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
-  z-index: 2000;                    /* Superpone todo */
-  justify-content: center;          /* Centrar contenido horizontal */
-  align-items: center;              /* Centrar contenido vertical */
-}
-.contenido-modal {
-  background: var(--color-surface); /* Fondo de superficie */
-  padding: var(--space-xl);         /* Relleno interior grande */
-  border-radius: var(--radius);     /* Bordes redondeados */
-  max-width: 500px;                 /* Ancho máximo */
-  width: 90%;                       /* 90% del viewport */
-  box-shadow: var(--shadow);        /* Sombra global */
-  position: relative;               /* Para cerrar botón */
-  animation: modalFadeIn 0.3s ease-out; /* Animación de entrada */
-}
-@keyframes modalFadeIn {
-  from {
-    opacity: 0;                     /* Invisible al inicio */
-    transform: translateY(-20px);   /* Desplazado hacia arriba */
-  }
-  to {
-    opacity: 1;                     /* Visible al final */
-    transform: translateY(0);       /* En posición original */
-  }
-}
-.contenido-modal h3 {
-  color: var(--color-primary);      /* Título en color primario */
-  margin-bottom: var(--space-md);   /* Espacio inferior mediano */
-  text-align: center;               /* Centrado de texto */
-}
-.cerrar-modal {
-  position: absolute;               /* Posicionado dentro del modal */
-  top: var(--space-md);             /* Separado del top */
-  right: var(--space-lg);           /* Separado del lado derecho */
-  font-size: 24px;                  /* Tamaño grande para ícono */
-  cursor: pointer;                  /* Cursor de puntero */
-  color: #777;                      /* Color gris */
-  transition: var(--transition-base); /* Transición global */
-  background: none;                 /* Fondo transparente */
-  border: none;                     /* Sin borde */
-}
-.cerrar-modal:hover {
-  color: var(--color-primary);      /* Color primario al pasar */
-  transform: rotate(90deg);         /* Rota el ícono al pasar */
-}
+
 
 /* ==================== FOOTER ==================== */
 .footer-joyeria {
   background: var(--color-footer-bg, var(--color-surface)); /* Fondo con fallback */
   padding: var(--space-xl) var(--space-md) var(--space-sm); /* Rellenos: top, laterales, bottom */
-  margin-top: var(--space-xl);      /* Espacio superior grande */
+  margin-top: var(--space-xxl);      /* Espacio superior grande */
   box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08); /* Sombra por encima */
   border-top: 1px solid var(--color-primary); /* Borde superior muy sutil */
 }
