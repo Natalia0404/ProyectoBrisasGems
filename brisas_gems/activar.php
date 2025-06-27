@@ -1,6 +1,6 @@
 <?php
 // activar.php
-require_once 'conexion.php';
+require_once 'php/conexion.php';
 
 if (isset($_GET['token'])) {
   $token = $_GET['token'];
