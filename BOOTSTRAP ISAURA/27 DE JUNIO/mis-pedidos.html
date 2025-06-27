@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sistema interactivo de Brisas Gems para la personalización de joyas en línea">
+  <meta name="author" content="Johan Bocanegra">
+  <link rel="icon" href="../img/icono.png">
+  <title>Seguimiento de Pedido | Brisas Gems</title>
+<!-- Estilos globales primero -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/assets/css-global/main.css">
+<link rel="stylesheet" href="./css/mis-pedidos.html">
+</head>
+
+<body>
+  <header class="encabezado">
+    <div class="contenedor-header">
+      <a href="#" class="logo">
+        <img src="../img/logo.png" alt="Logo Brisas Gems">
+      </a>
+  
+      <nav class="nav-principal">
+        <a href="#">Personalización</a>
+        <a href="#" class="active" aria-current="page">Mis Pedidos</a>
+        <a href="#">Inspiración</a>
+      </nav>
+  
+      <a href="./perfil.html" class="boton-login">
+        <img src="../img/icono-perfil.svg" alt="Icono Iniciar Sesión" class="icono-login">My Perfil
+      </a>
+      
+    </div>
+  </header>
+  
+
+  <main class="container py-5 seguimiento-pedidos" id="seguimiento-pedidos">
+    <!-- Título del módulo -->
+    <h2 class="mb-4">Seguimiento de Pedidos</h2>
+  
+    <!-- RF-016: Lista de pedidos -->
+    <section>
+      <div class="table-responsive">
+        <table class="table table-hover align-middle">
+          <thead class="table-light">
+            <tr>
+              <th scope="col">Código</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Progreso</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Ejemplo de fila (se debe poblar dinámicamente desde backend) -->
+            <tr>
+              <td>BRG-0001</td>
+              <td>2025-06-20</td>
+              <td>En producción</td>
+              <td>
+                <!-- RF-017: Barra de progreso -->
+                <div class="progress" style="height: 1rem;">
+                  <div class="progress-bar" role="progressbar" style="width: 50%;" 
+                       aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                    50%
+                  </div>
+                </div>
+              </td>
+              <td>
+                <!-- Botones para ver detalle, render e imagen final -->
+                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#detallesPedidoModal" title="Ver detalles">
+                  <i class="bi bi-list"></i>
+                </button>
+                <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#render3DModal" title="Ver diseño 3D">
+                  <i class="bi bi-image"></i>
+                </button>
+                <button class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#imagenFinalModal" title="Ver imagen final">
+                  <i class="bi bi-camera"></i>
+                </button>
+              </td>
+            </tr>
+            <!-- /fila de ejemplo -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  
+    <!-- Modal RF-018: Detalles del pedido -->
+    <div class="modal fade" id="detallesPedidoModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title w-100 text-center">Detalles del Pedido BRG-0001</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Listado de opciones de personalización -->
+            <ul class="list-group">
+              <!-- Ejemplo dinámico -->
+              <li class="list-group-item">
+                <strong>Gema:</strong> Rubí
+              </li>
+              <li class="list-group-item">
+                <strong>Forma:</strong> Redonda
+              </li>
+              <li class="list-group-item">
+                <strong>Metal:</strong> Oro Blanco
+              </li>
+              <!-- /ejemplo -->
+            </ul>
+            <!-- Comentarios del pedido -->
+            <div class="mt-3">
+              <h6>Comentarios:</h6>
+              <p>Por favor incluir el estuche de terciopelo rojo.</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Modal RF-019: Render 3D -->
+    <div class="modal fade" id="render3DModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title w-100 text-center">Diseño Renderizado</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body text-center">
+            <!-- Incluir la imagen 3D desde render_3d.ren_imagen -->
+            <model-viewer src="../img/progreso-pedido/metaretail-anillo-simple/anillo.glb" alt="Render-3d" auto-rotate camera-controls ar style="width: 100%; height: 350px;"></model-viewer>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Modal RF-020: Imagen final -->
+    <div class="modal fade" id="imagenFinalModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title w-100 text-center">Imagen Final del Producto</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body text-center">
+            <!-- Incluir la imagen final desde foto_producto_final.fot_imagen_final -->
+            <img src="../img/progreso-pedido/vista previa 1.jpg" alt="Foto final del producto" class="img-fluid rounded">
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+
+  <footer class="footer-joyeria">
+    <div class="contenedor-footer">
+      
+      <div class="columna-footer">
+        <h4>Brisas Gems</h4>
+        <p>🟢 Joyería fina y personalizada con los más altos estándares de calidad.</p>
+        <div class="redes-sociales">
+          <a href="#" target="_blank" rel="noopener" aria-label="Facebook Brisas Gems">
+            <img src="../img/icono-whatsApp.png" alt="Facebook Brisas Gems">
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="Instagram Brisas Gems">
+            <img src="../img/icono instagram.png" alt="Instagram Brisas Gems">
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="WhatsApp Brisas Gems">
+            <img src="../img/icono-facebook.png" alt="WhatsApp Brisas Gems">
+          </a>
+        </div>
+      </div>
+  
+      <div class="columna-footer">
+        <h4>Contacto</h4>
+        <p><span class="icono-footer">🟢</span> Av Jiménez #5-43, Emerald Trade Center, Bogotá</p>
+        <p><span class="icono-footer">🟢</span> +57 6017654312</p>
+        <p><span class="icono-footer">🟢</span> info@brisasgem.com</p>
+      </div>
+  
+      <div class="columna-footer">
+        <h4>Enlaces</h4>
+        <nav aria-label="Enlaces rápidos">
+          <ul class="enlaces-footer">
+            <li><a href="../index.html"> Inicio</a></li>
+            <li><a href="../personalizar.html"> Personalización</a></li>
+            <li><a href="../inspiracion.html"> Inspiración</a></li>
+          </ul>
+        </nav>
+      </div>
+  
+    </div>
+  
+    <div class="derechos-footer">
+      <p>© 2025 Brisas Gems - Todos los derechos reservados</p>
+      <p>Desarrollado por SENA CEET - Ficha 2996176 ADSO</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</body>
+</html> 
