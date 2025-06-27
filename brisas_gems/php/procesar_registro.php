@@ -2,7 +2,6 @@
 // procesar_registro.php
 
 require_once 'conexion.php'; // Conexión a la base de datos
-// require_once '../funciones/token_generator.php'; // Generador de tokens (puedes usar bin2hex directamente)
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // 1. Capturar datos del formulario
@@ -24,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "<script>alert('Este correo ya está registrado.'); window.history.back();</script>";
     exit;
   }
+  $stmt->close();
 
   // 3. Insertar usuario como inactivo
   $stmt = $conn->prepare("INSERT INTO usuarios 
@@ -38,29 +38,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $token = bin2hex(random_bytes(32));
     $fecha_exp = date('Y-m-d H:i:s', strtotime('+1 day'));
 
-    // 5. Guardar el token en la tabla 'tokens'
+    // 5. Guardar el token
     $stmt_token = $conn->prepare("INSERT INTO tokens (token, tipo, fecha_expiracion, usu_id) VALUES (?, 'activacion', ?, ?)");
     $stmt_token->bind_param("ssi", $token, $fecha_exp, $usu_id);
-    $stmt_token->execute();
 
-    // 6. Simulación de envío de correo con enlace de activación
-    $enlace = "http://localhost/activar.php?token=" . $token;
-    echo "<script>alert('Registro exitoso. Revisa tu correo para activar la cuenta.');
-    window.location.href='../login.html';</script>";
+    if ($stmt_token->execute()) {
+      $enlace = "http://localhost/brisas_gems/activar.php?token=$token";
 
-    // En producción: usar una función como mail() o PHPMailer para enviar el $enlace
-    // mail($correo, "Activa tu cuenta", "Haz clic aquí para activar: $enlace");
+      // ✅ Mostrar el enlace en pantalla para pruebas
+      echo "<h3>✅ Registro exitoso</h3>";
+      echo "<p>Simulación de envío de correo:</p>";
+      echo "<p><strong>Enlace de activación:</strong> <a href='$enlace'>$enlace</a></p>";
+      echo "<p><a href='../login.html'>Ir al login</a></p>";
+    } else {
+      echo "<pre>❌ Error al guardar el token: " . $stmt_token->error . "</pre>";
+    }
 
+    $stmt_token->close();
   } else {
-    echo "<pre>Error al registrar el usuario: " . $stmt->error . "</pre>";
-    exit;
+    echo "<pre>❌ Error al registrar el usuario: " . $stmt->error . "</pre>";
   }
 
   $stmt->close();
   $conn->close();
 
 } else {
-  // Si no se accede por POST, redireccionar
   header("Location: registro.html");
   exit;
 }
