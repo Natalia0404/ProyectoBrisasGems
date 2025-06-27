@@ -1,8 +1,8 @@
 <?php
 // procesar_registro.php
 
-require_once '../conexion.php'; // Conexión a la base de datos
-require_once '../funciones/token_generator.php'; // Generador de tokens (puedes usar bin2hex directamente)
+require_once 'conexion.php'; // Conexión a la base de datos
+// require_once '../funciones/token_generator.php'; // Generador de tokens (puedes usar bin2hex directamente)
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // 1. Capturar datos del formulario
@@ -46,13 +46,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // 6. Simulación de envío de correo con enlace de activación
     $enlace = "http://localhost/activar.php?token=" . $token;
     echo "<script>alert('Registro exitoso. Revisa tu correo para activar la cuenta.');
-    window.location.href='login.html';</script>";
+    window.location.href='../login.html';</script>";
 
     // En producción: usar una función como mail() o PHPMailer para enviar el $enlace
     // mail($correo, "Activa tu cuenta", "Haz clic aquí para activar: $enlace");
 
   } else {
-    echo "<script>alert('Error al registrar el usuario.'); window.history.back();</script>";
+    echo "<pre>Error al registrar el usuario: " . $stmt->error . "</pre>";
+    exit;
   }
 
   $stmt->close();

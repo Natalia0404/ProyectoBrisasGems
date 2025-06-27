@@ -116,6 +116,15 @@ HOVER: activa las animaciones
   border-color: rgba(10, 128, 72, 0.3);
   transform: translateY(-2px);
 }
+/* Estado activo: restaura hover permanentemente */
+.nav-principal a.active {
+  color: var(--color-primary);            /* mismo color que en hover */
+}
+
+.nav-principal a.active::before,
+.nav-principal a.active::after {
+  transform: scaleX(1);                  /* líneas expandidas como en hover */
+}
 
 /* ==================== CONTENIDO PRINCIPAL ==================== */
 .lista-detalles {
