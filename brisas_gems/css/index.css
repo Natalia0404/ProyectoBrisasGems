@@ -18,7 +18,8 @@ header.encabezado {
 .contenedor-header {
   max-width: 1200px;             /* Ancho máximo del contenedor */
   margin: 0 auto;                /* Centrado horizontal automático */
-  display: flex;                 /* Flexbox para alinear su contenido */
+  display: flex;
+  flex-wrap: wrap;                 /* Flexbox para alinear su contenido */
   align-items: center;           /* Centrado vertical */
   justify-content: space-between;/* Distribuye espacio entre hijos */
   gap: var(--space-xl);          /* Separación entre elementos flex */
@@ -119,6 +120,7 @@ HOVER: activa las animaciones
   transform: translateY(-2px);
 }
 
+/* Especificaciones generales para el html y body */
 html, body {
     height: 100%;
     margin: 0;
@@ -131,7 +133,8 @@ html, body {
 body >*:not(footer) {
     flex: 1 0 auto;
 }
-  
+ 
+/* ==================== CARRUSEL ==================== */
 .carrusel {
     width: 100%;
     height: 80vh;
@@ -161,21 +164,44 @@ body >*:not(footer) {
     z-index: 1;
 }
 
-/* Sección de bienvenida */
+/* ==================== CONTENIDO PRINCIPAL BIENVENIDA ==================== */
 .info-section {
     width: 100%;
-    padding: 40px 5%;
+    padding: 0;
     background: #f9f9f9;
     text-align: center;
     margin-bottom: 50px;
 }
 
-.bienvenida p {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
+.bienvenida h2 {
+    font-size: var(--font-size-xxl);
+    font-weight: var(--font-weight-bold);
+    margin-top: 50px;
 }
 
+.bienvenida p {
+    padding-top: 50px;
+    font-size: var(--font-size-lg);
+    margin-bottom: 6px;
+}
 
+/* ==================== CONTENIDO SECUNDARIO CONTEXTO ==================== */
+.info-complement {
+    width: 35%;
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin-left: 50px;
+}
+.contexto {
+  margin-left: 15px;
+  padding-left: 35px;
+}
+.contexto p {
+    text-align:left ; 
+    font-size: var(--font-size-lg);          /* Espacio entre párrafos */
+}
 
 /* ==================== FOOTER ==================== */
 
