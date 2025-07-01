@@ -1,71 +1,189 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Sistema interactivo de Brisas Gems para la personalización de joyas en línea. Permite al usuario diseñar piezas únicas con visualización en tiempo real, acceder a un catálogo con recomendaciones personalizadas, hacer seguimiento del estado del pedido y comunicarse eficientemente con el equipo de diseño, mejorando la experiencia del cliente y reduciendo tiempos de respuesta">
-<meta name="author" content="Johan Bocanegra">
-<link rel="icon" href="../imagenes/icono.png">
-<title>Actualizar Datos Personales</title>
-<link rel="stylesheet" href="../css/Actualizar-Datos-Personales.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sistema interactivo de Brisas Gems para la personalización de joyas en línea">
+  <meta name="author" content="Johan Bocanegra">
+  <link rel="icon" href="../img/icono.png">
+  <title>Seguimiento de Pedido | Brisas Gems</title>
+<!-- Estilos globales primero -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 <link rel="stylesheet" href="../css/assets/css-global/main.css">
+<link rel="stylesheet" href="../css/mi-perfil.css">
 </head>
 <body>
-    <header class="encabezado">
-        <div class="contenedor-header">
-          <a href="#" class="logo">
-            <img src="../img/logo.png" alt="Logo Brisas Gems">
-          </a>
-      
-          <nav class="nav-principal">
-            <a href="#">Personalización</a>
-            <a href="./mis-pedidos.html">Mis Pedidos</a>
-            <a href="#">Inspiración</a>
-          </nav>
-      
-          <a href="./perfil.html"  class="boton-login active">
-            <img src="../img/icono-perfil.svg" alt="Icono Iniciar Sesión" class="icono-login">My Perfil
-          </a>
-          
+
+<!-- ------ -->
+<!-- HEADER -->
+<!-- ------ -->
+
+<header class="encabezado">
+  <div class="contenedor-header">
+
+    <!-- Menú izquierdo -->
+    <nav class="nav-izquierda">
+      <a href="../personalizar.html">PERSONALIZACION</a>
+      <a href="../inspiracion.html">INSPIRACION</a>
+    </nav>
+
+    <!-- Logo centrado -->
+    <div class="logo-centro">
+      <a href="../index.html">
+        <img src="../img/logo.png" alt="Logo Brisas Gems">
+      </a>
+    </div>
+
+    <!-- Íconos a la derecha -->
+    <div class="menu-derecha">
+      <a href="#"><img src="../img/gem.svg" alt="Favoritos" class="icono"></a>
+      <a href="#"><img src="../img/bluesky.svg" alt="Carrito" class="icono"></a>
+      <div class="perfil-wrapper">
+        <img src="../img/person.svg" alt="Perfil" class="icono" id="icono-usuario">
+        <div class="menu-usuario" id="menu-usuario">
+          <a href="login.html">Iniciar sesión</a>
+          <a href="registro.html">Registrarse</a>
+          <a href="mis-pedidos.html">Mis pedidos</a>
+          <a href="perfil.html">Mi perfil</a>
         </div>
-      </header>
-      <!-- Módulo: Actualizar Datos Personales (Formulario) -->
-<section id="actualizar-datos-personales" aria-labelledby="titulo-actualizar-datos">
-    <!-- Título del módulo -->
-    <h2 id="titulo-actualizar-datos">Actualizar Datos Personales</h2>
-  
-    <!-- Formulario para actualización de datos -->
-    <form id="form-actualizar-datos" action="/usuario/actualizar" method="post" novalidate>
-      <!-- Campo: Nombre completo -->
-      <div class="form-group">
-        <label for="nombre">Nombre Completo</label>
-        <input type="text" id="nombre" name="nombre" required aria-required="true" placeholder="Ingresa tu nombre completo">
-        <span class="error-message" id="error-nombre" aria-live="polite"></span>
       </div>
-  
-      <!-- Campo: Correo electrónico -->
-      <div class="form-group">
-        <label for="email">Correo Electrónico</label>
-        <input type="email" id="email" name="email" required aria-required="true" placeholder="usuario@ejemplo.com">
-        <span class="error-message" id="error-email" aria-live="polite"></span>
-      </div>
-  
-      <!-- Campo: Número de teléfono -->
-      <div class="form-group">
-        <label for="telefono">Número de Teléfono</label>
-        <input type="tel" id="telefono" name="telefono" pattern="^[0-9]{7,15}$" placeholder="Ej: 3123456789">
-        <span class="error-message" id="error-telefono" aria-live="polite"></span>
-      </div>
-  
-      <!-- Contenedor para mensaje de confirmación -->
-      <div class="confirmation-message" id="mensaje-confirmacion" role="status" aria-live="assertive" hidden>
-        Tus datos han sido actualizados correctamente.
-      </div>
-  
-      <!-- Botón de envío -->
-      <div class="form-actions">
-        <button type="submit">Actualizar</button>
-      </div>
-    </form>
-  </section>
+    </div>
+  </div>
+</header>
+
+
+      <main class="container my-5">
+        <section id="actualizar-datos-personales" class="mx-auto" style="max-width: 400px;">
+          <h2 class="mb-4">Actualizar mis datos personales</h2>
+      
+          <!-- Mensajes de alerta -->
+          <!--
+            Mostrar dinámicamente con servidor/JS:
+            - .alert-success tras actualización exitosa
+            - .alert-danger si falla la validación o el correo ya existe
+          -->
+          <div id="alert-placeholder"></div>
+      
+          <!-- Formulario: método POST al endpoint encargado -->
+          <form id="form-actualizar-datos" action="/perfil/actualizar" method="POST" novalidate>
+            <!-- Campo oculto con el ID del usuario autenticado -->
+            <input type="hidden" name="usu_id" value="<?= $usuario->usu_id ?>">
+      
+            <!-- Nombre completo -->
+            <div class="mb-3">
+              <label for="usu_nombre" class="form-label">Nombre completo</label>
+              <input
+                type="text"
+                class="form-control"
+                id="usu_nombre"
+                name="usu_nombre"
+                required
+                value="<?= htmlspecialchars($usuario->usu_nombre) ?>"
+              >
+              <div class="invalid-feedback">
+                Por favor, ingresa tu nombre completo.
+              </div>
+            </div>
+      
+            <!-- Correo electrónico -->
+            <div class="mb-3">
+              <label for="usu_correo" class="form-label">Correo electrónico</label>
+              <input
+                type="email"
+                class="form-control"
+                id="usu_correo"
+                name="usu_correo"
+                required
+                value="<?= htmlspecialchars($usuario->usu_correo) ?>"
+              >
+              <div class="invalid-feedback">
+                Ingresa un correo válido que no esté en uso.
+              </div>
+            </div>
+      
+            <!-- Teléfono -->
+            <div class="mb-3">
+              <label for="usu_telefono" class="form-label">Número de teléfono</label>
+              <input
+                type="tel"
+                class="form-control"
+                id="usu_telefono"
+                name="usu_telefono"
+                pattern="^[0-9\-\+\s\(\)]{7,20}$"
+                value="<?= htmlspecialchars($usuario->usu_telefono) ?>"
+              >
+              <div class="invalid-feedback">
+                Ingresa un número de teléfono válido.
+              </div>
+            </div>
+      
+            <!-- Botón de envío -->
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary">
+                Guardar cambios
+              </button>
+            </div>
+          </form>
+        </section>
+      </main>
+      <footer class="footer-joyeria">
+        <div class="contenedor-footer">
+          
+          <div class="columna-footer">
+            <h4>Brisas Gems</h4>
+            <p>🟢 Joyería fina y personalizada con los más altos estándares de calidad.</p>
+            <div class="redes-sociales">
+              <a href="#" target="_blank" rel="noopener" aria-label="Facebook Brisas Gems">
+                <img src="../img/icono-whatsApp.png" alt="Facebook Brisas Gems">
+              </a>
+              <a href="#" target="_blank" rel="noopener" aria-label="Instagram Brisas Gems">
+                <img src="../img/icono instagram.png" alt="Instagram Brisas Gems">
+              </a>
+              <a href="#" target="_blank" rel="noopener" aria-label="WhatsApp Brisas Gems">
+                <img src="../img/icono-facebook.png" alt="WhatsApp Brisas Gems">
+              </a>
+            </div>
+          </div>
+      
+          <div class="columna-footer">
+            <h4>Contacto</h4>
+            <p><span class="icono-footer">🟢</span> Av Jiménez #5-43, Emerald Trade Center, Bogotá</p>
+            <p><span class="icono-footer">🟢</span> +57 6017654312</p>
+            <p><span class="icono-footer">🟢</span> info@brisasgem.com</p>
+          </div>
+      
+          <div class="columna-footer">
+            <h4>Enlaces</h4>
+            <nav aria-label="Enlaces rápidos">
+              <ul class="enlaces-footer">
+                <li><a href="./mis-pedidos.html"> Mis Pedidos</a></li>
+                <li><a href="./perfil.html"> My Perfil</a></li>
+              </ul>
+            </nav>
+          </div>
+      
+        </div>
+      
+        <div class="derechos-footer">
+          <p>© 2025 Brisas Gems - Todos los derechos reservados</p>
+          <p>Desarrollado por SENA CEET - Ficha 2996176 ADSO</p>
+        </div>
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+      <!-- Script para el menú de usuario -->
+  <script>
+  const iconoUsuario = document.getElementById('icono-usuario');
+  const menuUsuario = document.getElementById('menu-usuario');
+
+  iconoUsuario.addEventListener('click', () => {
+    menuUsuario.classList.toggle('activo');
+  });
+
+  // Cierra el menú al hacer clic fuera
+  document.addEventListener('click', (e) => {
+    if (!iconoUsuario.contains(e.target) && !menuUsuario.contains(e.target)) {
+      menuUsuario.classList.remove('activo');
+    }
+  });
+</script>
 </body>

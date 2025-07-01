@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestion De Usuarios Y Roles 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../img/icono.png">
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<main class="container my-5">
+  <h2 class="mb-4 text-center">Gestión de Usuarios 2</h2>
+
+  <!-- Botón para agregar usuario -->
+  <div class="d-flex justify-content-end mb-3">
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAgregar">Agregar Usuario</button>
+  </div>
+
+  <!-- Tabla de usuarios -->
+  <div class="table-responsive">
+    <table class="table table-striped align-middle">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Documento</th>
+          <th>Rol</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-usuarios">
+        <!-- Aquí se inyectan dinámicamente los usuarios desde PHP -->
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<!-- Modal: Agregar Usuario -->
+<div class="modal fade" id="modalAgregar" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <form action="../php/usuarios/agregar_usuario.php" method="POST" class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Agregar nuevo usuario</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body row g-3">
+
+        <div class="col-md-6">
+          <label for="nombre" class="form-label">Nombre completo</label>
+          <input type="text" class="form-control" name="usu_nombre" required>
+        </div>
+
+        <div class="col-md-6">
+          <label for="correo" class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" name="usu_email" required>
+        </div>
+
+        <div class="col-md-6">
+          <label for="telefono" class="form-label">Teléfono</label>
+          <input type="tel" class="form-control" name="usu_telefono">
+        </div>
+
+        <div class="col-md-6">
+          <label for="tipdoc_id" class="form-label">Tipo de documento</label>
+          <select class="form-select" name="tipdoc_id" required>
+            <option value="">Seleccione...</option>
+            <option value="1">Cédula de ciudadanía</option>
+            <option value="2">Cédula de extranjería</option>
+            <option value="3">Pasaporte</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label for="usu_docnum" class="form-label">Número de documento</label>
+          <input type="text" class="form-control" name="usu_docnum" required>
+        </div>
+
+        <div class="col-md-6">
+          <label for="password" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" name="usu_password" required>
+        </div>
+
+        <div class="col-md-6">
+          <label for="rol_id" class="form-label">Rol</label>
+          <select class="form-select" name="rol_id" required>
+            <option value="">Seleccione...</option>
+            <option value="1">Cliente</option>
+            <option value="2">Diseñador</option>
+            <option value="3">Administrador</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label for="usu_activo" class="form-label">Estado</label>
+          <select class="form-select" name="usu_activo" required>
+            <option value="1">Activo</option>
+            <option value="0">Inactivo</option>
+          </select>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-success">Guardar usuario</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../js/usuarios.js"></script>
+</body>
+</html>

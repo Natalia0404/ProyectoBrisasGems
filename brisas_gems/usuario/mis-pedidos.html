@@ -10,28 +10,46 @@
 <!-- Estilos globales primero -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 <link rel="stylesheet" href="../css/assets/css-global/main.css">
-<link rel="stylesheet" href="../css/progreso-de-pedido.css">
+<link rel="stylesheet" href="../css/mis-pedidos.css">
 </head>
 
 <body>
-  <header class="encabezado">
-    <div class="contenedor-header">
-      <a href="#" class="logo">
+<!-- ------ -->
+<!-- HEADER -->
+<!-- ------ -->
+
+<header class="encabezado">
+  <div class="contenedor-header">
+
+    <!-- Menú izquierdo -->
+    <nav class="nav-izquierda">
+      <a href="../personalizar.html">PERSONALIZACION</a>
+      <a href="../inspiracion.html">INSPIRACION</a>
+    </nav>
+
+    <!-- Logo centrado -->
+    <div class="logo-centro">
+      <a href="../index.html">
         <img src="../img/logo.png" alt="Logo Brisas Gems">
       </a>
-  
-      <nav class="nav-principal">
-        <a href="#">Personalización</a>
-        <a href="#" class="active" aria-current="page">Mis Pedidos</a>
-        <a href="#">Inspiración</a>
-      </nav>
-  
-      <a href="./perfil.html" class="boton-login">
-        <img src="../img/icono-perfil.svg" alt="Icono Iniciar Sesión" class="icono-login">My Perfil
-      </a>
-      
     </div>
-  </header>
+
+    <!-- Íconos a la derecha -->
+    <div class="menu-derecha">
+      <a href="#"><img src="../img/gem.svg" alt="Favoritos" class="icono"></a>
+      <a href="#"><img src="../img/bluesky.svg" alt="Carrito" class="icono"></a>
+      <div class="perfil-wrapper">
+        <img src="../img/person.svg" alt="Perfil" class="icono" id="icono-usuario">
+        <div class="menu-usuario" id="menu-usuario">
+          <a href="login.html">Iniciar sesión</a>
+          <a href="registro.html">Registrarse</a>
+          <a href="mis-pedidos.html">Mis pedidos</a>
+          <a href="perfil.html">Mi perfil</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
   
 
   <main class="container py-5 seguimiento-pedidos" id="seguimiento-pedidos">
@@ -207,5 +225,21 @@
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+      <!-- Script para el menú de usuario -->
+  <script>
+  const iconoUsuario = document.getElementById('icono-usuario');
+  const menuUsuario = document.getElementById('menu-usuario');
+
+  iconoUsuario.addEventListener('click', () => {
+    menuUsuario.classList.toggle('activo');
+  });
+
+  // Cierra el menú al hacer clic fuera
+  document.addEventListener('click', (e) => {
+    if (!iconoUsuario.contains(e.target) && !menuUsuario.contains(e.target)) {
+      menuUsuario.classList.remove('activo');
+    }
+  });
+</script>
 </body>
 </html> 

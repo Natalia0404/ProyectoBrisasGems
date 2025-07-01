@@ -25,7 +25,7 @@ delete from usuarios;
 
 -- se usa la funcion substring para aplicar sha2 solo desde el caracter 6 
 update usuarios
-set usu_password = SHA2('dfjlsdkjf', 256)
+set usu_password = SHA2(SUBSTRING(usu_password, 6), 256)
 where usu_password like 'hash-%';
 
 

@@ -1,212 +1,214 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sistema interactivo de Brisas Gems para la personalización de joyas en línea">
-  <meta name="author" content="Johan Bocanegra">
-  <link rel="icon" href="../imagenes/icono.png">
-  <title>Historial de personalizaciones | Brisas Gems</title>
-  <link rel="stylesheet" href="../assets/css-global/main.css">
-  <link rel="stylesheet" href="../css/historial-personalizaciones.css">
-  <link rel="preload" href="../imagenes/logo.png" as="image">
-</head>
-<body>
-  <header class="header-joyeria">
-    <div class="contenedor-header">
-      <a href="../index.html" class="logo-joyeria" aria-label="Inicio Brisas Gems">
-        <img src="../imagenes/logo.png" alt="Logo Brisas Gems" class="logo-img" width="50" height="50" loading="eager" decoding="async">
-        <span class="nombre-joyeria">Brisas Gems</span>
-      </a>
-  
-      <nav class="navegacion-principal" aria-label="Navegación principal">
-        <ul class="nav-contenedor">
-          <li>
-            <a href="../personalizacion/personalizacion.html" class="nav-enlace">
-              <div class="nav-contenido">
-                <span class="nav-texto">✦ Personalización</span>
-              </div>
-              <div class="nav-subtexto">Crea tu joya única</div>
-            </a>
-          </li>
-          <li>
-            <a href="../portafolio/portafolio.html" class="nav-enlace">
-              <div class="nav-contenido">
-                <span class="nav-texto">✦ Portafolio</span>
-              </div>
-              <div class="nav-subtexto">Nuestras creaciones</div>
-            </a>
-          </li>
-          <li>
-            <a href="../progreso-de-pedido/progreso-de-pedido.html" class="nav-enlace" aria-current="page">
-              <div class="nav-contenido">
-                <span class="nav-texto">✦ Progreso</span>
-              </div>
-              <div class="nav-subtexto">Sigue tu pedido</div>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  
-  <main class="contenedor-principal">
-    <h1 class="titulo-principal">
-      <i class="fas fa-history icono-titulo" aria-hidden="true"></i>
-      Historial de Personalizaciones
-    </h1>
-
-    <div class="filtros">
-      <div class="grupo-filtro">
-        <label for="filtro-fecha"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Filtrar por fecha:</label>
-        <select id="filtro-fecha" class="selector-filtro">
-          <option value="todos">Todos</option>
-          <option value="ultimo-mes">Último mes</option>
-          <option value="ultimos-3-meses">Últimos 3 meses</option>
-          <option value="ultimo-ano">Último año</option>
-        </select>
-      </div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema interactivo de Brisas Gems para la personalización de joyas en línea">
+    <meta name="author" content="Johan Bocanegra">
+    <link rel="icon" href="../img/icono.png">
+    <title>Gestion De Pedidos</title>
+  <!-- Estilos globales primero -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/assets/css-global/main.css">
+  <link rel="stylesheet" href="../css/produccion.css">
+  </head>
+  <body>
+    <header class="encabezado">
+        <div class="contenedor-header">
+          <a href="#" class="logo">
+            <img src="../img/logo.png" alt="Logo Brisas Gems">
+          </a>
       
-      <div class="grupo-filtro">
-        <label for="filtro-estado"><i class="fas fa-check-circle" aria-hidden="true"></i> Filtrar por estado:</label>
-        <select id="filtro-estado" class="selector-filtro">
-          <option value="todos">Todos</option>
-          <option value="completados">Completados</option>
-          <option value="en-proceso">En proceso</option>
-          <option value="cancelados">Cancelados</option>
-        </select>
-      </div>
-    </div>
-
-    <section class="lista-personalizaciones">
-      <div class="sin-resultados" id="sin-resultados">
-        <i class="fas fa-box-open" aria-hidden="true"></i>
-        <h2>No tienes personalizaciones registradas</h2>
-        <p>Aún no has creado diseños personalizados. ¡Comienza ahora!</p>
-        <a href="../personalizar.html" class="boton-primario">
-          <i class="fas fa-gem" aria-hidden="true"></i> Crear nueva personalización
-        </a>
-      </div>
+          <nav class="nav-principal">
+            <a href="#">Personalización</a>
+            <a href="./mis-pedidos.html">Mis Pedidos</a>
+            <a href="#">Inspiración</a>
+          </nav>
       
-      <div class="personalizaciones-container" id="personalizaciones-container">
-        <article class="tarjeta-personalizacion">
-          <div class="encabezado-tarjeta">
-            <span class="fecha">15/01/2025</span>
-            <span class="estado completado">Completado</span>
-          </div>
+          <a href="./perfil.html"  class="boton-login active">
+            <img src="../img/icono-perfil.svg" alt="Icono Iniciar Sesión" class="icono-login">My Perfil
+          </a>
           
-          <div class="contenido-tarjeta">
-            <div class="imagen-container">
-              <img src="../img/Portafolio/anillo sencillo verde frente.jpg" alt="Anillo de compromiso con esmeralda" class="imagen-personalizacion" width="200" height="200" loading="lazy" decoding="async">
-            </div>
-            
-            <div class="detalles">
-              <h3>Anillo de compromiso con esmeralda</h3>
-              <ul class="especificaciones">
-                <li><strong>Material:</strong> Oro blanco 18k</li>
-                <li><strong>Piedra principal:</strong> Esmeralda colombiana (1.2 ct)</li>
-                <li><strong>Piedras secundarias:</strong> Diamantes (0.5 ct total)</li>
-                <li><strong>Talla:</strong> 6.5</li>
-              </ul>
-              
-              <div class="acciones">
-                <button class="boton-secundario ver-detalle">
-                  <i class="fas fa-eye" aria-hidden="true"></i> Ver detalles
-                </button>
-                <button class="boton-secundario reutilizar">
-                  <i class="fas fa-redo" aria-hidden="true"></i> Reutilizar diseño
-                </button>
+        </div>
+      </header>
+      <!-- CONTENIDO DEL MÓDULO: Gestión de Diseños y Progreso de Pedidos -->
+<main class="container my-5 separador">
+    <!-- 1. Selección de pedido -->
+    <section id="section-seleccionar-pedido" class="mb-5">
+      <h2 class="h4 mb-3">1. Seleccione el pedido</h2>
+      <!-- Selector de pedidos: se debe llenar dinámicamente -->
+      <form id="form-seleccionar-pedido" class="row g-2">
+        <div class="col-md-8">
+          <label for="select-pedido" class="form-label">Pedido</label>
+          <select id="select-pedido" name="ped_id" class="form-select" required>
+            <option value="" selected disabled>-- Seleccione un pedido --</option>
+            <!-- Ejemplo: <option value="1">PED-2025-001 – En diseño</option> -->
+          </select>
+        </div>
+        <div class="col-md-4 d-flex align-items-end">
+          <button type="submit" class="btn btn-primary w-100">Cargar datos</button>
+        </div>
+      </form>
+    </section>
+  
+    <hr>
+  
+    <!-- 2. Subir diseño renderizado -->
+    <section id="section-render-3d" class="mb-5 d-none">
+      <h2 class="h4 mb-3">2. Subir diseño renderizado (3D)</h2>
+      <form id="form-upload-render" action="/render/upload" method="POST" enctype="multipart/form-data" class="row g-3">
+        <!-- ped_id oculto rellenado tras selección -->
+        <input type="hidden" name="ped_id" id="input-render-ped-id">
+        <div class="col-md-8">
+          <label for="input-render-file" class="form-label">Archivo 3D (.OBJ, .STL)</label>
+          <input
+            type="file"
+            id="input-render-file"
+            name="ren_imagen"
+            class="form-control"
+            accept=".obj,.stl"
+            required
+          >
+        </div>
+        <div class="col-md-4 d-flex align-items-end">
+          <button type="submit" class="btn btn-success w-100">Subir render</button>
+        </div>
+        <div class="col-12">
+          <div id="render-preview" class="border rounded p-3" style="min-height: 200px;">
+            <!-- Aquí se cargará el visor o miniatura del render 3D -->
+          </div>
+        </div>
+      </form>
+    </section>
+  
+    <!-- 3. Subir imagen del producto terminado -->
+    <section id="section-foto-final" class="mb-5 d-none">
+      <h2 class="h4 mb-3">3. Subir foto del producto terminado</h2>
+      <form id="form-upload-foto" action="/foto/upload" method="POST" enctype="multipart/form-data" class="row g-3">
+        <input type="hidden" name="ped_id" id="input-foto-ped-id">
+        <div class="col-md-8">
+          <label for="input-foto-file" class="form-label">Imagen JPG/PNG</label>
+          <input
+            type="file"
+            id="input-foto-file"
+            name="fot_imagen_final"
+            class="form-control"
+            accept=".jpg,.jpeg,.png"
+            required
+          >
+        </div>
+        <div class="col-md-4 d-flex align-items-end">
+          <button type="submit" class="btn btn-success w-100">Subir imagen</button>
+        </div>
+        <div class="col-12">
+          <img id="foto-preview" src="#" alt="Vista previa de la foto final" class="img-fluid rounded d-none">
+        </div>
+      </form>
+    </section>
+  
+    <!-- 4. Agregar o editar comentarios -->
+    <section id="section-comentarios" class="mb-5 d-none">
+      <h2 class="h4 mb-3">4. Comentarios del pedido</h2>
+      <form id="form-comentarios" action="/pedido/comentario" method="POST" class="mb-3">
+        <input type="hidden" name="ped_id" id="input-coment-ped-id">
+        <div class="mb-3">
+          <label for="textarea-comentarios" class="form-label">Comentarios</label>
+          <textarea
+            id="textarea-comentarios"
+            name="ped_comentarios"
+            class="form-control"
+            rows="4"
+            placeholder="Agregue observaciones..."
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar comentario</button>
+      </form>
+    </section>
+  
+    <!-- 5. Historial de pedidos y barra de progreso -->
+    <section id="section-historial" class="mb-5">
+      <h2 class="h4 mb-3">5. Historial de pedidos</h2>
+      <div id="historial-list" class="row gy-4">
+        <!-- Cada tarjeta representa un pedido -->
+        <!-- Ejemplo:
+        <div class="col-md-6">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">PED-2025-001</h5>
+              <p class="card-text">Cliente: Juan Pérez • Fecha: 2025-06-29</p>
+              <div class="mb-3">
+                <label class="form-label">Progreso:</label>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar"
+                       style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                    En producción (50%)
+                  </div>
+                </div>
               </div>
+              <!-- (Solo para administradores) Actualizar estado
+              <form action="/pedido/progreso" method="POST" class="d-flex align-items-center">
+                <input type="hidden" name="ped_id" value="1">
+                <select name="est_id" class="form-select me-2" required>
+                  <option value="1">En diseño</option>
+                  <option value="2">En producción</option>
+                  <option value="3">Finalizado</option>
+                </select>
+                <button type="submit" class="btn btn-outline-secondary">Actualizar</button>
+              </form>
             </div>
           </div>
-        </article>
-        
-        <article class="tarjeta-personalizacion">
-          <div class="encabezado-tarjeta">
-            <span class="fecha">10/12/2024</span>
-            <span class="estado en-proceso">En proceso</span>
-          </div>
-          
-          <div class="contenido-tarjeta">
-            <div class="imagen-container">
-              <img src="../img/Portafolio/anillo azul grande frente.jpg" alt="Anillo de compromiso clásico" class="imagen-personalizacion" width="200" height="200" loading="lazy" decoding="async">
-            </div>
-            
-            <div class="detalles">
-              <h3>Anillo de compromiso clásico</h3>
-              <ul class="especificaciones">
-                <li><strong>Material:</strong> Oro amarillo 14k</li>
-                <li><strong>Piedra principal:</strong> Diamante (0.8 ct)</li>
-                <li><strong>Piedras secundarias:</strong> Diamantes (0.3 ct total)</li>
-                <li><strong>Talla:</strong> 7.0</li>
-              </ul>
-              
-              <div class="acciones">
-                <button class="boton-secundario ver-detalle">
-                  <i class="fas fa-eye" aria-hidden="true"></i> Ver detalles
-                </button>
-                <button class="boton-secundario reutilizar">
-                  <i class="fas fa-redo" aria-hidden="true"></i> Reutilizar diseño
-                </button>
-              </div>
-            </div>
-          </div>
-        </article>
+        </div>
+        -->
       </div>
     </section>
   </main>
+  
 
-  <div class="modal-detalles" id="modalDetalles" role="dialog" aria-modal="true" aria-labelledby="modalTitulo" hidden>
-    <div class="contenido-modal">
-      <button class="cerrar-modal" aria-label="Cerrar modal">&times;</button>
-      <div class="contenido-detalles" id="contenido-detalles"></div>
-    </div>
-  </div>
+      <!-- coontenido-->
 
-  <footer class="footer-joyeria">
-    <div class="contenedor-footer">
-      <div class="columna-footer">
-        <h4>Brisas Gems</h4>
-        <p>✦ Joyería fina y personalizada con los más altos estándares de calidad.</p>
-        <div class="redes-sociales">
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook Brisas Gems">
-            <img src="../img/icono-facebook.png" alt="Facebook Brisas Gems" loading="lazy" width="24" height="24">
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram Brisas Gems">
-            <img src="../img/icono instagram.png" alt="Instagram Brisas Gems" loading="lazy" width="24" height="24">
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Brisas Gems">
-            <img src="../img/icono-whatsApp.png" alt="WhatsApp Brisas Gems" loading="lazy" width="24" height="24">
-          </a>
+
+      <footer class="footer-joyeria">
+        <div class="contenedor-footer">
+          
+          <div class="columna-footer">
+            <h4>Brisas Gems</h4>
+            <p>🟢 Joyería fina y personalizada con los más altos estándares de calidad.</p>
+            <div class="redes-sociales">
+              <a href="#" target="_blank" rel="noopener" aria-label="Facebook Brisas Gems">
+                <img src="../img/icono-whatsApp.png" alt="Facebook Brisas Gems">
+              </a>
+              <a href="#" target="_blank" rel="noopener" aria-label="Instagram Brisas Gems">
+                <img src="../img/icono instagram.png" alt="Instagram Brisas Gems">
+              </a>
+              <a href="#" target="_blank" rel="noopener" aria-label="WhatsApp Brisas Gems">
+                <img src="../img/icono-facebook.png" alt="WhatsApp Brisas Gems">
+              </a>
+            </div>
+          </div>
+      
+          <div class="columna-footer">
+            <h4>Contacto</h4>
+            <p><span class="icono-footer">🟢</span> Av Jiménez #5-43, Emerald Trade Center, Bogotá</p>
+            <p><span class="icono-footer">🟢</span> +57 6017654312</p>
+            <p><span class="icono-footer">🟢</span> info@brisasgem.com</p>
+          </div>
+      
+          <div class="columna-footer">
+            <h4>Enlaces</h4>
+            <nav aria-label="Enlaces rápidos">
+              <ul class="enlaces-footer">
+                <li><a href="./Gestionar-U-R.html">Gestión de Usuarios y Roles</a></li>
+                <li><a href="#"> My Perfil</a></li>
+              </ul>
+            </nav>
+          </div>
+      
         </div>
-      </div>
-  
-      <div class="columna-footer">
-        <h4>Contacto</h4>
-        <p><i class="icono-footer">✦</i> Av Jiménez #5-43, Emerald Trade Center, Bogotá</p>
-        <p><i class="icono-footer">✦</i> +57 6017654312</p>
-        <p><i class="icono-footer">✦</i> info@brisasgem.com</p>
-      </div>
-  
-      <div class="columna-footer">
-        <h4>Enlaces</h4>
-        <nav aria-label="Enlaces rápidos">
-          <ul class="enlaces-footer">
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="../personalizar.html">Personalización</a></li>
-            <li><a href="../inspiracion.html">Portafolio</a></li>
-            <li><a href="../usuario/mis-pedidos.html">Progreso</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  
-    <div class="derechos-footer">
-      <p>© 2025 Brisas Gems - Todos los derechos reservados</p>
-      <p>Desarrollado por SENA CEET - Ficha 2996176 ADSO</p>
-    </div>
-  </footer>
-
-  <script src="../js/historial-personalizaciones.js" defer></script>
-</body>
-</html>
+      
+        <div class="derechos-footer">
+          <p>© 2025 Brisas Gems - Todos los derechos reservados</p>
+          <p>Desarrollado por SENA CEET - Ficha 2996176 ADSO</p>
+        </div>
+      </footer>
+  </body>

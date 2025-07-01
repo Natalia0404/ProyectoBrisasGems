@@ -1,40 +1,145 @@
+/* ================================= */
+/* ========== HEADER BASE ========== */
+/* ================================= */
 
-
-  /* PERSONALIZADOR DE JOYAS */
-
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    max-width: 1200pc;
-    margin: 0 auto;
-    padding-top: 100px;
-    gap: 60px;
-  }
-
-  #vista-principal {
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  padding: 4px;
-  background-color: #fff;
+header.encabezado {
+  background: white;
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  font-family: 'Georgia', serif;
 }
 
-.container-opciones {
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  
+/* FLEX GENERAL */
+.contenedor-header {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+/* MENÚ IZQUIERDO */
+.nav-izquierda {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-izquierda a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.85rem;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* LÍNEAS ANIMADAS EN HOVER */
+.nav-izquierda a::before,
+.nav-izquierda a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #0b6b10, #15ad3b); /* verde degradado */
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  left: 0;
+}
+
+/* Línea superior */
+.nav-izquierda a::before {
+  top: -6px;
+  transform-origin: left;
+}
+
+/* Línea inferior */
+.nav-izquierda a::after {
+  bottom: -6px;
+  transform-origin: right;
+}
+
+/* Hover: activa las líneas y cambia color */
+.nav-izquierda a:hover::before,
+.nav-izquierda a:hover::after {
+  transform: scaleX(1);
+}
+.nav-izquierda a:hover {
+  color: #0a6e22;
+}
+
+/* Estado activo permanente */
+.nav-izquierda a.activo {
+  color: #0a6e22;
+}
+.nav-izquierda a.activo::before,
+.nav-izquierda a.activo::after {
+  transform: scaleX(1);
 }
 
 
+/* LOGO CENTRADO */
+.logo-centro img {
+  height: 70px;
+  object-fit: contain;
+}
 
-  
+/* MENÚ DERECHO */
+.menu-derecha {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.icono {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+/* MENÚ USUARIO DESPLEGABLE */
+.perfil-wrapper {
+  position: relative;
+}
+.menu-usuario {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 140%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+}
+.menu-usuario a {
+  text-decoration: none;
+  color: #333;
+  padding: 0.4rem 0;
+  font-size: 0.9rem;
+}
+.menu-usuario a:hover {
+  color: #001e61;
+}
+.menu-usuario.activo {
+  display: flex;
+}
+
+
 
 /* ==================== FOOTER ==================== */
 .footer-joyeria {
   background: var(--color-footer-bg, var(--color-surface)); /* Fondo con fallback */
   padding: var(--space-xl) var(--space-md) var(--space-sm); /* Rellenos: top, laterales, bottom */
-  margin-top: var(--space-xl);      /* Espacio superior grande */
+  margin-top: var(--space-xxl);      /* Espacio superior grande */
   box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08); /* Sombra por encima */
   border-top: 1px solid var(--color-primary); /* Borde superior muy sutil */
 }
@@ -104,3 +209,4 @@
 .derechos-footer p:first-child {
   margin-bottom: var(--space-xs);   /* Espacio inferior extra pequeño */
 }
+
