@@ -7,6 +7,7 @@ html, body {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 /* El contenido principal debe expandirse para empujar el footer hacia abajo */
@@ -60,7 +61,8 @@ body >*:not(footer) {
 }
 
 .bienvenida p {
-    padding-top: 50px;
+    font-style: italic;
+    padding-top: -10px;
     font-size: var(--font-size-lg);
     margin-bottom: 6px;
 }
@@ -73,16 +75,42 @@ body >*:not(footer) {
     flex-direction: column;
     align-items: baseline;
     margin-left: 50px;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 .contexto {
   margin-left: 15px;
   padding-left: 35px;
 }
 .contexto p {
-    text-align:left ; 
+    text-align:left;
+    margin-bottom: 10px; 
     font-size: var(--font-size-lg);          /* Espacio entre párrafos */
 }
 
+/* ==================== CONTEXTO ILUSTRACIÓN ==================== */
+.contexto-ilustracion {
+ display: flex;
+ margin-bottom: auto; /* Espacio inferior */
+}
+
+.contexto-imagen {
+    display: flex;                    /* Flex para alinear imágenes */
+    justify-content:flex-end;
+    flex-direction: column;
+    align-items:baseline;             /* Centrado vertical */
+    margin-left: auto;  
+    margin-top: -490px;          /* Espacio inferior */
+    gap: 20px; 
+                          /* Espacio entre imágenes */             
+}
+
+.contexto-imagen img {
+    width: 250px;                    /* Ancho fijo de la imagen */
+    height: auto;                    /* Mantiene la proporción de la imagen */
+    box-shadow: var(--shadow);       /* Sombra global definida */
+}
 /* ==================== FOOTER ==================== */
 
 .footer-joyeria {
