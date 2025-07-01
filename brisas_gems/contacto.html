@@ -7,54 +7,49 @@
   <meta name="author" content="Johan Bocanegra">
   <link rel="icon" href="../brisas_gems/img/icono.png">
   <title>Seguimiento de Pedido | Brisas Gems</title>
-  <link rel="stylesheet" href="../brisas_gems/css/modulo-soporte.css">
-  <link rel="stylesheet" href="../assets/css-global/main.css">
+  <link rel="stylesheet" href="./css/contacto.css">
+  <link rel="stylesheet" href="./assets/css-global/main.css">
 </head>
 <body>
-  <!-- Header con el diseño idéntico al otro módulo -->
-  <header class="header-joyeria">
-    <div class="contenedor-header">
-      <a href="../index.html" class="logo-joyeria">
-        <img src="../brisas_gems/img/logo.png" alt="Brisas Gems" class="logo-img">
-        <span class="nombre-joyeria">Brisas Gems</span>
+
+  <!-- ------ -->
+<!-- HEADER -->
+<!-- ------ -->
+
+<header class="encabezado">
+  <div class="contenedor-header">
+
+    <!-- Menú izquierdo -->
+    <nav class="nav-izquierda">
+      <a href="personalizar.html">PERSONALIZACION</a>
+      <a href="inspiracion.html">INSPIRACION</a>
+    </nav>
+
+    <!-- Logo centrado -->
+    <div class="logo-centro">
+      <a href="index.html">
+        <img src="./img/logo.png" alt="Logo Brisas Gems">
       </a>
-      
-      <nav class="navegacion-principal">
-        <div class="nav-contenedor">
-          <a href="../personalizacion/personalizacion.html" class="nav-enlace">
-            <div class="nav-contenido">
-              <span class="nav-icono">✦</span>
-              <span class="nav-texto">Personalización</span>
-            </div>
-            <div class="nav-subtexto">Crea tu joya única</div>
-          </a>
-          
-          <a href="../portafolio/portafolio.html" class="nav-enlace">
-            <div class="nav-contenido">
-              <span class="nav-icono">✧</span>
-              <span class="nav-texto">Portafolio</span>
-            </div>
-            <div class="nav-subtexto">Nuestras creaciones</div>
-          </a>
-          
-          <a href="../progreso-de-pedido/progreso-de-pedido.html" class="nav-enlace active">
-            <div class="nav-contenido">
-              <span class="nav-icono">✷</span>
-              <span class="nav-texto">Progreso</span>
-            </div>
-            <div class="nav-subtexto">Sigue tu pedido</div>
-          </a>
+    </div>
+
+    <!-- Íconos a la derecha -->
+    <div class="menu-derecha">
+      <a href="#"><img src="./img/gem.svg" alt="Favoritos" class="icono"></a>
+      <a href="#"><img src="./img/bluesky.svg" alt="Carrito" class="icono"></a>
+      <div class="perfil-wrapper">
+        <img src="./img/person.svg" alt="Perfil" class="icono" id="icono-usuario">
+        <div class="menu-usuario" id="menu-usuario">
+          <a href="login.html">Iniciar sesión</a>
+          <a href="registro.html">Registrarse</a>
+          <a href="./usuario/mis-pedidos.html">Mis pedidos</a>
+          <a href="./usuario/perfil.html">Mi perfil</a>
         </div>
-      </nav>
-      
-      <div class="acciones-usuario">
-        <a href="../gestion-de-usuarios/login.html" class="boton-login">
-          <span class="icono-login">👤</span>
-          <span>Iniciar sesión</span>
-        </a>
       </div>
     </div>
-  </header>
+  </div>
+</header>
+
+
 
   <!-- Contenido principal del módulo -->
   <main class="contenedor-soporte">
@@ -104,7 +99,7 @@
         </div>
 
         <input type="hidden" name="via" value="formulario">
-        
+
         <button type="submit" class="boton-enviar">
           <i class="fas fa-paper-plane"></i> Enviar formulario
         </button>

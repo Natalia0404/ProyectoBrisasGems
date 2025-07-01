@@ -15,174 +15,139 @@ body {
   color: var(--color-texto);
 }
 
-/* HEADER MEJORADO - Versión horizontal */
-.header-joyeria {
-  background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  padding: 0 2rem;
-  position: sticky;
+/* ================================= */
+/* ========== HEADER BASE ========== */
+/* ================================= */
+
+header.encabezado {
+  background: white;
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 2rem;
+  position: fixed;
   top: 0;
-  z-index: 1000;
+  width: 100%;
+  z-index: 999;
+  font-family: 'Georgia', serif;
 }
 
+/* FLEX GENERAL */
 .contenedor-header {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
 }
 
-.logo-joyeria {
+/* MENÚ IZQUIERDO */
+.nav-izquierda {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-izquierda a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.85rem;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* LÍNEAS ANIMADAS EN HOVER */
+.nav-izquierda a::before,
+.nav-izquierda a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #0b6b10, #15ad3b); /* verde degradado */
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  left: 0;
+}
+
+/* Línea superior */
+.nav-izquierda a::before {
+  top: -6px;
+  transform-origin: left;
+}
+
+/* Línea inferior */
+.nav-izquierda a::after {
+  bottom: -6px;
+  transform-origin: right;
+}
+
+/* Hover: activa las líneas y cambia color */
+.nav-izquierda a:hover::before,
+.nav-izquierda a:hover::after {
+  transform: scaleX(1);
+}
+.nav-izquierda a:hover {
+  color: #0a6e22;
+}
+
+/* Estado activo permanente */
+.nav-izquierda a.activo {
+  color: #0a6e22;
+}
+.nav-izquierda a.activo::before,
+.nav-izquierda a.activo::after {
+  transform: scaleX(1);
+}
+
+
+/* LOGO CENTRADO */
+.logo-centro img {
+  height: 70px;
+  object-fit: contain;
+}
+
+/* MENÚ DERECHO */
+.menu-derecha {
   display: flex;
   align-items: center;
-  text-decoration: none;
-  transition: transform 0.3s ease;
+  gap: 1.5rem;
+}
+.icono {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
 }
 
-.logo-joyeria:hover {
-  transform: scale(1.02);
-}
-
-.logo-img {
-  height: 50px;
-  width: auto;
-  margin-right: 12px;
-}
-
-.nombre-joyeria {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #0a8048;
-  letter-spacing: 0.5px;
+/* MENÚ USUARIO DESPLEGABLE */
+.perfil-wrapper {
   position: relative;
 }
-
-.nombre-joyeria::after {
-  content: 'Joyería fina';
-  position: absolute;
-  bottom: -12px;
-  left: 0;
-  font-size: 0.6rem;
-  font-weight: 400;
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing: 1.5px;
-  color: #888;
-  width: 100%;
-}
-.nav-enlace {
-  display: inline-flex;
+.menu-usuario {
+  display: none;
   flex-direction: column;
-  align-items: center;
+  position: absolute;
+  top: 140%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+}
+.menu-usuario a {
   text-decoration: none;
   color: #333;
-  padding: 0.5rem 3.2rem;
-  position: relative;
-  transition: all 0.3s ease;
-  min-width: 90px;
-  gap: 0.5rem;
-}
-
-.nav-enlace:hover {
-  color: #0a8048;
-}
-
-.nav-enlace.active {
-  color: #0a8048;
-  font-weight: 600;
-}
-
-.nav-icono {
-  font-size: 1.2rem;
-  margin-bottom: 4px;
-  transition: transform 0.3s ease;
-}
-
-.nav-enlace:hover .nav-icono {
-  transform: translateY(-3px);
-}
-
-.nav-texto {
+  padding: 0.4rem 0;
   font-size: 0.9rem;
-  font-weight: 500;
 }
-
-.nav-enlace.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 2px;
-  background-color: #0a8048;
-  border-radius: 2px;
+.menu-usuario a:hover {
+  color: #001e61;
 }
-
-.acciones-usuario {
+.menu-usuario.activo {
   display: flex;
-  align-items: center;
-}
-
-.boton-login {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0.6rem 1.2rem;
-  background-color: transparent;
-  border: 1px solid #0a8048;
-  color: #0a8048;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.boton-login:hover {
-  background-color: #0a8048;
-  color: white;
-  box-shadow: 0 4px 12px rgba(10, 128, 72, 0.2);
-}
-
-.icono-login {
-  font-size: 1rem;
-}
-
-/* Efecto de "joya brillante" para el item activo */
-.nav-enlace.active .nav-icono {
-  animation: brillo 2s infinite alternate;
-}
-
-@keyframes brillo {
-  from {
-    text-shadow: 0 0 5px rgba(10, 128, 72, 0.3);
-  }
-  to {
-    text-shadow: 0 0 10px rgba(10, 128, 72, 0.6), 0 0 20px rgba(10, 128, 72, 0.3);
-  }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .contenedor-header {
-    height: 70px;
-    padding: 0 1rem;
-  }
-  
-  .nav-icono {
-    display: none;
-  }
-  
-  .nav-texto {
-    font-size: 0.8rem;
-  }
-  
-  .nombre-joyeria::after {
-    display: none;
-  }
 }
 
 /* Contenido principal */
