@@ -5,33 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Iniciar sesión</title>
   <link rel="stylesheet" href="./css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/gestion-de-usuario.css" />
+  <link rel="stylesheet" href="./css/login.css" />
   <link rel="stylesheet" href="../assets/css-global/main.css">
 </head>
 <body>
 
   <body>
-    <!-- Encabezado generico para todas la pag -->
-    <header>
-      <a href="../index.html" class="logo-container">
-        <div class="logo">Brisas Gems</div>
-        <div class="logo-img">
-          <img src="../imagenes/logo-general-removebg-preview.png" alt="logo">
-      </div>
-    </a>
-    <nav class="nav-links">
-      <a href="../personalizacion/personalizacion.html">Personalización</a>
-      <a href="../portafolio/portafolio.html">Portafolio</a> 
-      <a href="../progreso-de-pedido/progreso-de-pedido.html">Progreso de Pedido</a>
+<!-- ------ -->
+<!-- HEADER -->
+<!-- ------ -->
+
+<header class="encabezado">
+  <div class="contenedor-header">
+
+    <!-- Menú izquierdo -->
+    <nav class="nav-izquierda">
+      <a href="personalizar.html">PERSONALIZACION</a>
+      <a href="inspiracion.html">INSPIRACION</a>
     </nav>
-    <div class="user-links">
-      <a href="../gestion-de-usuarios/login.html" class="login-link">Iniciar sesión</a>
-      <!--<a href="perfil.html" class="perfil-link">Perfil</a>-->
+
+    <!-- Logo centrado -->
+    <div class="logo-centro">
+      <a href="index.html">
+        <img src="./img/logo.png" alt="Logo Brisas Gems">
+      </a>
     </div>
-  </header>
-  <hr>
 
-
+    <!-- Íconos a la derecha -->
+    <div class="menu-derecha">
+      <a href="#"><img src="./img/gem.svg" alt="Favoritos" class="icono"></a>
+      <a href="#"><img src="./img/bluesky.svg" alt="Carrito" class="icono"></a>
+      <div class="perfil-wrapper">
+        <img src="./img/person.svg" alt="Perfil" class="icono" id="icono-usuario">
+        <div class="menu-usuario" id="menu-usuario">
+          <a href="login.html">Iniciar sesión</a>
+          <a href="registro.html">Registrarse</a>
+          <a href="./usuario/mis-pedidos.html">Mis pedidos</a>
+          <a href="./usuario/perfil.html">Mi perfil</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
   <!-- ---- -->
   <!-- MAIN -->
   <!-- ---- -->
@@ -66,5 +81,23 @@
   </section>
 </main>
 
+
+
+<!-- Script para el menú de usuario -->
+  <script>
+  const iconoUsuario = document.getElementById('icono-usuario');
+  const menuUsuario = document.getElementById('menu-usuario');
+
+  iconoUsuario.addEventListener('click', () => {
+    menuUsuario.classList.toggle('activo');
+  });
+
+  // Cierra el menú al hacer clic fuera
+  document.addEventListener('click', (e) => {
+    if (!iconoUsuario.contains(e.target) && !menuUsuario.contains(e.target)) {
+      menuUsuario.classList.remove('activo');
+    }
+  });
+</script>
 </body>
 </html>

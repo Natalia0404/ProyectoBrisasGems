@@ -1,132 +1,144 @@
+/* ================================= */
+/* ========== HEADER BASE ========== */
+/* ================================= */
 
-/* ==================== HEADER BASE ==================== */
 header.encabezado {
-  position: fixed;               /* Fija el header en la parte superior del viewport */
-  top: 0;                        /* Pega al borde superior */
-  left: 0;                       /* Pega al borde izquierdo */
-  right: 0;                      /* Pega al borde derecho */
-  z-index: 1000;                 /* Superpone sobre otros elementos */
-  backdrop-filter: none;         /* Sin filtro de fondo (hoy no desenfoca) */
-  background-color: var(--color-surface); /* Fondo tomado de la variable global */
-  border-bottom: 1px solid var(--color-primary); /* Borde inferior sutil */
-  box-shadow: var(--shadow);     /* Sombra global definida */
-  padding: var(--space-md) var(--space-xl); /* Espaciado interior: vertical y horizontal */
+  background: white;
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  font-family: 'Georgia', serif;
 }
 
-/* Contenedor centrado dentro del header */
+/* FLEX GENERAL */
 .contenedor-header {
-  max-width: 1200px;             /* Ancho máximo del contenedor */
-  margin: 0 auto;                /* Centrado horizontal automático */
-  display: flex;                 /* Flexbox para alinear su contenido */
-  align-items: center;           /* Centrado vertical */
-  justify-content: space-between;/* Distribuye espacio entre hijos */
-  gap: var(--space-xl);          /* Separación entre elementos flex */
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* ==================== LOGO ==================== */
-.logo {
-  display: flex;                 /* Flex para centrar verticalmente su contenido */
-  align-items: center;           /* Centrado vertical de la imagen */
-}
-.logo img {
-  width: 200px;                  /* Ancho fijo del logo */
-  object-fit: contain;           /* Ajusta la imagen sin deformarla */
-  transition: transform var(--transition-base); /* Transición suave definida globalmente */
-}
-.logo img:hover {
-  transform: scale(1.05);        /* Aumenta ligeramente el tamaño al pasar el ratón */
+/* MENÚ IZQUIERDO */
+.nav-izquierda {
+  display: flex;
+  gap: 2rem;
 }
 
-/* ==================== NAVEGACIÓN PRINCIPAL ==================== */
-.nav-principal {
-    display: flex;                        /* Usa Flexbox para alinear los enlaces */
-    gap: var(--space-xxl);               /* Espaciado horizontal entre los enlaces */
-    justify-content: space-evenly;       /* Distribuye el espacio uniformemente */
-    flex-grow: 1;                         /* El nav ocupa todo el espacio posible */
-  }
-.nav-principal a {
-    text-decoration: none;               /* Elimina el subrayado predeterminado */
-    color: var(--color-text);            /* Usa el color de texto definido globalmente */
-    font-size: var(--font-size-lg);      /* Tamaño de texto (por variable) */
-    font-weight: var(--font-weight-normal); /* Peso de fuente estándar */
-    position: relative;                  /* Necesario para posicionar los pseudo-elementos */
-    transition: color var(--transition-base); /* Transición suave del color al pasar el cursor */
-  }
-  
-  .nav-principal a::after,
-  .nav-principal a::before {
-    content: "";                         /* Se crean dos líneas (superior e inferior) */
-    position: absolute;                  /* Posición absoluta dentro del <a> */
-    width: 100%;                         /* Ancho completo del enlace */
-    height: 2px;                         /* Grosor de las líneas */
-    background: linear-gradient(to right, #0b6b10, #15ad3b); /* Degradado en verde esmeralda */
-    transform: scaleX(0);                /* Oculta las líneas inicialmente */
-    transition: transform 0.4s ease-out; /* Transición suave para el efecto */
-    left: 0;                             /* Alineado al borde izquierdo */
-  }
-  
-  /* Línea inferior */
-  .nav-principal a::after {
-    bottom: -5px;                        /* Posición debajo del enlace */
-    transform-origin: right;            /* Se expande de derecha a izquierda */
-  }
-  
-  /* Línea superior */
-  .nav-principal a::before {
-    top: -5px;                           /* Posición arriba del enlace */
-    transform-origin: left;             /* Se expande de izquierda a derecha */
-  }
-  
-/* ======================================
-HOVER: activa las animaciones
-====================================== */
-.nav-principal a:hover {
-    color: var(--color-primary);         /* Cambia el color del texto al pasar el mouse */
-  }
-  
-.nav-principal a:hover::after,
-.nav-principal a:hover::before {
-    transform: scaleX(1);                /* Expande las líneas en ambos sentidos */
-  }
-
-/* Estado activo: restaura hover permanentemente */
-.nav-principal a.active {
-  color: var(--color-primary);            /* mismo color que en hover */
+.nav-izquierda a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.85rem;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-.nav-principal a.active::before,
-.nav-principal a.active::after {
-  transform: scaleX(1);                  /* líneas expandidas como en hover */
+/* LÍNEAS ANIMADAS EN HOVER */
+.nav-izquierda a::before,
+.nav-izquierda a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #0b6b10, #15ad3b); /* verde degradado */
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  left: 0;
+}
+
+/* Línea superior */
+.nav-izquierda a::before {
+  top: -6px;
+  transform-origin: left;
+}
+
+/* Línea inferior */
+.nav-izquierda a::after {
+  bottom: -6px;
+  transform-origin: right;
+}
+
+/* Hover: activa las líneas y cambia color */
+.nav-izquierda a:hover::before,
+.nav-izquierda a:hover::after {
+  transform: scaleX(1);
+}
+.nav-izquierda a:hover {
+  color: #0a6e22;
+}
+
+/* Estado activo permanente */
+.nav-izquierda a.activo {
+  color: #0a6e22;
+}
+.nav-izquierda a.activo::before,
+.nav-izquierda a.activo::after {
+  transform: scaleX(1);
 }
 
 
-/* ==================== BOTÓN DE INICIO DE SESIÓN ==================== */
-.boton-login {
-  display: inline-flex;          /* Para alinear texto e imagen horizontalmente */
-  align-items: center;           /* Centra verticalmente */
-  gap: 8px;                     /* Espacio entre imagen y texto */
-  padding: var(--space-xs) var(--space-sm);         /* Espaciado interno vertical y horizontal */
-  background-color: var(--color-surface);           /* Fondo en color primario (verde institucional) */
-  color: var(--color-text);                      /* Color del texto (blanco u otro según variable) */
-  border-radius: var(--radius-lg);                     /* Bordes redondeados definidos por variable */
-  font-size: var(--font-size-lg);                   /* Tamaño de fuente definido por variable */
-  text-decoration: none;                            /* Sin subrayado */
-  transition: background-color var(--transition-base); /* Transición suave al cambiar fondo */
-  border: 2px solid var(--color-primary);
-}
-.boton-login img.icono-login {
-  width: 25px;                   /* Ajusta el tamaño */
-  height: auto;
-  display: block;
+/* LOGO CENTRADO */
+.logo-centro img {
+  height: 70px;
+  object-fit: contain;
 }
 
-.boton-login:hover {
-  color: var(--color-primary);
-  background-color: rgba(10, 128, 72, 0.1);
-  color: var(--color-primary);
-  border-color: rgba(10, 128, 72, 0.3);
-  transform: translateY(-2px);
+/* MENÚ DERECHO */
+.menu-derecha {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
+.icono {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+/* MENÚ USUARIO DESPLEGABLE */
+.perfil-wrapper {
+  position: relative;
+}
+.menu-usuario {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 140%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+}
+.menu-usuario a {
+  text-decoration: none;
+  color: #333;
+  padding: 0.4rem 0;
+  font-size: 0.9rem;
+}
+.menu-usuario a:hover {
+  color: #001e61;
+}
+.menu-usuario.activo {
+  display: flex;
+}
+
+
+
+
+
+
+
   .main-content {
     display: flex;
     flex-direction: row;
