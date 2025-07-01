@@ -1,0 +1,246 @@
+/* ==================== HEADER BASE ==================== */
+header.encabezado {
+    position: fixed;               /* Fija el header en la parte superior del viewport */
+    top: 0;                        /* Pega al borde superior */
+    left: 0;                       /* Pega al borde izquierdo */
+    right: 0;                      /* Pega al borde derecho */
+    z-index: 1000;                 /* Superpone sobre otros elementos */
+    backdrop-filter: none;         /* Sin filtro de fondo (hoy no desenfoca) */
+    background-color: var(--color-surface); /* Fondo tomado de la variable global */
+    border-bottom: 1px solid var(--color-primary); /* Borde inferior sutil */
+    box-shadow: var(--shadow);     /* Sombra global definida */
+    padding: var(--space-md) var(--space-xl); /* Espaciado interior: vertical y horizontal */ 
+  }
+  
+  /* Contenedor centrado dentro del header */
+  .contenedor-header {
+    max-width: 1200px;             /* Ancho máximo del contenedor */
+    margin: 0 auto;                /* Centrado horizontal automático */
+    display: flex;    
+    flex-wrap: wrap;             /* Flexbox para alinear su contenido */
+    align-items: center;           /* Centrado vertical */
+    justify-content: space-between;/* Distribuye espacio entre hijos */
+    gap: var(--space-xl);          /* Separación entre elementos flex */
+  }
+  
+  /* ==================== LOGO ==================== */
+  .logo {
+    display: flex;                 /* Flex para centrar verticalmente su contenido */
+    align-items: center;           /* Centrado vertical de la imagen */
+  }
+  .logo img {
+    width: 200px;                  /* Ancho fijo del logo */
+    object-fit: contain;           /* Ajusta la imagen sin deformarla */
+    transition: transform var(--transition-base); /* Transición suave definida globalmente */
+  }
+  .logo img:hover {
+    transform: scale(1.05);        /* Aumenta ligeramente el tamaño al pasar el ratón */
+  }
+  
+  /* ==================== NAVEGACIÓN PRINCIPAL ==================== */
+  .nav-principal {
+      display: flex;                        /* Usa Flexbox para alinear los enlaces */
+      gap: var(--space-xxl);               /* Espaciado horizontal entre los enlaces */
+      justify-content: space-evenly;       /* Distribuye el espacio uniformemente */
+      flex-grow: 1;                         /* El nav ocupa todo el espacio posible */
+    }
+  .nav-principal a {
+      text-decoration: none;               /* Elimina el subrayado predeterminado */
+      color: var(--color-text);            /* Usa el color de texto definido globalmente */
+      font-size: var(--font-size-lg);      /* Tamaño de texto (por variable) */
+      font-weight: var(--font-weight-normal); /* Peso de fuente estándar */
+      position: relative;                  /* Necesario para posicionar los pseudo-elementos */
+      transition: color var(--transition-base); /* Transición suave del color al pasar el cursor */
+    }
+    
+    .nav-principal a::after,
+    .nav-principal a::before {
+      content: "";                         /* Se crean dos líneas (superior e inferior) */
+      position: absolute;                  /* Posición absoluta dentro del <a> */
+      width: 100%;                         /* Ancho completo del enlace */
+      height: 2px;                         /* Grosor de las líneas */
+      background: linear-gradient(to right, #0b6b10, #15ad3b); /* Degradado en verde esmeralda */
+      transform: scaleX(0);                /* Oculta las líneas inicialmente */
+      transition: transform 0.4s ease-out; /* Transición suave para el efecto */
+      left: 0;                             /* Alineado al borde izquierdo */
+    }
+    
+    /* Línea inferior */
+    .nav-principal a::after {
+      bottom: -5px;                        /* Posición debajo del enlace */
+      transform-origin: right;            /* Se expande de derecha a izquierda */
+    }
+    
+    /* Línea superior */
+    .nav-principal a::before {
+      top: -5px;                           /* Posición arriba del enlace */
+      transform-origin: left;             /* Se expande de izquierda a derecha */
+    }
+    
+  /* ======================================
+  HOVER: activa las animaciones
+  ====================================== */
+  .nav-principal a:hover {
+      color: var(--color-primary);         /* Cambia el color del texto al pasar el mouse */
+    }
+    
+  .nav-principal a:hover::after,
+  .nav-principal a:hover::before {
+      transform: scaleX(1);                /* Expande las líneas en ambos sentidos */
+    }
+    
+  
+  /* ==================== BOTÓN DE INICIO DE SESIÓN ==================== */
+  .boton-login {
+    display: inline-flex;          /* Para alinear texto e imagen horizontalmente */
+    align-items: center;           /* Centra verticalmente */
+    gap: 8px;                     /* Espacio entre imagen y texto */
+    padding: var(--space-xs) var(--space-sm);         /* Espaciado interno vertical y horizontal */
+    background-color: var(--color-surface);           /* Fondo en color primario (verde institucional) */
+    color: var(--color-text);                      /* Color del texto (blanco u otro según variable) */
+    border-radius: var(--radius-lg);                     /* Bordes redondeados definidos por variable */
+    font-size: var(--font-size-lg);                   /* Tamaño de fuente definido por variable */
+    text-decoration: none;                            /* Sin subrayado */
+    transition: background-color var(--transition-base); /* Transición suave al cambiar fondo */
+    border: 2px solid var(--color-primary);
+  }
+  .boton-login img.icono-login {
+    width: 25px;                   /* Ajusta el tamaño */
+    height: auto;
+    display: block;
+  }
+  
+  .boton-login:hover {
+    color: var(--color-primary);
+    background-color: rgba(10, 128, 72, 0.1);
+    color: var(--color-primary);
+    border-color: rgba(10, 128, 72, 0.3);
+    transform: translateY(-2px);
+  }
+  /* Estado activo: restaura hover permanentemente */
+  .nav-principal a.active {
+    color: var(--color-primary);            /* mismo color que en hover */
+  }
+  
+  .nav-principal a.active::before,
+  .nav-principal a.active::after {
+    transform: scaleX(1);                  /* líneas expandidas como en hover */
+  
+  }
+
+
+  /*contenido*/
+  /* CSS personalizado mínimo:  
+   - Sólo ajustes puntuales;  
+   - Se apoya en Bootstrap v5+. */
+
+#section-seleccionar-pedido{
+  margin-top: 150px;
+  color: var(--color-primary);
+}
+
+/* 1. Asegurar que las secciones ocultas se muestren tras selección */
+#section-render-3d.d-none,
+#section-foto-final.d-none,
+#section-comentarios.d-none {
+  display: none !important;
+}
+
+/* 2. Previews: centrar contenidos */
+#render-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  margin-top: 20px;
+}
+
+#foto-preview {
+  max-height: 300px;
+  object-fit: contain;
+}
+
+/* 3. Tarjetas de historial: espaciado */
+#historial-list .card {
+  border-radius: .5rem;
+}
+
+/* 4. Formularios: mantener consistencia */
+form .form-label {
+  font-weight: 500;
+}
+/* ==================== FOOTER ==================== */
+.footer-joyeria {
+  background: var(--color-footer-bg, var(--color-surface)); /* Fondo con fallback */
+  padding: var(--space-xl) var(--space-md) var(--space-sm); /* Rellenos: top, laterales, bottom */
+  margin-top: var(--space-xxl);      /* Espacio superior grande */
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08); /* Sombra por encima */
+  border-top: 1px solid var(--color-primary); /* Borde superior muy sutil */
+}
+.contenedor-footer {
+  display: grid;                    /* Grid para columnas */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas adaptables */
+  max-width: 1200px;                /* Ancho máximo */
+  margin: 0 auto;                   /* Centrado horizontal */
+  gap: var(--space-xl);             /* Espacio entre columnas */
+}
+.columna-footer h4 {
+  color: var(--color-primary);      /* Título en color primario */
+  font-size: 1.1rem;                /* Tamaño ligeramente mayor */
+  font-weight: 600;                 /* Negrita media */
+  margin-bottom: var(--space-md);   /* Espacio inferior mediano */
+  padding-bottom: var(--space-sm);  /* Padding inferior pequeño */
+  position: relative;               /* Para la línea ::after */
+}
+.columna-footer h4::after {
+  content: '';                      /* Línea decorativa */
+  position: absolute;               /* Absoluta respecto al h4 */
+  bottom: 0; left: 0;               /* Pegada a la base y al lado izquierdo */
+  width: 50px; height: 2px;         /* Dimensiones de la línea */
+  background-color: var(--color-primary); /* Color primario */
+}
+.columna-footer p,
+.columna-footer a {
+  color: var(--color-text);         /* Texto en color global */
+  margin-bottom: var(--space-sm);   /* Espacio inferior pequeño */
+  text-decoration: none;            /* Sin subrayado */
+  font-size: 0.9rem;                /* Tamaño de fuente compacto */
+  transition: var(--transition-base); /* Transición global */
+}
+.columna-footer a:hover {
+  color: var(--color-primary);      /* Texto primario al pasar */
+  padding-left: var(--space-xs);    /* Pequeño desplazamiento al texto */
+}
+.redes-sociales {
+  display: flex;                    /* Flex para iconos */
+  gap: var(--space-md);             /* Espacio entre iconos */
+  margin-top: var(--space-md);      /* Espacio superior mediano */
+}
+.redes-sociales a {
+  display: inline-block;            /* Inline-block para control de tamaño */
+  transition: var(--transition-base); /* Transición global */
+}
+.redes-sociales a:hover {
+  transform: translateY(-3px);      /* Eleva el icono */
+}
+.redes-sociales img {
+  width: 24px; height: 24px;        /* Tamaño consistente */
+  opacity: 0.7;                     /* Opacidad inicial */
+  transition: var(--transition-base); /* Transición global */
+}
+.redes-sociales img:hover {
+  opacity: 1;                       /* Opacidad completa al pasar */
+}
+.derechos-footer {
+  text-align: center;               /* Centrado de texto */
+  color: var(--color-muted);        /* Texto en color atenuado */
+  font-size: 0.8rem;                /* Fuente pequeña */
+  max-width: 1200px;                /* Ancho máximo */
+  margin: var(--space-xl) auto 0;   /* Márgenes superior y centrado */
+  padding-top: var(--space-md);     /* Padding superior mediano */
+  border-top: 1px solid rgba(0, 0, 0, 0.05); /* Línea superior muy sutil */
+}
+.derechos-footer p:first-child {
+  margin-bottom: var(--space-xs);   /* Espacio inferior extra pequeño */
+}
+
