@@ -11,7 +11,7 @@ header.encabezado {
   background: white;
   border-bottom: 1px solid #ccc;
   padding: 1rem 2rem;
-  position: fixed;
+  position:sticky;
   top: 0;
   width: 100%;
   z-index: 999;
@@ -138,6 +138,19 @@ header.encabezado {
   display: flex;
 }
 
+
+
+/* ================================= */
+/* ========== MAIN ================= */
+/* ================================= */
+
+
+
+main {
+  margin-top: 100px; /* compensa el header */
+}
+
+
 /* ================================= */
 /* ========== FOOTER  ============== */
 /* ================================= */
@@ -220,6 +233,27 @@ header.encabezado {
 
 
 
+
+
+
+
+/* Asegura que el body y html llenen la pantalla */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Envoltorio para todo el contenido de la página */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* El contenido principal crece y empuja el footer hacia abajo */
+main {
+  flex: 1;
+}
 
 
 
