@@ -18,7 +18,7 @@ body >*:not(footer) {
 /* ==================== CARRUSEL ==================== */
 .carrusel {
     width: 100%;
-    height: 80vh;
+    height: 70vh;
     position: relative;
     overflow: hidden;
     object-fit: cover;
