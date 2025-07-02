@@ -4,7 +4,7 @@
 html, body {
     height: 100%;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -67,6 +67,7 @@ body >*:not(footer) {
     margin-bottom: 6px;
 }
 
+
 /* ==================== CONTENIDO SECUNDARIO CONTEXTO ==================== */
 .info-complement {
     width: 35%;
@@ -86,31 +87,53 @@ body >*:not(footer) {
 .contexto p {
     text-align:left;
     margin-bottom: 10px; 
-    font-size: var(--font-size-lg);          /* Espacio entre párrafos */
+    font-size: var(--font-size-lg);          
 }
 
 /* ==================== CONTEXTO ILUSTRACIÓN ==================== */
 .contexto-ilustracion {
- display: flex;
- margin-bottom: auto; /* Espacio inferior */
+  position: relative;  
+  min-height: 100px;     
 }
 
 .contexto-imagen {
-    display: flex;                    /* Flex para alinear imágenes */
-    justify-content:flex-end;
-    flex-direction: column;
-    align-items:baseline;             /* Centrado vertical */
-    margin-left: auto;  
-    margin-top: -490px;          /* Espacio inferior */
-    gap: 20px; 
-                          /* Espacio entre imágenes */             
+  position: relative;     
+  width: 90%;
+  height: 90%;
 }
 
 .contexto-imagen img {
-    width: 250px;                    /* Ancho fijo de la imagen */
-    height: auto;                    /* Mantiene la proporción de la imagen */
-    box-shadow: var(--shadow);       /* Sombra global definida */
+  position: absolute;
+  width: 300px;       
+  height: auto;
+  border-radius: 7px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
 }
+
+.contexto-imagen img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #00000000;
+}
+
+/* SECCIÓN DE IMAGENES */
+.img1 {
+  top: -450px;     
+  right: -100px;   
+}
+
+
+.img2 {
+  top: -300px;  
+  right: 180px;  
+}
+
+
+.img3 {
+  bottom: -20px; 
+  right: -100px;  
+}
+
 /* ==================== FOOTER ==================== */
 
 .footer-joyeria {
