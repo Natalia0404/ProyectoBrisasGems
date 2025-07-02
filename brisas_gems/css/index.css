@@ -111,8 +111,10 @@ body >*:not(footer) {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
 }
 
+<!---HEAD --->
+
 .contexto-imagen img:hover {
-    transform: scale(1.1);
+    transform: scale(1.1);  
     box-shadow: 0 0 10px #00000000;
 }
 
@@ -209,3 +211,5 @@ body >*:not(footer) {
 .derechos-footer p:first-child {
   margin-bottom: var(--space-xs);   /* Espacio inferior extra pequeño */
 }
+
+
