@@ -111,8 +111,6 @@ body >*:not(footer) {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
 }
 
-<!---HEAD --->
-
 .contexto-imagen img:hover {
     transform: scale(1.1);  
     box-shadow: 0 0 10px #00000000;
