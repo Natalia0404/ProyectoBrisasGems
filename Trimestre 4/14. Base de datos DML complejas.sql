@@ -14,7 +14,7 @@ select
     op.opc_nombre,
     vp.val_nombre
 from pedido p
-join usuarios u on p.usu_id_admin = u.usu_id
+join usuarios u on p.usu_id = u.usu_id
 join estado_pedido ep on p.est_id = ep.est_id
 left join personalizacion per on p.per_id = per.per_id
 left join detalle_personalizacion dp on per.per_id = dp.per_id

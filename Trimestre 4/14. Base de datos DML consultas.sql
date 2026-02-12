@@ -2,7 +2,7 @@
 -- CONSULTAS CON JOINS
 -- ===================
 
-
+use brisas_gems;
 -- 1. inner join — detalles de pedidos con info del usuario y estado
 -- Así puedes listar pedidos con el nombre del cliente y el estado del pedido, útil para tu administración.
 select 
@@ -11,7 +11,7 @@ select
     p.ped_fecha_creacion,
     ep.est_nombre as estado_pedido
 from pedido p
-inner join usuarios u on p.usu_id_admin = u.usu_id
+inner join usuarios u on p.usu_id = u.usu_id
 inner join estado_pedido ep on p.est_id = ep.est_id;
 
 -- 2. left join — todos los usuarios y sus pedidos si existen
