@@ -1,0 +1,46 @@
+@startuml
+skinparam defaultTextAlignment center
+skinparam shadowing false
+skinparam NodeBackgroundColor #DAE8FC
+skinparam NodeBorderColor #6C8EBF
+skinparam ArtifactBackgroundColor #FFFFFF
+skinparam ArtifactBorderColor #6C8EBF
+skinparam ComponentBackgroundColor #FFF2CC
+skinparam ComponentBorderColor #D6B656
+skinparam DatabaseBackgroundColor #D5E8D4
+skinparam DatabaseBorderColor #82B366
+skinparam ArrowColor #000000
+skinparam FontColor #000000
+
+node "Dispositivo del Cliente" {
+    artifact "Navegador Web\n(Cliente)" as navegador
+}
+
+node "AWS EC2 Instance (Linux Server)" <<cloud>> {
+
+    node "Capa Frontend" {
+        component "Apache (httpd)\n(Servidor Web)" as apache
+        artifact "Aplicación Laravel (PHP)\n«Frontend»" as laravel
+        apache -down-> laravel
+    }
+
+    node "Capa Backend" {
+        together {
+            component "Tomcat Embebido\n(Servidor de Aplicaciones)" as tomcat
+            artifact "API REST Spring Boot (Java)\n«Backend»" as springboot
+        }
+        artifact "Almacenamiento Local\n/uploads/\n(historial, productos,\npersonalizacion, renders)" as almacenamiento
+
+        tomcat -down-> springboot : ejecuta
+        springboot -right-> almacenamiento : I/O Local\n(Lectura / Escritura)
+    }
+
+    node "Capa de Datos" {
+        database "MySQL\nEsquema: brisas_gems" as mysql
+    }
+}
+
+navegador -down-> apache : HTTP :80
+laravel -down-> springboot : HTTP :8080\n(REST API / JSON)
+springboot -down-> mysql : JDBC / TCP :3306
+@enduml
